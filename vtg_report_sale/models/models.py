@@ -13,6 +13,7 @@ class VTGRportSaleCustomerBuyMonth(models.Model):
 
     count_buy = fields.Integer(string='Số đơn mua')
     partner_id = fields.Many2one('res.partner', string='Khách hàng')
+    phone = fields.Char(string='Số Điện Thoại')
     branch_id = fields.Many2one('vtg.branch', string='Chi nhánh')
     date = fields.Date(string='Tháng')
 
@@ -21,10 +22,11 @@ class VTGRportSaleCustomerBuyMonth(models.Model):
         self.env.cr.execute('''
             CREATE OR REPLACE VIEW %s AS (
              SELECT ROW_NUMBER() OVER (ORDER BY a.date,a.partner_id, a.branch_id) AS id, 
-             COUNT(*) as count_buy, partner_id,branch_id,date FROM (
+             COUNT(*) as count_buy, partner_id,b.phone,branch_id,date FROM (
              SELECT partner_id,x_branch_id as branch_id,DATE_TRUNC('month', date_order) AS date
              FROM sale_order WHERE create_date >= '01/01/2024' AND state in ('paid','done','invoiced')) as a
-             GROUP BY partner_id,branch_id,date
+             Join res_partner as b on a.partner_id = b.id
+             GROUP BY partner_id,branch_id,date, b.phone
             )''' % (self._table,)
                             )
 
