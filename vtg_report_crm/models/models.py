@@ -393,3 +393,25 @@ class VTGRportPriceLeadMKT(models.Model):
                 ON a.marketing_id = b.user_id AND a.channel_id = b.channel_id
               )''' % (self._table,)
                             )
+class VTGRportLeadMKT(models.Model):
+    _name = 'vtg.report.crm.lead.mkt'
+    _description = 'VTG Report lead mkt'
+    _auto = False
+
+    lead_id = fields.Many2one('crm.lead', string='lead')
+    marketing_id = fields.Many2one('res.users', string="Nhân viên")
+    channel_id = fields.Many2one('crm.kpi.mkt.budget.channel', string='Kênh')
+    source_id = fields.Many2one('utm.source', string='Nguồn')
+    stage_id = fields.Many2one('crm.stage', string='Trạng Thái')
+    lead_create = fields.Datetime(string='Ngày Tạo Lead')
+
+
+    def init(self):
+        tools.drop_view_if_exists(self.env.cr, self._table)
+        self.env.cr.execute('''
+              CREATE OR REPLACE VIEW %s AS (
+              	SELECT ROW_NUMBER() OVER (ORDER BY create_date) AS id, id as lead_id,marketing_id,channel_id,source_id,stage_id,create_date as lead_create
+                FROM crm_lead 
+                 WHERE create_date > '01/01/2024'
+              )''' % (self._table,)
+                            )

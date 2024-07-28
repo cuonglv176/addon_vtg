@@ -1,1 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_vtg_report_crm_lead_mkt,vtg_report_crm.vtg_report_crm_lead_mkt,model_vtg_report_crm_lead_mkt,,1,1,1,0
