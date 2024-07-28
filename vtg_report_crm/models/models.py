@@ -106,7 +106,7 @@ class VTGRportCRMSALEAMOUNT(models.Model):
             SELECT a.amount_total amount_total, a.user_id, a.date_order :: DATE as date
             FROM sale_order a 
             WHERE create_date > '01/01/2023' 
-            AND state in ('sale','done')
+            AND state not in ('draft','cancel') and status_transfer != 'return'
             ) as a
             GROUP BY a.user_id,a.date) as a
 
