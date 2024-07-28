@@ -22,11 +22,11 @@ class VTGRportSaleCustomerBuyMonth(models.Model):
         self.env.cr.execute('''
             CREATE OR REPLACE VIEW %s AS (
              SELECT ROW_NUMBER() OVER (ORDER BY a.date,a.partner_id, a.branch_id) AS id, 
-             COUNT(*) as count_buy, partner_id,b.phone,branch_id,date FROM (
+             COUNT(*) as count_buy, a.partner_id,b.phone,a.branch_id,a.date FROM (
              SELECT partner_id,x_branch_id as branch_id,DATE_TRUNC('month', date_order) AS date
              FROM sale_order WHERE create_date >= '01/01/2024' AND state in ('paid','done','invoiced')) as a
              Join res_partner as b on a.partner_id = b.id
-             GROUP BY partner_id,branch_id,date, b.phone
+             GROUP BY a.partner_id,a.branch_id,a.date, b.phone
             )''' % (self._table,)
                             )
 
