@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="purchase_order_form_domain_partner_inherit" model="ir.ui.view">
+            <field name="name">purchase.order.form.domain.partner.inherit</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+
+
+                <xpath expr="//field[@name='partner_id']" position="attributes">
+                    <attribute name="domain">[('supplier_rank','&gt;', 0)]</attribute>
+                </xpath>
+                <xpath expr="//field[@name='partner_ref']" position="after">
+                    <field name="transfer_code" attrs="{'invisible': [('state','=','cancel')]}"/>
+                    <field name="transfer_status" attrs="{'invisible': [('state','=','cancel')]}"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="purchase_order_view_tree_transfer" model="ir.ui.view">
+            <field name="name">purchase_order_view_tree_transfer</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_view_tree"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//tree" position="inside">
+                    <field name="transfer_status"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="vpicktree_transfer_status" model="ir.ui.view">
+            <field name="name">vpicktree_transfer_status</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.vpicktree"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='state']" position="after">
+                    <field name="transfer_status"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="view_picking_form_transfer_status" model="ir.ui.view">
+            <field name="name">view_picking_form_transfer_status</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='origin']" position="after">
+                    <field name="transfer_status" attrs="{'invisible': [('picking_type_code', '!=', 'incoming')]}"/>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

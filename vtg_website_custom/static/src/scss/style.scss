@@ -1,0 +1,7 @@
+.o_form_view {
+  .o_form_label.o_required_modifier::after {
+    content: "(*)";
+    color: red;
+    font-size: 0.8rem;
+  }
+}

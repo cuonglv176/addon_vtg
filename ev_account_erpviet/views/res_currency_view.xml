@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record id="z_rescurrency_form" model="ir.ui.view">
+			<field name="name">z.res.currency.form</field>
+			<field name="model">res.currency</field>
+			<field name="inherit_id" ref="base.view_currency_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='rate']" position="attributes">
+					<attribute name="invisible">1</attribute>
+                </xpath>
+				<xpath expr="//field[@name='rate']" position="after">
+					<field name="x_rate"/>
+                </xpath>
+            </field>
+        </record>
+
+		<record id="z_view_currency_tree" model="ir.ui.view">
+			<field name="name">z.res.currency.tree</field>
+			<field name="model">res.currency</field>
+			<field name="inherit_id" ref="base.view_currency_tree" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='rate']" position="attributes">
+					<attribute name="invisible">1</attribute>
+                </xpath>
+				<xpath expr="//field[@name='rate']" position="after">
+					<field name="x_rate"/>
+				</xpath>
+            </field>
+        </record>
+
+		<record id="z_view_currency_rate_tree" model="ir.ui.view">
+			<field name="name">z.res.currency.rate.tree</field>
+			<field name="model">res.currency.rate</field>
+			<field name="inherit_id" ref="base.view_currency_rate_tree" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='rate']" position="attributes">
+					<attribute name="invisible">1</attribute>
+                </xpath>
+				<xpath expr="//field[@name='rate']" position="after">
+					<field name="x_rate"/>
+				</xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

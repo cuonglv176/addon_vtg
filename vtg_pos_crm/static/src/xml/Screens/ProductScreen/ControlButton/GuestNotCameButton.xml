@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="GuestNotCameButton" owl="1">
+        <div class="control-button" t-if="isShowButton">
+            <span>Guests Not Came</span>
+        </div>
+    </t>
+
+</templates>

@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_crm_kpi_mkt,vtg_kpi.crm_kpi_mkt,model_crm_kpi_mkt,vtg_security.group_vtg_employee_mkt,1,1,1,0
+access_crm_kpi_mkt_budget,vtg_kpi.crm_kpi_mkt_budget,model_crm_kpi_mkt_budget,vtg_security.group_vtg_employee_mkt,1,1,1,0
+access_crm_kpi_mkt_line_day,vtg_kpi.crm_kpi_mkt_line_day,model_crm_kpi_mkt_line_day,vtg_security.group_vtg_employee_mkt,1,1,1,0
+access_crm_kpi_sale,vtg_kpi.crm_kpi_sale,model_crm_kpi_sale,vtg_security.group_vtg_employee_team_sale,1,1,1,0
+access_crm_kpi_sale_line,vtg_kpi.crm_kpi_sale_line,model_crm_kpi_sale_line,vtg_security.group_vtg_employee_team_sale,1,1,1,0
+access_crm_kpi_sale_line_day,vtg_kpi.crm_kpi_sale_line_day,model_crm_kpi_sale_line_day,vtg_security.group_vtg_employee_team_sale,1,1,1,0
+access_crm_kpi_mkt_budget_channel,vtg_kpi.crm_kpi_mkt_budget_channel,model_crm_kpi_mkt_budget_channel,vtg_security.group_vtg_employee_mkt,1,1,1,0

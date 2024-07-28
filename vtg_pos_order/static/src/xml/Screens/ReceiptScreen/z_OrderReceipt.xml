@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <!-- Inheriting and extending the existing OrderReceipt template -->
+    <t t-name="OrderReceipt" t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('pos-receipt')]" t-operation="replace">
+            <div class="pos-receipt-vtg">
+                <!-- Header Section -->
+                <div class="header">
+                    <t t-if="receipt.company.logo">
+                        <img class="pos-receipt-logo" t-att-src="receipt.company.logo" alt="Logo"
+                             style="max-height: 50px;"/>
+                    </t>
+                    <t t-else="">
+                        <h2 class="pos-receipt-center-align">
+                            <t t-esc="receipt.company.name"/>
+                        </h2>
+                    </t>
+                    <div>
+                        <t t-esc="receipt.company.name"/>
+                        <br/>
+                        <t t-esc="receipt.company.phone"/>
+                        -
+                        <t t-esc="receipt.cashier"/>
+                    </div>
+                </div>
+
+                <!-- Order Information Section -->
+                <div class="order-info">
+                    <h2>Đơn hàng #<t t-esc="receipt.name"/></h2>
+                    <div>Ngày đặt hàng: <t t-esc="receipt.date.localestring"/></div>
+                </div>
+
+                <!-- Order Lines Section -->
+                <div class="orderlines">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Mô tả</th>
+                                <th>Số lượng</th>
+                                <th>Đơn giá</th>
+                                <th>Thuế</th>
+                                <th>Số tiền</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="receipt.orderlines" t-as="line">
+                                <tr>
+                                    <td><t t-esc="line.product_name_wrapped[0]" /></td>
+                                    <td><t t-esc="line.quantity" /></td>
+                                    <td><t t-esc="env.pos.format_currency_no_symbol(line.price_display)" /></td>
+                                    <td><t t-esc="env.pos.format_currency_no_symbol(line.price_with_tax - line.price_display)" /></td>
+                                    <td><t t-esc="env.pos.format_currency_no_symbol(line.price_with_tax)" /></td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Total Section -->
+                <div class="total-section">
+                    <strong>Tổng tiền</strong>
+                    <span t-esc="env.pos.format_currency(receipt.total_with_tax)" class="pos-receipt-right-align"/>
+                </div>
+
+                <!-- Footer Section -->
+                <div class="footer">
+                    <div>Điều khoản Điều kiện: <a t-att-href="receipt.company.terms_url"><t t-esc="receipt.company.terms_url" /></a></div>
+                </div>
+            </div>
+        </xpath>
+    </t>
+
+</templates>

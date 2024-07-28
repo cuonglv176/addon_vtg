@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="view_account_change_lock_date_inherit" model="ir.ui.view">
+            <field name="name">view_account_change_lock_date_inherit</field>
+            <field name="model">account.change.lock.date</field>
+            <field name="inherit_id" ref="account_accountant.view_account_change_lock_date"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//button[@name='change_lock_date']" position="replace">
+                    <button string="Save" name="change_lock_date_inherit" type="object" class="btn-primary"/>
+                    <!-- Add your fields or attributes here -->
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

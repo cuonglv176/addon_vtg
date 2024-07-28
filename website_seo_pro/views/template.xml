@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<odoo>
+    <template id="footer_custom" inherit_id="website.footer_custom" customize_show="True" name="SEO Site MAP Footer">
+        <xpath expr="//div[@id='footer']//div[hasclass('col-lg-2')]//ul" position="inside">
+            <li>
+                <a href="/page/website.sitemap">
+                    <span>Sitemap</span>
+                </a>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="sitemap_recursive" name="Sitemap REC">
+        <li>
+            <i class="fa fa-link text-primary"></i>
+            <a t-att-href="wk_menu.url" t-field="wk_menu.name"></a>
+            <ul t-if="wk_menu.child_id" style="list-style: none;" class="mt8">
+                <t t-foreach="wk_menu.child_id" t-as="wk_menu">
+                    <t t-call="website_seo_pro.sitemap_recursive"/>
+                </t>
+            </ul>
+        </li>
+    </template>
+    <template id="sitemap" name="Site Map">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure">
+                    <section>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h1>
+                                        <i class="fa fa-sitemap fa-2x"></i>
+                                        <t t-esc='website.name'/>
+                                        SiteMap</h1>
+                                    <ul style="list-style: none;" class="mt16">
+                                        <t t-foreach="menu_ids" t-as="wk_menu">
+                                            <t t-call="website_seo_pro.sitemap_recursive"/>
+                                        </t>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </t>
+    </template>
+
+</odoo>

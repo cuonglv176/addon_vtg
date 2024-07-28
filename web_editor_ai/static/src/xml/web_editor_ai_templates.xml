@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates xml:space="preserve">
+
+    <div t-name="web_editor_ai.request_dialog">
+        <textarea id="aiRequestInput" rows="7" class="form-control col" placeholder="Enter your request to AI ..." ></textarea>
+    </div>
+
+    <form class="g-2" t-name="web_editor_ai.content_generator">
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <label class="col-form-label fw-bold" for="writeAbout" title="blablabla">Write about</label>
+                <textarea id="writeAbout" rows="5" class="form-control" placeholder="What would you like to write about?"><t t-out="widget.about"/></textarea>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="row ">
+                     <div class="col-auto">
+                        <label class="col-form-label fw-bold" for="tone_select">Tone</label>
+                        <div class="col" name="tone_select">
+                             <t t-foreach="widget.tone_options" t-as="tone" >
+                                <div class="radio form-check">
+                                    <input t-if="tone_last" t-att-id="'t_' + tone[0]" type="radio"  name="tone" t-att-value="tone[2]" class="form-check-input" checked="checked"/>
+                                    <input t-else="" t-att-id="'t_' + tone[0]" type="radio"  name="tone" t-att-value="tone[2]" class="form-check-input"/>
+                                    <label class="form-check-label ms-1" t-att-for="'t_' + tone[0]" t-esc="tone[1]" />
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <label class="col-form-label fw-bold" for="format_select">Format</label>
+                        <div class="col" name="format_select">
+                             <t t-foreach="widget.format_options" t-as="format" >
+                                <div class="radio form-check">
+                                    <input t-if="format_last" t-att-id="'f_' + format[0]" type="radio"  name="format" t-att-value="format[2]" class="form-check-input" checked="checked"/>
+                                    <input t-else="" t-att-id="'f_' + format[0]" type="radio"  name="format" t-att-value="format[2]" class="form-check-input"/>
+                                    <label class="form-check-label ms-1" t-att-for="'f_' + format[0]" t-esc="format[1]" />
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <label class="col-form-label fw-bold" for="length_select">Length</label>
+                        <div class="col" name="length_select">
+                             <t t-foreach="widget.length_options" t-as="length" >
+                                <div class="radio form-check">
+                                    <input t-if="length_last" t-att-id="'l_' + length[0]" type="radio"  name="length" t-att-value="length[2]" class="form-check-input" checked="checked"/>
+                                    <input t-else="" t-att-id="'l_' + length[0]" type="radio"  name="length" t-att-value="length[2]" class="form-check-input"/>
+                                    <label class="form-check-label ms-1" t-att-for="'l_' + length[0]" t-esc="length[1]" />
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col mt-4 d-none ps-5 pe-5" id="previewContainer">
+                <h2>Preview</h2>
+                <div class="col" id="previewContent"></div>
+            </div>
+        </div>
+
+
+    </form>
+
+
+</templates>

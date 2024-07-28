@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem id="menu_cash_bank_report" name="Report" parent="menu_cash_bank_payment" sequence="10"/>
+
+        <record id="action_account_report_general_funds" model="ir.actions.client">
+            <field name="name">General Funds</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'account.general.funds'}" />
+        </record>
+
+        <menuitem id="menu_action_account_report_general_funds" name="General Funds" action="action_account_report_general_funds" parent="menu_cash_bank_report" groups="account.group_account_user" sequence="1"/>
+
+
+        <record id="action_account_report_general_banks" model="ir.actions.client">
+            <field name="name">General Banks</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'account.general.banks'}" />
+        </record>
+
+        <menuitem id="menu_action_account_report_general_banks" name="General Banks" action="action_account_report_general_banks" parent="menu_cash_bank_report" groups="account.group_account_user" sequence="3"/>
+
+
+        <record id="action_account_report_general_transfer" model="ir.actions.client">
+            <field name="name">General Transfer</field>
+            <field name="tag">account_report</field>
+            <field name="context" eval="{'model': 'account.general.transfer'}" />
+        </record>
+
+<!--        <menuitem id="menu_action_account_report_general_transfer" name="General Transfer" action="action_account_report_general_transfer" parent="menu_cash_bank_report" groups="account.group_account_user" sequence="6"/>-->
+
+<!--        <record id="action_account_report_advances_employees" model="ir.actions.client">-->
+<!--            <field name="name">Advances to employees</field>-->
+<!--            <field name="tag">account_report</field>-->
+<!--            <field name="context" eval="{'model': 'account.advances.employees'}" />-->
+<!--        </record>-->
+
+<!--        <menuitem id="menu_action_account_report_advances_employees" name="Advances to employees" action="action_account_report_advances_employees" parent="menu_cash_bank_report" groups="account.group_account_user" sequence="7"/>-->
+    </data>
+</odoo>

@@ -1,0 +1,28 @@
+<odoo>
+    <data>
+
+        <record id="view_move_inherit_cash_bank_form" model="ir.ui.view">
+            <field name="name">view_move_cash_bank_form_inherit</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <field name="invoice_date" position="after">
+                    <field name="x_is_not_payment" attrs="{'readonly': [('payment_state','=','paid')], 'invisible': [('move_type','!=','in_invoice')]}" force_save="1"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_move_inherit_cash_bank_tree" model="ir.ui.view">
+            <field name="name">view_move_cash_bank_tree_inherit</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_invoice_tree"/>
+            <field name="arch" type="xml">
+                <field name="company_currency_id" position="after">
+                    <field name="x_is_not_payment" attrs="{'invisible': [('move_type','!=','in_invoice')]}" force_save="1"/>
+                    <field name="payment_state"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</odoo>

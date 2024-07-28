@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="website_menus_form_view_inherit_droggol_theme_common" model="ir.ui.view">
+        <field name="name">website.menu.view.form.inherit</field>
+        <field name="model">website.menu</field>
+        <field name="inherit_id" ref="website.website_menus_form_view"/>
+        <field name="arch" type="xml">
+            <field name="is_mega_menu" position="after">
+                <field name="dr_menu_label_id"/>
+                <field name="dr_highlight_menu"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="menu_tree_inherit_droggol_theme_common" model="ir.ui.view">
+        <field name="name">website.menu.tree.inherit.droggol.theme.common</field>
+        <field name="model">website.menu</field>
+        <field name="inherit_id" ref="website.menu_tree"/>
+        <field name="arch" type="xml">
+            <field name="url" position="after">
+                <field name="dr_menu_label_id"/>
+                <field name="dr_highlight_menu"/>
+            </field>
+        </field>
+    </record>
+
+    <!--
+        Due to wrong placemenent odoo test case we need to enable few menus
+        Sale root menu is mandetory to test product configurator test case.
+        See: https://github.com/odoo/odoo/blob/15.0/addons/sale_product_configurator/static/tests/tours/product_configurator_advanced_ui.js#L12
+    -->
+    <record id="sale.sale_menu_root" model="ir.ui.menu">
+        <field name="active" eval="True"/>
+    </record>
+
+    <record id="sale.menu_sale_quotations" model="ir.ui.menu">
+        <field name="active" eval="True"/>
+    </record>
+
+    <!-- move to new file -->
+    <record id="view_website_sale_website_form" model="ir.ui.view">
+        <field name="name">website_sale.website.form</field>
+        <field name="model">website</field>
+        <field name="inherit_id" ref="website_sale.view_website_sale_website_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='shop_extra_field_ids']/tree" position="inside">
+                <field name="dr_label"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

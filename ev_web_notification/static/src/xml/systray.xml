@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+
+    <t t-name="ev_web_notification.systray.MessagingMenu.Previews">
+        <t t-if="_.isEmpty(previews)">
+            <li class="text-center o_no_activity mt16">
+                <span>No conversation yet...</span>
+            </li>
+        </t>
+        <t t-foreach="previews" t-as="preview">
+            <t t-call="ev_web_notification.Preview"/>
+        </t>
+    </t>
+
+
+    <t t-name="ev_web_notification.systray.ActivityMenu.Previews">
+        <t t-set="activities" t-value="widget._activities"/>
+        <t t-if="_.isEmpty(activities)">
+            <div class="dropdown-item-text text-center o_no_activity">
+                <span>No activities planned.</span>
+            </div>
+        </t>
+        <div class="o_mail_systray_dropdown_top">
+            <button type="button" class="btn btn-link o_mark_as_read">Mark as read</button>
+        </div>
+        <t t-foreach="activities" t-as="activity">
+            <t t-if="activity.status == 'seen'">
+                <div class="o_mail_preview o_systray_activity" t-att-data-message_id="activity.id"
+                     t-att-data-res_id="activity.res_id"
+                     t-att-data-res_model="activity.model" t-att-data-model_name="activity.name"
+                     t-att-data-url_portal="activity.url_portal"
+                     t-att-data-status="activity.status"
+                     data-filter='my'>
+                    <div t-if="activity.icon">
+                        <t t-if="activity.status == 'seen'">
+                            <i t-attf-class="fa #{activity.icon}"/>
+                        </t>
+                    </div>
+                    <t t-if="activity.status == 'seen'">
+                        <div class="o_preview_info">
+                            <div class="o_preview_title">
+                                <span class="o_preview_name" style=" white-space: normal">
+                                    <t t-esc="activity.res_name"/>
+                                    <br/>
+                                    <t t-esc="activity.create_date"/>
+                                </span>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </t>
+            <t t-if="activity.status != 'seen'">
+                <div class="o_mail_preview o_systray_activity" t-att-data-message_id="activity.id"
+                     t-att-data-res_id="activity.res_id"
+                     style="background-color: whitesmoke;"
+                     t-att-data-res_model="activity.model" t-att-data-model_name="activity.name"
+                     t-att-data-url_portal="activity.url_portal"
+                     t-att-data-status="activity.status"
+                     data-filter='my'>
+                    <div t-if="activity.icon">
+                        <t t-if="activity.status != 'seen'">
+                            <i style="font-weight: bold; font-size: 15px;background-color: whitesmoke;"
+                               t-attf-class="fa #{activity.icon}"/>
+                        </t>
+                    </div>
+                    <t t-if="activity.status != 'seen'">
+                        <div class="o_preview_info o_preview_unread" style="background-color: whitesmoke;">
+                            <div class="o_preview_title o_preview_unread">
+                                <span class="o_preview_name" style="font-weight: bold; white-space: normal;">
+                                    <t t-esc="activity.res_name"/>
+                                    <br/>
+                                    <t t-esc="activity.create_date"/>
+                                </span>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </t>
+        </t>
+    </t>
+
+    <!--    <t t-name="ev_web_notification.systray.ActivityMenu">-->
+    <!--        <li class="o_mail_systray_item">-->
+    <!--            <a class="dropdown-toggle o-no-caret" data-toggle="dropdown" data-display="static" aria-expanded="false"-->
+    <!--               title="Notifications" href="#" role="button">-->
+    <!--                <i class="fa fa-bell" role="img" aria-label="Notifications"/>-->
+    <!--                <span class="o_notification_counter badge badge-pill"/>-->
+    <!--            </a>-->
+    <!--            <div class="o_mail_systray_dropdown dropdown-menu dropdown-menu-right" role="menu">-->
+    <!--                <div class="o_mail_systray_dropdown_items"/>-->
+    <!--            </div>-->
+    <!--        </li>-->
+    <!--    </t>-->
+
+    <t t-name="ev_web_notification.systray.ActivityMenu">
+        <div class="new_icon">
+            <div class="icon_div">
+                <div class="toggle-icon" role="button">
+                    <a class="dropdown-toggle o-no-caret" data-toggle="dropdown" data-display="static"
+                       aria-expanded="false"
+                       title="Notifications" href="#" role="button">
+                        <i class="fa fa-bell" role="img" aria-label="Notifications" style="color: rgba(255, 255, 255, 0.9);"/>
+                        <span class="vtg_icon_notify o_notification_counter badge badge-pill" style="margin-top: -0.8rem;
+      margin-right: 0;
+      margin-left: -0.6rem;
+      background: #017e84;
+      color: white;
+      vertical-align: super;
+      font-size: 0.7em;"/>
+                    </a>
+                    <div class="o_mail_systray_dropdown dropdown-menu dropdown-menu-right" role="menu">
+                        <div class="o_mail_systray_dropdown_items"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

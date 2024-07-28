@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="vtg_crm_kpi_mkt_form_view" model="ir.ui.view">
+            <field name="name">crm.kpi.mkt.form</field>
+            <field name="model">crm.kpi.mkt</field>
+            <field name="arch" type="xml">
+                <form string="vtg crm kpi mkt">
+                    <header>
+                        <button name="action_confirm" type="object" states="draft" string="Xác nhận"
+                                class="oe_highlight"/>
+                        <button name="action_cancel" type="object" states="confirmed" string="Hủy"/>
+                        <field name="state" readonly="1"
+                               statusbar_visible="draft,confirmed,cancel" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <h3 class="text-center">Mã KPI:
+                            <field name="name" readonly="1" force_save="1"/>
+                        </h3>
+                        <group>
+                            <group>
+                                <field name="user_id" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="currency_id" invisible="1"/>
+                            </group>
+                            <group>
+                                <field name="month" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="date_start" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="date_end" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            </group>
+                        </group>
+                        <h5>LEAD</h5>
+                        <group>
+                            <group string="Dự kiến">
+                                <field name="qty_lead_target"/>
+                            </group>
+                            <group string="Thực tế">
+                                <field name="qty_lead" readonly="1" force_save="1"/>
+                                <field name="qty_lead_percent" widget="percentpie" nolabel="1"/>
+                            </group>
+                        </group>
+                        <h5>CHI TIÊU</h5>
+                        <group>
+                            <group string="Dự kiến">
+                                <field name="budget_target" widget="monetary"/>
+                                <field name="amount_per_lead_target" widget="monetary"/>
+                            </group>
+                            <group string="Thực tế">
+                                <field name="amount_per_lead" widget="monetary" readonly="1" force_save="1"/>
+                                <field name="budget" widget="monetary" readonly="1" force_save="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Chi tiết KPI">
+                                <field name="line_ids" editable="bottom"
+                                       attrs="{'readonly':[('state','!=','draft')]}">
+                                    <tree string="Chi tiết KPI" editable="bottom">
+                                        <field name="week"/>
+                                        <field name="date_start"/>
+                                        <field name="date_end"/>
+                                        <field name="user_id"/>
+                                        <field name="qty_lead_target"/>
+                                        <field name="qty_lead"/>
+                                        <field name="amount_per_lead_target"/>
+                                        <field name="amount_per_lead" readonly="1" force_save="1"/>
+                                        <field name="budget_target"/>
+                                        <field name="budget" readonly="1" force_save="1"/>
+                                        <field name="currency_id" invisible="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Kết quả theo ngày">
+                                <field name="line_day_ids" editable="bottom">
+                                    <tree string="Kết quả theo ngày" editable="bottom">
+                                        <field name="date"/>
+                                        <field name="user_id"/>
+                                        <field name="qty_lead" sum="1"/>
+                                        <field name="qty_lead_kh"/>
+                                        <field name="qty_lead_tt"/>
+                                        <field name="budget"/>
+                                        <field name="amount_per_lead"/>
+                                        <field name="amount_per_lead_target"/>
+                                        <field name="amount_per_lead_sum"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="vtg_crm_kpi_mkt_tree_view" model="ir.ui.view">
+            <field name="name">crm.kpi.mkt.tree</field>
+            <field name="model">crm.kpi.mkt</field>
+            <field name="arch" type="xml">
+                <tree decoration-success="state == 'confirmed'">
+                    <field name="name"/>
+                    <field name="user_id"/>
+                    <field name="month"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="vtg_crm_kpi_mkt_action" model="ir.actions.act_window">
+            <field name="name">KPI MARKETING</field>
+            <field name="res_model">crm.kpi.mkt</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="vtg_crm_kpi_mkt_tree_view"/>
+        </record>
+
+
+        <record id="vtg_crm_kpi_mkt_budget_tree_view" model="ir.ui.view">
+            <field name="name">crm.kpi.mkt.budget.tree</field>
+            <field name="model">crm.kpi.mkt.budget</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="date"/>
+                    <field name="user_id"/>
+                    <field name="reason"/>
+                    <field name="id_invoice"/>
+                    <field name="channel_id"/>
+                    <field name="source_id"/>
+                    <field name="budget" widget="monetary"/>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="img_invoice" widget="image" width="100px;"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="vtg_crm_kpi_mkt_budget_form_view" model="ir.ui.view">
+            <field name="name">crm.kpi.mkt.budget.form</field>
+            <field name="model">crm.kpi.mkt.budget</field>
+            <field name="arch" type="xml">
+                <form string="vtg crm kpi mkt">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="user_id"/>
+                                <field name="currency_id" invisible="1"/>
+                                <field name="date"/>
+                                <field name="reason"/>
+                                <field name="img_invoice" widget="image" width="100px;"/>
+
+                            </group>
+                            <group>
+                                <field name="channel_id"/>
+                                <field name="source_id"/>
+                                <field name="id_invoice"/>
+                                <field name="budget" widget="monetary"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="vtg_crm_kpi_mkt_budget_action" model="ir.actions.act_window">
+            <field name="name">Chi tiêu</field>
+            <field name="res_model">crm.kpi.mkt.budget</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="vtg_crm_kpi_mkt_budget_tree_view"/>
+        </record>
+
+        <menuitem id="vtg_crm_kpi_menu" name="Báo cáo"
+                  sequence="10"
+                  web_icon="vtg_kpi,static/description/icon.png"
+        />
+        <menuitem id="vtg_crm_kpi_marketing_menu" name="Marketing"
+                  sequence="1"
+        />
+        <menuitem id="vtg_crm_kpi_mkt_menu" name="KPI Marketing"
+                  action="vtg_crm_kpi_mkt_action"
+                  sequence="1"
+                  parent="vtg_kpi.vtg_crm_kpi_marketing_menu"
+        />
+        <menuitem id="vtg_crm_kpi_mkt_menu" name="Chi tiêu"
+                  action="vtg_crm_kpi_mkt_budget_action"
+                  sequence="2"
+                  parent="vtg_kpi.vtg_crm_kpi_marketing_menu"
+        />
+
+
+    </data>
+</odoo>

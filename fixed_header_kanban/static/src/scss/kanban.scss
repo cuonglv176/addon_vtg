@@ -1,0 +1,24 @@
+.o_kanban_header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: #f9f9f9;
+    padding: 20px 0;
+}
+
+.o_kanban_view .o_kanban_group.o_kanban_has_progressbar > .o_kanban_header .o_kanban_header_title {
+    height: auto;
+    margin-top: 0px;
+}
+
+.o_kanban_counter {
+    margin-bottom: 0;
+}
+
+.o_kanban_view .o_column_quick_create .o_quick_create_folded {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: #f9f9f9;
+    padding: 20px 16px;
+}

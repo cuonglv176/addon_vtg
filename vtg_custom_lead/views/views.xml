@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="vtg_crm_lead_booking_form_view" model="ir.ui.view">
+            <field name="name">crm.lead.booking.form</field>
+            <field name="model">crm.lead.booking</field>
+            <field name="arch" type="xml">
+                <form string="vtg crm lead booking">
+                    <header>
+                        <button name="action_send_booking" type="object" states="draft" string="Gửi tới salon"
+                                class="oe_highlight"/>
+                        <button name="action_confirm_booking" type="object" states="confirm" string="Xác nhận khách tới"
+                                class="oe_highlight" groups="vtg_security.group_vtg_employee_cashier"/>
+                        <button name="action_cancel_booking" type="object" states="confirm" string="Khách hủy lịch"
+                                groups="vtg_security.group_vtg_employee_cashier"/>
+                        <button name="vtg_crm_lead_booking_log_note_action_new"
+                                type="object"
+                                string="Cập nhật ghi chú"
+                                groups="vtg_security.group_vtg_employee_cashier"/>
+                        <button name="action_create_order" type="object" states="confirmed" string="Tạo đơn hàng"
+                                class="oe_highlight" groups="vtg_security.group_vtg_employee_cashier"/>
+                        <button name="action_cancel_buy" type="object" states="confirmed" string="Khách không mua"
+                                groups="vtg_security.group_vtg_employee_cashier"/>
+                        <button name="action_confirm_booking" type="object" states="confirm" string="Xác nhận khách tới"
+                                class="oe_highlight" groups="vtg_security.group_vtg_director_sale"/>
+                        <button name="action_cancel_booking" type="object" states="confirm" string="Khách hủy lịch"
+                                groups="vtg_security.group_vtg_director_sale"/>
+                        <button name="action_create_order" type="object" states="confirmed" string="Tạo đơn hàng"
+                                class="oe_highlight" groups="vtg_security.group_vtg_director_sale"/>
+                        <button name="action_cancel_buy" type="object" states="confirmed" string="Khách không mua"
+                                groups="vtg_security.group_vtg_director_sale"/>
+                        <field name="state" readonly="1"
+                               statusbar_visible="draft,confirm,confirmed,cancel" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div name="button_box" class="oe_button_box">
+                            <button name="action_view_sale_order" class="oe_stat_button" icon="fa-shopping-basket"
+                                    type="object" attrs="{'invisible': [('sale_order_count','=',0)]}">
+                                <field widget="statinfo" name="sale_order_count" string="Đơn hàng"/>
+                            </button>
+                        </div>
+                        <h3 class="text-center">Mã đặt lịch:
+                            <field name="name" readonly="1" force_save="1"/>
+                        </h3>
+                        <group>
+                            <group>
+                                <field name="branch_id" required="1"/>
+                                <field name="lead_id" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="partner_id" attrs="{'readonly':[('state','!=','draft')]}" required="1"/>
+                                <field name="partner_name" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="partner_phone" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="partner_address" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="state_id" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="source_id" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            </group>
+                            <group>
+                                <field name="team_id" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="user_id" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="date_sent" readonly="1"/>
+                                <field name="date"/>
+                                <field name="slot_time"/>
+                                <field name="date_start" readonly="1" force_save="1"/>
+                                <field name="date_end" readonly="1" force_save="1"/>
+                                <field name="category_id" widget="many2many_tags"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Sản phẩm quan tâm">
+                                <field name="detail_ids" editable="bottom">
+                                    <tree string="Sản phẩm quan tâm" editable="bottom">
+                                        <field name="product_id"/>
+                                        <field name="qty"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="vtg_crm_lead_booking_tree_view" model="ir.ui.view">
+            <field name="name">crm.lead.booking.tree</field>
+            <field name="model">crm.lead.booking</field>
+            <field name="arch" type="xml">
+                <tree decoration-warning="state == 'confirm'"
+                      decoration-success="state == 'confirmed'">
+                    <field name="lead_id"/>
+                    <field name="partner_id"/>
+                    <field name="partner_name"/>
+                    <field name="partner_phone"/>
+                    <field name="branch_id"/>
+                    <field name="slot_time"/>
+                    <field name="date_sent" readonly="1"/>
+                    <field name="state"/>
+                    <field name="status_customer" widget="label_selection"
+                           options="{'classes': {'not_yet': 'warning','buy': 'success'}}"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="vtg_crm_lead_booking_action" model="ir.actions.act_window">
+            <field name="name">Đặt lịch</field>
+            <field name="res_model">crm.lead.booking</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="vtg_crm_lead_booking_tree_view"/>
+        </record>
+
+        <record id="vtg_crm_lead_booking_action_new" model="ir.actions.act_window">
+            <field name="name">Đặt lịch</field>
+            <field name="res_model">crm.lead.booking</field>
+            <field name="view_mode">form,tree</field>
+            <field name="domain">[('lead_id', '=', active_id)]</field>
+            <field name="context">{'search_default_lead_id': active_id, 'default_lead_id': active_id}
+            </field>
+        </record>
+
+        <menuitem id="vtg_crm_lead_booking_menu" name="Booking"
+                  action="vtg_crm_lead_booking_action"
+                  sequence="16"
+                  parent="crm.crm_menu_root"
+        />
+
+
+        <record id="vtg_crm_lead_booking_log_note_form_view" model="ir.ui.view">
+            <field name="name">crm.lead.booking.log.note.form</field>
+            <field name="model">crm.lead.booking.log.note</field>
+            <field name="arch" type="xml">
+                <form string="vtg crm lead booking log note">
+                    <sheet>
+                        <h3 class="text-center">CẬP NHẬT GHI CHÚ:
+                        </h3>
+                        <group>
+                            <group>
+                                <field name="content"/>
+                                <field name="contact_form"/>
+                            </group>
+                            <group>
+                                <field name="result"/>
+                                <field name="booking_id" readonly="1" force_save="1"/>
+                                <field name="state" readonly="1" force_save="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Ghi chú">
+                                <field name="note" widget="html"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <footer>
+                        <button string="Lưu" class="btn-primary" special="save" data-hotkey="v"/>
+                        <button string="Hủy" special="cancel" data-hotkey="z"/>
+                    </footer>
+                </form>
+
+            </field>
+        </record>
+
+
+        <record id="vtg_crm_lead_log_note_form_view" model="ir.ui.view">
+            <field name="name">crm.lead.log.note.form</field>
+            <field name="model">crm.lead.log.note</field>
+            <field name="arch" type="xml">
+                <form string="vtg crm lead log note">
+                    <sheet>
+                        <h3 class="text-center">CẬP NHẬT GHI CHÚ:
+                        </h3>
+                        <group>
+                            <group>
+                                <field name="content"/>
+                                <field name="contact_form"/>
+                            </group>
+                            <group>
+                                <field name="result"/>
+                                <field name="lead_id" readonly="1" force_save="1"/>
+                                <field name="stage_id" readonly="1" force_save="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Ghi chú">
+                                <field name="note" widget="html"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <footer>
+                        <button string="Lưu" class="btn-primary" special="save" data-hotkey="v"/>
+                        <button string="Hủy" special="cancel" data-hotkey="z"/>
+                    </footer>
+                </form>
+
+            </field>
+        </record>
+
+
+        <record id="vtg_crm_lead_log_note_action_new" model="ir.actions.act_window">
+            <field name="name">Log Note</field>
+            <field name="res_model">crm.lead.log.note</field>
+            <field name="view_mode">form,tree</field>
+            <field name="domain">[('lead_id', '=', active_id)]</field>
+            <field name="context">{'search_default_lead_id': active_id, 'default_lead_id': active_id}
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

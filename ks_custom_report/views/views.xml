@@ -1,0 +1,163 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="ks_custom_report.form">
+            <field name="name">Report Form View</field>
+            <field name="model">ks_custom_report.ks_report</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group name="general_info" string="General Info">
+                                <field name="name"/>
+                                <field name="ks_cr_query_type" required="True"/>
+                                <field name="ks_cr_group_access" widget="many2many_tags"
+                                       options="{'no_create': True, 'no_create_edit':True, 'no_open': True}"/>
+                                <field name="ks_show_pivot_view"/>
+                                <field name="ks_show_graph_view"/>
+                            </group>
+                            <group name="menu_info" string="Menu Info">
+                                <field name="ks_cr_menu_name"/>
+                                <field name="ks_cr_top_menu_id"
+                                       options="{'no_create': True, 'no_create_edit':True, 'no_open': True}"/>
+                                <field name="ks_cr_menu_priority"/>
+                                <field name="ks_model_update" invisible="1"/>
+                                <field name="ks_model_id" attrs="{'readonly': [('ks_model_update','=',True)],
+                                            'required': [('ks_cr_query_type','=','field_chain')], 'invisible': [('ks_cr_query_type','=','custom_query')]}"
+                                       options="{'no_create': True, 'no_create_edit':True, 'no_open': True}"/>
+                                <field name="ks_cr_active"/>
+                                <field name="ks_show_query_field_tree_view" invisible="1"/>
+                            </group>
+                        </group>
+                        <group name="report_model_columns" string="Report Model Fields"
+                               attrs="{'invisible': ['|',('ks_model_id', '=', False), ('ks_cr_query_type','=','custom_query')]}">
+                            <field name="ks_cr_column_ids" attrs="{'invisible': [('ks_model_id', '=', False)]}"
+                                   nolabel="1">
+                                <form string="Field Detail">
+                                    <group>
+                                        <group string="General Info">
+                                            <field name="ks_cr_model_id" invisible="1"/>
+                                            <field name="name"/>
+                                            <field name="ks_model_name" invisible="1"/>
+                                            <field name="ks_visible_operator_fields" invisible="1"/>
+                                            <field name="ks_visible_date_fields" invisible="1"/>
+                                            <field name="ks_model_field_chan" widget="ks_model_relations"
+                                                   options="{'model': 'ks_model_name'}"/>
+                                        </group>
+
+                                        <group string="Search View">
+                                            <field name="ks_incl_search_filter"/>
+                                            <field name="ks_incl_group_filter"/>
+                                            <field name="ks_incl_display"/>
+                                            <field name="ks_incl_sort" attrs="{'invisible': [('ks_incl_display','=', False)]}"/>
+                                            <field name="sortable_type" attrs="{'invisible': [('ks_incl_sort','=', False)]}"/>
+                                        </group>
+
+                                        <group string="Alter Values"
+                                               attrs="{'invisible': ['|',('ks_visible_operator_fields','=', False),('ks_visible_date_fields','=', True)]}">
+                                            <group>
+                                                <field name="ks_alter_values"/>
+                                            </group>
+                                            <group></group>
+                                            <group attrs="{'invisible': [('ks_alter_values','=', False)]}">
+                                                <field name="ks_operator"
+                                                       attrs="{'required': [('ks_value', '!=', 0.00), ('ks_alter_values','=', True)]}"/>
+                                            </group>
+                                            <group attrs="{'invisible': [('ks_alter_values','=', False)]}">
+                                                <field name="ks_value"
+                                                       attrs="{'required': [('ks_operator', '!=', False)]}"/>
+                                            </group>
+                                        </group>
+
+                                        <group string="Alter Values"
+                                               attrs="{'invisible': ['|',('ks_visible_operator_fields','=', True),('ks_visible_date_fields','=', False)]}">
+                                            <group>
+                                                <field name="ks_alter_values"/>
+                                            </group>
+                                            <group></group>
+                                            <div class="alert alert-info" role="alert" style="width: 100%;" attrs="{'invisible': [('ks_alter_values','=', False)]}">
+                                                To decrease value of any of the following parameters, preceded the digit with a negative sign(-).</div>
+                                            <group attrs="{'invisible': [('ks_alter_values','=', False)]}">
+                                                <field name="ks_year"/>
+                                                <field name="ks_week"/>
+
+                                                <field name="ks_hour"/>
+                                            </group>
+                                            <group attrs="{'invisible': [('ks_alter_values','=', False)]}">
+                                                <field name="ks_month"/>
+                                                <field name="ks_day"/>
+                                            </group>
+                                        </group>
+                                    </group>
+                                </form>
+
+                                <tree>
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name"/>
+                                    <field name="ks_cr_model_id" invisible="1"/>
+                                    <field name="ks_model_name" invisible="1"/>
+                                    <field name="ks_model_field_chan" widget="ks_model_relations"
+                                           options="{'model': 'ks_model_name'}"/>
+                                    <field name="ks_incl_search_filter"/>
+                                    <field name="ks_incl_group_filter"/>
+                                    <field name="ks_incl_sort"/>
+                                </tree>
+
+                            </field>
+                        </group>
+                        <group attrs="{'invisible': [('ks_cr_query_type','=','field_chain')]}">
+                            <field name="ks_custom_query"
+                                   attrs="{'required': [('ks_cr_query_type','=','custom_query')]}"/>
+                        </group>
+                        <group name="report_model_column" string="Report Model Fields"
+                               attrs="{'invisible': ['|',('ks_cr_query_type','=','field_chain'), ('ks_show_query_field_tree_view', '=', False)]}">
+                            <field name="ks_custom_query_report_column_ids"
+                                   options="{'no_create': True, 'no_create_edit':True, 'no_open': True}"
+                                   nolabel="1">
+                                <tree editable="top" create="0" delete="0">
+                                    <field name="name" readonly="1"/>
+                                    <field name="ks_display_name" attrs="{'readonly': [('name','=','id')]}"/>
+                                    <field name="search_by" attrs="{'readonly': [('name','=','id')]}"/>
+                                    <field name="group_by" attrs="{'readonly': [('name','=','id')]}"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="ks_custom_report.list">
+            <field name="name">Report List View</field>
+            <field name="model">ks_custom_report.ks_report</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="ks_model_id" options="{'no_create': True, 'no_create_edit':True, 'no_open': True}"
+                           attrs="{'readonly': [('id','!=',False)]}"/>
+                    <field name="ks_cr_column_ids" widget="many2many_tags" options="{'no_create_edit': True}"
+                           domain="[('ks_cr_model_id','=',id)]"/>
+                    <field name="ks_custom_query_report_column_ids" widget="many2many_tags"
+                           options="{'no_create_edit': True}" domain="[('ks_cr_model_id','=',id)]"/>
+                    <field name="ks_cr_menu_name"/>
+                    <field name="ks_cr_group_access" widget="many2many_tags"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="ks_custom_report.action_window">
+            <field name="name">Reports</field>
+            <field name="res_model">ks_custom_report.ks_report</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!-- Top menu item -->
+        <menuitem name="ReportMate" id="ks_custom_report.menu_root" action="ks_custom_report.action_window"
+                  web_icon="ks_custom_report,static/description/icon.png"
+                  groups="ks_custom_report.group_ks_cr_manager"/>
+
+
+    </data>
+</odoo>

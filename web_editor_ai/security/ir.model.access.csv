@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_content_generator_options,content_generator_options,model_content_generator_options,base.group_system,1,1,1,1
+access_ai_api,ai_api,model_ai_api,base.group_system,1,1,1,1

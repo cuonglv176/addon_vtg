@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="seq_crm_kpi_mkt" model="ir.sequence">
+        <field name="name">Crm kpi mkt</field>
+        <field name="code">crm.kpi.mkt</field>
+        <field name="prefix">KPI/MKT%(y)s/%(month)s/</field>
+        <field name="padding">2</field>
+    </record>
+
+    <record id="seq_crm_kpi_sale" model="ir.sequence">
+        <field name="name">Crm kpi sale</field>
+        <field name="code">crm.kpi.sale</field>
+        <field name="prefix">KPI/SALE%(y)s/%(month)s/</field>
+        <field name="padding">2</field>
+    </record>
+
+    <record id="seq_crm_kpi_budget" model="ir.sequence">
+        <field name="name">crm.kpi.mkt.budget</field>
+        <field name="code">crm.kpi.mkt.budget</field>
+        <field name="prefix">BUDGET/%(y)s/%(month)s/</field>
+        <field name="padding">2</field>
+    </record>
+</odoo>

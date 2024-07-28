@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_stock_inventory_cut,access_stock_inventory_cut,model_stock_inventory_cut,,1,0,0,0
+access_stock_pushaway_rule_admin,access_stock_pushaway_rule_admin,vtg_stock_move.model_stock_pushaway_rule,stock.group_stock_manager,1,1,1,1
+access_stock_pushaway_rule_user,access_stock_pushaway_rule_user,vtg_stock_move.model_stock_pushaway_rule,,1,0,0,0

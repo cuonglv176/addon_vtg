@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_account_cash_root">
+        <t t-raw="0"/>
+    </template>
+
+    <template id="report_account_cash_bank">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="ev_account_cash_bank.report_account_cash_root">
+                    <div class="page" style="font-size: 15px; font-family: 'Times New Roman', Times, serif;">
+                        <style>
+                            .table {
+                            border-collapse: collapse;
+                            width:100%
+                            }
+                            .tb-header {
+                            width: 100%;
+                            font-size: 13px;
+                            }
+                            .table > tbody > t > tr > td {border: 1px solid black; padding: 5px;}
+                            .table > tbody > tr > td {border: 1px solid black; padding: 5px;}
+                            .table > thead > tr > th {border: 1px solid black; padding: 5px;}
+                            .table > tr {border: 1px solid black; padding: 5px;}
+                            .table > tr > td {border: 1px solid black; padding: 5px;}
+                            .tb-footer
+                            {
+                            width: 100%;
+                            line-height: 1.5;
+                            }
+
+                            p{
+                            margin:0px
+                            }
+                        </style>
+                        <table align="left" border="0" cellpadding="1" cellspacing="1" style="width:100%;">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <p>
+                                            <span>
+                                                <span t-field="o.company_id.name"/>
+                                            </span>
+                                        </p>
+
+                                        <p>
+                                            <span>
+                                                <t t-if="o.company_id.partner_id.street">
+                                                    <t t-esc="o.company_id.partner_id.street"/>
+                                                </t>
+                                                <t t-if="o.company_id.partner_id.city">,
+                                                    <t t-esc="o.company_id.partner_id.city"/>
+                                                </t>
+                                                <t t-if="not o.company_id.partner_id.city and o.company_id.partner_id.state_id">
+                                                    ,
+                                                    <t t-esc="o.company_id.partner_id.state_id.name"/>
+                                                </t>
+                                                <t t-if="o.company_id.partner_id.country_id">,
+                                                    <t t-esc="o.company_id.partner_id.country_id.name"/>
+                                                </t>
+                                            </span>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table align="center" border="0" cellpadding="1" cellspacing="1" style="width:100%;">
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td style="width:30%">
+                                        <span style="font-size:18px">
+                                            <strong style="padding:3px; margin: 1px;">
+                                                Số:
+                                                <span t-esc="o.name"/>
+                                            </strong>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style=" text-align:center; padding-left: 15%;">
+                                        <span style="font-size:25px;">
+                                            <strong>
+                                                <t t-if="o.payment_type == 'cash_out'">PHIẾU CHI</t>
+                                                <t t-if="o.payment_type == 'cash_in'">PHIẾU THU</t>
+                                            </strong>
+                                        </span>
+                                    </td>
+                                    <td style="font-size:18px;">
+
+                                        <table style="width: 100%;">
+                                            <t t-if="o.payment_type == 'cash_out'">
+                                                <t t-foreach="o.payment_lines" t-as="general">
+                                                    <t t-if="general.value != 0">
+                                                        <tr>
+                                                            <td style="text-align:left; width:20%;font-size:18px;">Nợ:
+                                                            </td>
+                                                            <td style="width:80%">
+                                                                <table border="0" cellpadding="1"
+                                                                       cellspacing="1"
+                                                                       style="width:100%">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td style="text-align:left">
+                                                                                <t t-esc="general.debit_account_id.code"/>
+                                                                            </td>
+                                                                            <td style="text-align:right;">
+                                                                                <t t-esc="'{:,.0f}'.format(general.value).replace(',', '.')"/>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </t>
+                                                </t>
+                                            </t>
+                                            <t t-if="o.payment_type == 'cash_in'">
+                                                <t t-if="o.payment_lines">
+                                                    <tr>
+                                                        <td style="text-align:left; width:20%;font-size:18px;">Nợ:
+                                                        </td>
+                                                        <td style="width:80%">
+                                                            <table border="0" cellpadding="1"
+                                                                   cellspacing="1"
+                                                                   style="width:100%">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td style="text-align:left">
+                                                                            <t t-esc="o.payment_lines[0].debit_account_id.code"/>
+                                                                        </td>
+                                                                        <td style="text-align:right;">
+                                                                            <t t-esc="'{:,.0f}'.format(o.amount_total).replace(',', '.')"/>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </t>
+                                            </t>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-size:18px; text-align:center; padding-left: 15%;">
+                                        NGÀY
+                                        <span t-esc="'{:02d}'.format(o.payment_date.day)"/>
+                                        THÁNG
+                                        <span t-esc="'{:02d}'.format(o.payment_date.month)"/>
+                                        NĂM
+                                        <span t-esc="o.payment_date.year"/>
+                                    </td>
+                                    <td style="font-size:18px;">
+                                        <table style="width: 100%;">
+                                            <t t-if="o.payment_type == 'cash_out'">
+                                                <tr>
+                                                    <td style="text-align:left; vertical-align:top; width:20%">
+                                                        Có:
+                                                    </td>
+                                                    <td style="width:80%">
+                                                        <table border="0" cellpadding="1"
+                                                               cellspacing="1"
+                                                               style="width:100%">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td style="text-align:left">
+                                                                        <t t-esc="o.payment_lines[0].credit_account_id.code"/>
+                                                                    </td>
+                                                                    <td style="text-align:right;">
+                                                                        <t t-esc="'{:,.0f}'.format(o.amount_total).replace(',', '.')"/>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </t>
+                                            <t t-if="o.payment_type == 'cash_in'">
+                                                <t t-if="o.payment_lines">
+                                                    <t t-foreach="o.payment_lines" t-as="general">
+                                                        <t t-if="general.value != 0">
+                                                            <tr>
+                                                                <td style="text-align:left; vertical-align:top; width:20%">
+                                                                    Có:
+                                                                </td>
+                                                                <td style="width:80%">
+                                                                    <table border="0" cellpadding="1"
+                                                                           cellspacing="1"
+                                                                           style="width:100%">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td style="text-align:left">
+                                                                                    <t t-esc="general.credit_account_id.code"/>
+                                                                                </td>
+                                                                                <td style="text-align:right;">
+                                                                                    <t t-esc="'{:,.0f}'.format(general.value).replace(',', '.')"/>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </t>
+                                                    </t>
+                                                </t>
+                                            </t>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table align="center" border="0" cellpadding="1" cellspacing="1" style="width:100%;">
+                            <tbody>
+                                <tr style="min-height:40px;">
+                                    <td style="width:25%">
+                                        <p style="font-size:18px;margin-bottom:10px">
+                                            <t t-if="o.payment_type in ('cash_in', 'bank_in')">Họ và tên người nộp
+                                                tiền:
+                                            </t>
+                                            <t t-if="o.payment_type in ('cash_out','bank_out')">Họ và tên người nhận
+                                                tiền:
+                                            </t>
+                                        </p>
+                                    </td>
+                                    <td style="font-size:18px;">
+                                        <t t-if="o.receiver">
+                                            <span t-esc="o.receiver + ' - ' + o.partner_id.name"/>
+                                        </t>
+                                    </td>
+                                </tr>
+                                <tr style="min-height:40px">
+                                    <td>
+                                        <p style="font-size:18px;margin-bottom:10px">Địa chỉ:</p>
+                                    </td>
+                                    <td style="font-size:18px;">
+                                        <t t-if="o.address">
+                                            <t t-esc="o.address"/>
+                                        </t>
+                                    </td>
+                                </tr>
+                                <tr style="min-height:40px">
+                                    <td>
+                                        <p style="font-size:18px;margin-bottom:10px">
+                                            <!--                                                <t t-if="o.x_is_cash_in == True">Lý do nộp:</t>-->
+                                            <t t-if="o.payment_type == 'cash_out'">Lý do chi:</t>
+                                            <t t-if="o.payment_type == 'cash_in'">Lý do thu:</t>
+                                        </p>
+                                    </td>
+                                    <td style="font-size:18px;">
+                                        <span t-field="o.description"/>
+                                    </td>
+                                </tr>
+                                <tr style="min-height:40px; font-size:18px;">
+                                    <td>
+                                        <p style="font-size:18px;margin-bottom:10px;">Số tiền:</p>
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            <t t-esc="'{:,.0f}'.format(o.amount_total).replace(',', '.')"/>
+                                            <t t-esc="o.currency_id.name"/>
+                                        </strong>
+                                    </td>
+                                </tr>
+                                <tr style="min-height:40px; font-size:18px;">
+                                    <td>
+                                        <p style="font-size:18px;margin-bottom:10px;">Viết bằng chữ:</p>
+                                    </td>
+                                    <td>
+                                        <t t-set="amount_words" t-value="o.get_amount_word(o.amount_total)"/>
+                                        <em>
+                                            <t t-esc="amount_words"/>
+                                        </em>
+                                    </td>
+                                </tr>
+                                <tr style="min-height:40px">
+                                    <td>
+                                        <p style="font-size:18px;margin-bottom:10px;">Kèm theo:</p>
+                                    </td>
+                                    <td>
+                                        <p style="font-size:18px;">.......... Chứng từ gốc:</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table align="center" border="0" cellpadding="1" cellspacing="1"
+                               style="width:100%;margin-top:20px; margin-bottom:10px">
+                            <tbody>
+                                <tr>
+                                    <td style="text-align:right;font-size:18px;" colspan="2">
+                                        <span>Ngày.............</span>
+                                        <span>tháng...........</span>
+                                        <span>năm............</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table align="center" border="0" cellpadding="1" cellspacing="1"
+                               style="width:100%;margin-top:10px; margin-bottom:100px">
+                            <tbody>
+                                <tr>
+                                    <td style="width:20%;text-align:center;font-size:18px;">
+                                        <span>GIÁM ĐỐC</span>
+                                    </td>
+                                    <td style="width:20%;text-align:center;font-size:18px;">
+                                        <span>KẾ TOÁN TRƯỞNG</span>
+                                    </td>
+                                    <td style="width:20%;text-align:center;font-size:18px;">
+                                        <span>NGƯỜI LẬP PHIẾU</span>
+                                    </td>
+                                    <td style="width:20%;text-align:center;font-size:18px;">
+                                        <span>THỦ QUỸ</span>
+                                    </td>
+                                    <td style="width:20%;text-align:center;font-size:18px;">
+                                        <t t-if="o.payment_type in ('cash_in', 'bank_in')">
+                                            <span>NGƯỜI NỘP TIỀN</span>
+                                        </t>
+                                        <t t-if="o.payment_type in ('cash_out','bank_out')">
+                                            <span>NGƯỜI NHẬN TIỀN</span>
+                                        </t>
+                                    </td>
+                                </tr>
+                                <tr style="height:30px"></tr>
+                                <tr>
+                                    <td style="width:20%;text-align:center;font-size:18px;">
+                                        <span><t t-esc="o.company_id.x_director"/></span>
+                                    </td>
+                                    <td style="width:20%;text-align:center;font-size:18px;">
+                                        <span><t t-esc="o.company_id.x_chief_accountant"/></span>
+                                    </td>
+                                    <td style="width:20%;text-align:center;font-size:18px;">
+                                        <span><t t-esc="o.create_uid.name"/></span>
+                                    </td>
+                                    <td style="width:20%;text-align:center;font-size:18px;">
+                                        <span><t t-esc="o.create_uid.name"/></span>
+                                    </td>
+                                    <td style="width:20%;text-align:center;font-size:18px;">
+                                        <span></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div style="margin-bottom:80px">
+                            <div style="display:inline-block; width:25%">Đã nhận đủ số tiền (viết bằng chữ):</div>
+                            <div style="display:inline-block; width:74%; border-bottom:1px dotted"></div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <record id="paperformat_payment_card_report" model="report.paperformat">
+        <field name="name">VN A5 Portrait</field>
+        <field name="default" eval="True"/>
+        <field name="format">A5</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">10</field>
+        <field name="margin_bottom">10</field>
+        <field name="margin_left">10</field>
+        <field name="margin_right">10</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">110</field>
+    </record>
+
+    <report
+            id="action_report_cash_bank_pdf"
+            string="Report"
+            model="account.payment.cash.bank"
+            report_type="qweb-pdf"
+            name="ev_account_cash_bank.report_account_cash_bank"
+            file="ev_account_cash_bank.report_account_cash_bank"
+            print_report_name="object.name"
+            paperformat="ev_account_cash_bank.paperformat_payment_card_report"
+            menu="False"
+    />
+
+</odoo>

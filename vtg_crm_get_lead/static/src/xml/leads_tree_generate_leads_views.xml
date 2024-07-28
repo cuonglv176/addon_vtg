@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+   <t t-extend="KanbanView.buttons" t-name="button_near_create.button">
+       <t t-jquery="button" t-operation="before">
+<!--               <button t-if="widget.modelName == 'crm.lead'"-->
+<!--                   class="btn btn-primary open_wizard_action_kanban oe_highlight"-->
+<!--                   type="button">Lấy lead mới</button>-->
+               <button t-if="widget.modelName == 'crm.lead'"
+                       class="btn btn-primary oe_highlight open_get_new_lead"
+                       type="button" >Lấy lead mới</button>
+
+           <button t-if="widget.modelName == 'crm.lead'"
+                       class="btn btn-primary oe_highlight open_get_old_lead"
+                       type="button" >Lấy lead cũ</button>
+       </t>
+   </t>
+</templates>

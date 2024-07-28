@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="seq_dpt_kpi_manager" model="ir.sequence">
+        <field name="name">dpt.kpi.manager</field>
+        <field name="code">dpt.kpi.manager</field>
+        <field name="prefix">OKR%(y)s/%(month)s/</field>
+        <field name="padding">2</field>
+    </record>
+</odoo>

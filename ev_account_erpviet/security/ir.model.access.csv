@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+account_erpviet_01,ev_account_erpviet_01,model_account_journal_general,account.group_account_manager,1,1,1,1
+account_erpviet_02,ev_account_erpviet_02,model_account_fiscal_month,account.group_account_manager,1,1,1,1
+account_erpviet_03,ev_account_erpviet_03,model_object_cost,account.group_account_user,1,1,1,1
+account_erpviet_04,ev_account_erpviet_04,model_object_cost_product,account.group_account_user,1,1,1,1
+account_erpviet_05,ev_account_erpviet_05,model_object_cost_account,account.group_account_user,1,1,1,1
+account_erpviet_06,ev_account_erpviet_06,model_cost_factor,account.group_account_user,1,1,1,1
+account_erpviet_06,ev_account_erpviet_06,model_account_expense_item,,1,1,1,1
+
+
+

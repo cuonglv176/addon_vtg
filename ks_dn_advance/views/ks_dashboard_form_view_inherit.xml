@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ks_dn_advance.board_form_inherited" model="ir.ui.view">
+            <field name="name">ks_dashboard_ninja.View</field>
+            <field name="model">ks_dashboard_ninja.board</field>
+            <field name="inherit_id" ref="ks_dashboard_ninja.board_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='ks_dashboard_end_date']" position="after">
+                    <field name="ks_croessel_speed" required="1"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

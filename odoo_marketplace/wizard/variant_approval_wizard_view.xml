@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+
+<odoo>
+	<data>
+        <record id="wk_product_variant_wizard_view" model="ir.ui.view">
+            <field name="name">product.variant.wizard.view</field>
+            <field name="model">variant.approval.wizard</field>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <form string="Product Variant Approval" create="0" edit="0">
+                    <div>
+                        <div class="text-center" style="color:#558B2F;font-size: 20px;margin-bottom: 10px;">
+                            <center>Remove the product variants if you don't want them to be Approved.</center>
+                        </div>
+                        <field name="product_id" invisible="1"/>
+                        <field name="variant_ids">
+                            <tree create="false">
+                                <field name="name"/>
+                                <field name="product_template_attribute_value_ids" widget="many2many_tags" />
+                                <field name="marketplace_status"/>                                
+                            </tree>
+                        </field>
+                    </div>
+                    <footer>
+                        <button name="approve_selected_variant" type="object" string="Approve" class="oe_highlight"/>
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

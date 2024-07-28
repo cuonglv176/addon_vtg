@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_setting_token_view_form" model="ir.ui.view">
+        <field name="name">res.config.setting.token.view.form.inherit.sale</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="15"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='sale_ebay']" position="after">
+                <h2 class="mt32">Viettel Post - Aftership</h2>
+                <div class="row mt16 mb32 o_settings_container">
+                    <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <field name="is_token"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="is_token"/>
+                            <div class="text-muted">
+                                Tracking Order With Aftership by Viettel Post API
+                            </div>
+<!--                            <div class="content-group mt16">-->
+<!--                                <field name="token"-->
+<!--                                       attrs="{'invisible': [('is_token','=', False)], 'required': [('is_token','=', True)]}"/>-->
+<!--                            </div>-->
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="viettelpost_token_inherit_form_view" model="ir.ui.view">
+        <field name="name">viettelpost.token.inherit.form.view</field>
+        <field name="model">delivery.carrier</field>
+        <field name="inherit_id" ref="delivery.view_delivery_carrier_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='fixed_price']" position="after">
+                <field name="token"/>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

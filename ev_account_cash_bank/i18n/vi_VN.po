@@ -1,0 +1,1209 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ev_account_cash_bank
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-13 04:48+0000\n"
+"PO-Revision-Date: 2021-12-13 04:48+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_cash_bank
+msgid ".......... Chứng từ gốc:"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_bank_in_out
+msgid "<br/>GIẤY BÁO CÓ"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_bank_in_out
+msgid "<br/>GIẤY BÁO NỢ"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_cash_bank
+msgid "<span>GIÁM ĐỐC</span>"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_cash_bank
+msgid "<span>KẾ TOÁN TRƯỞNG</span>"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_cash_bank
+msgid "<span>NGƯỜI LẬP PHIẾU</span>"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_cash_bank
+msgid "<span>NGƯỜI NHẬN TIỀN</span>"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_cash_bank
+msgid "<span>NGƯỜI NỘP TIỀN</span>"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_cash_bank
+msgid ""
+"<span>Ngày.............</span>\n"
+"                                        <span>tháng...........</span>\n"
+"                                        <span>năm............</span>"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_cash_bank
+msgid "<span>THỦ QUỸ</span>"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_line__account_expense_item_id
+msgid "Account Expense Item"
+msgstr "Khoản mục chi phí"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__move_id_one_bill
+msgid "Account Move One Bill"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__move_ids
+msgid "Account Moves"
+msgstr "Bút toán"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_tax__payment_id
+msgid "Account Payment"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model,name:ev_account_cash_bank.model_account_payment_line
+msgid "Account Payment Cash Line"
+msgstr "Chi tiết giao dịch tiền mặt, ngân hàng"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_tax__account_tax_id
+msgid "Account Tax"
+msgstr "TK thuế GTGT"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_bank_statement_line__x_payment_option_id
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_move__x_payment_option_id
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment__x_payment_option_id
+msgid "Accountant Payment"
+msgstr "Giao dịch tiền mặt, ngân hàng"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_move_line__x_accountant_payment_line_id
+msgid "Accountant Payment Line"
+msgstr "Hạch toán"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_move_line__x_accountant_payment_tax_id
+msgid "Accountant Payment Tax"
+msgstr "Thuế"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_line__credit_account_id
+msgid "Accounting Credit account"
+msgstr "Tài khoản ghi có"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_line__debit_account_id
+msgid "Accounting Debit account"
+msgstr "Tài khoản ghi nợ"
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_bank_in_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_bank_out_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_cash_in_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_cash_out_form
+msgid "Accounting date"
+msgstr "Ngày kế toán"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__address
+msgid "Address"
+msgstr "Địa chỉ"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__amount_total
+msgid "Amount Total"
+msgstr "Tổng tiền"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_tax__amount_invoice
+msgid "Amount invoice before tax"
+msgstr "Giá trị HDDV"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_tax__amount_tax
+msgid "Amount tax"
+msgstr "Tiền thuế GTGT"
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_bank_in_tree
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_bank_out_tree
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_cash_in_tree
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_cash_out_tree
+msgid "Amount total"
+msgstr "Tổng giá trị sau thuế"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_line__analytic_account_id
+msgid "Analytic Account"
+msgstr "Bộ phận chịu phí"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_bank.py:0
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_cash.py:0
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_transfer.py:0
+#, python-format
+msgid "Balance"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__bank_id
+msgid "Bank"
+msgstr "Ngân hàng"
+
+#. module: ev_account_cash_bank
+#: model:ir.model,name:ev_account_cash_bank.model_res_partner_bank
+msgid "Bank Accounts"
+msgstr "Tài khoản ngân hàng"
+
+#. module: ev_account_cash_bank
+#: model:ir.actions.act_window,name:ev_account_cash_bank.action_account_payments_bank_in
+#: model:ir.model.fields.selection,name:ev_account_cash_bank.selection__account_payment_cash_bank__payment_type__bank_in
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_bank_in_form
+msgid "Bank In"
+msgstr "Báo có"
+
+#. module: ev_account_cash_bank
+#: model:ir.ui.menu,name:ev_account_cash_bank.menu_account_bank_in
+msgid "Bank In Payment"
+msgstr "Báo có"
+
+#. module: ev_account_cash_bank
+#: model:ir.actions.act_window,name:ev_account_cash_bank.action_account_payments_bank_out
+#: model:ir.model.fields.selection,name:ev_account_cash_bank.selection__account_payment_cash_bank__payment_type__bank_out
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_bank_out_form
+msgid "Bank Out"
+msgstr "Báo nợ"
+
+#. module: ev_account_cash_bank
+#: model:ir.ui.menu,name:ev_account_cash_bank.menu_account_bank_out
+msgid "Bank Out Payment"
+msgstr "Báo nợ"
+
+#. module: ev_account_cash_bank
+#: model:ir.ui.menu,name:ev_account_cash_bank.menu_bank_payment
+msgid "Bank Payment"
+msgstr "Giao dịch ngân hàng"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__partner_bank_id
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_bank_in_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_bank_out_form
+msgid "Bank account"
+msgstr "Tài khoản ngân hàng"
+
+#. module: ev_account_cash_bank
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_bank.py:0
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_cash.py:0
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_transfer.py:0
+#, python-format
+msgid "Base Amount"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_bank_in_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_bank_out_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_cash_in_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_cash_out_form
+msgid "Cancel"
+msgstr "Hủy"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields.selection,name:ev_account_cash_bank.selection__account_payment_cash_bank__state__cancel
+msgid "Cancelled"
+msgstr "Đã hủy"
+
+#. module: ev_account_cash_bank
+#: model:ir.ui.menu,name:ev_account_cash_bank.menu_cash_bank_payment
+msgid "Cash & Bank Payment"
+msgstr "Tiền mặt - Ngân hàng"
+
+#. module: ev_account_cash_bank
+#: model:ir.actions.act_window,name:ev_account_cash_bank.action_account_payments_cash_in
+#: model:ir.model.fields.selection,name:ev_account_cash_bank.selection__account_payment_cash_bank__payment_type__cash_in
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_cash_in_form
+msgid "Cash In"
+msgstr "Phiếu thu"
+
+#. module: ev_account_cash_bank
+#: model:ir.ui.menu,name:ev_account_cash_bank.menu_cash_in_payment
+msgid "Cash In Payment"
+msgstr "Phiếu thu"
+
+#. module: ev_account_cash_bank
+#: model:ir.actions.act_window,name:ev_account_cash_bank.action_account_payments_cash_out
+#: model:ir.model.fields.selection,name:ev_account_cash_bank.selection__account_payment_cash_bank__payment_type__cash_out
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_cash_out_form
+msgid "Cash Out"
+msgstr "Phiếu chi"
+
+#. module: ev_account_cash_bank
+#: model:ir.ui.menu,name:ev_account_cash_bank.menu_cash_out_payment
+msgid "Cash Out Payment"
+msgstr "Phiếu chi"
+
+#. module: ev_account_cash_bank
+#: model:ir.ui.menu,name:ev_account_cash_bank.menu_cash_payment
+msgid "Cash Payment"
+msgstr "Giao dịch tiền mặt"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_line__check_required_analytic
+msgid "Check Required Analytic"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_line__check_required_expense_item
+msgid "Check Required Expense Item"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_res_company__x_chief_accountant
+msgid "Chief Accountant"
+msgstr "Kế toán trưởng"
+
+#. module: ev_account_cash_bank
+#: model:res.groups,name:ev_account_cash_bank.group_account_chief
+msgid "Chief Accountent"
+msgstr "Kế toán trưởng"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_tax__code_invoice
+msgid "Code Invoice"
+msgstr "Ký hiệu hóa đơn"
+
+#. module: ev_account_cash_bank
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_bank.py:0
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_cash.py:0
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_transfer.py:0
+#, python-format
+msgid "Communication"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model,name:ev_account_cash_bank.model_res_company
+msgid "Companies"
+msgstr "Công ty"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__company_id
+msgid "Company"
+msgstr "Công ty"
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_bank_in_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_bank_out_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_cash_in_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_cash_out_form
+msgid "Confirm"
+msgstr "Xác nhận"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_bank_statement_import_journal_creation__x_corporate_funds
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_journal__x_corporate_funds
+msgid "Corporate Funds"
+msgstr "Quỹ công ty"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__count_move
+msgid "Count Move"
+msgstr "SL giao dịch"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__create_uid
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_line__create_uid
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_tax__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__create_date
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_line__create_date
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_tax__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_bank.py:0
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_cash.py:0
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_transfer.py:0
+#, python-format
+msgid "Credit"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_bank_in_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_bank_out_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_cash_in_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_cash_out_form
+msgid "Credit account"
+msgstr "Tài khoản ghi có"
+
+#. module: ev_account_cash_bank
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_bank.py:0
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_cash.py:0
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_transfer.py:0
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__currency_id
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_tax__currency_id
+#, python-format
+msgid "Currency"
+msgstr "Tiền tệ"
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_cash_bank
+msgid "Có:"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_bank.py:0
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_cash.py:0
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_transfer.py:0
+#, python-format
+msgid "Date"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_tax__date_invoice
+msgid "Date Invoice"
+msgstr "Ngày hóa đơn"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__x_time_confirm
+msgid "Date Time Confirm"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__x_time_print
+msgid "Date Time Print"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_bank.py:0
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_cash.py:0
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_transfer.py:0
+#, python-format
+msgid "Debit"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_bank_in_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_bank_out_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_cash_in_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_cash_out_form
+msgid "Debit account"
+msgstr "Tài khoản ghi nợ"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__credit_account_id
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__debit_account_id
+msgid "Default Account"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__description
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_line__name
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_tax__name
+msgid "Description"
+msgstr "Mô tả"
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_bank_in_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_bank_out_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_cash_in_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_cash_out_form
+msgid "Details"
+msgstr "Chi tiết"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_res_company__x_director
+msgid "Director"
+msgstr "Giám đốc"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_general_banks__display_name
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_general_funds__display_name
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_general_transfer__display_name
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_journal__display_name
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_move__display_name
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_move_line__display_name
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__display_name
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_line__display_name
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_register__display_name
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_tax__display_name
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_res_company__display_name
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_res_partner_bank__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_bank_in_out
+msgid "Diễn giải"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields.selection,name:ev_account_cash_bank.selection__account_payment_cash_bank__state__draft
+msgid "Draft"
+msgstr "Nháp"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__message_channel_ids
+msgid "Followers (Channels)"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,help:ev_account_cash_bank.field_account_payment_cash_bank__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_bank.py:0
+#: model:ir.actions.client,name:ev_account_cash_bank.action_account_report_general_banks
+#: model:ir.model,name:ev_account_cash_bank.model_account_general_banks
+#: model:ir.ui.menu,name:ev_account_cash_bank.menu_action_account_report_general_banks
+#, python-format
+msgid "General Banks"
+msgstr "Sổ ngân hàng"
+
+#. module: ev_account_cash_bank
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_cash.py:0
+#: model:ir.actions.client,name:ev_account_cash_bank.action_account_report_general_funds
+#: model:ir.model,name:ev_account_cash_bank.model_account_general_funds
+#: model:ir.ui.menu,name:ev_account_cash_bank.menu_action_account_report_general_funds
+#, python-format
+msgid "General Funds"
+msgstr "Sổ quỹ"
+
+#. module: ev_account_cash_bank
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_transfer.py:0
+#: model:ir.actions.client,name:ev_account_cash_bank.action_account_report_general_transfer
+#: model:ir.model,name:ev_account_cash_bank.model_account_general_transfer
+#, python-format
+msgid "General Transfer"
+msgstr "Sổ cái - 113"
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_cash_bank
+msgid ""
+"Họ và tên người nhận\n"
+"                                                tiền:"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_cash_bank
+msgid ""
+"Họ và tên người nộp\n"
+"                                                tiền:"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_general_banks__id
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_general_funds__id
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_general_transfer__id
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_journal__id
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_move__id
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_move_line__id
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__id
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_line__id
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_register__id
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_tax__id
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_res_company__id
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_res_partner_bank__id
+msgid "ID"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_bank_in_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_bank_out_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_cash_in_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_cash_out_form
+msgid "IN"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,help:ev_account_cash_bank.field_account_payment_cash_bank__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,help:ev_account_cash_bank.field_account_payment_cash_bank__message_needaction
+#: model:ir.model.fields,help:ev_account_cash_bank.field_account_payment_cash_bank__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,help:ev_account_cash_bank.field_account_payment_cash_bank__message_has_error
+#: model:ir.model.fields,help:ev_account_cash_bank.field_account_payment_cash_bank__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_bank.py:0
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_cash.py:0
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_transfer.py:0
+#, python-format
+msgid "Initial Balance"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_bank_out_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_cash_out_form
+msgid "Interpretation"
+msgstr "Diễn giải"
+
+#. module: ev_account_cash_bank
+#: code:addons/ev_account_cash_bank/wizard/account_payment_register.py:0
+#, python-format
+msgid "Invoices are not allowed to payments."
+msgstr "Hóa đơn không được phép ghi nhận thanh toán."
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model,name:ev_account_cash_bank.model_account_journal
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__journal_id
+msgid "Journal"
+msgstr "Sổ nhật ký"
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_bank_in_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_bank_out_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_cash_in_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_cash_out_form
+msgid "Journal Entries"
+msgstr "Bút toán sổ nhật ký"
+
+#. module: ev_account_cash_bank
+#: model:ir.model,name:ev_account_cash_bank.model_account_move
+msgid "Journal Entry"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model,name:ev_account_cash_bank.model_account_move_line
+msgid "Journal Item"
+msgstr "Bút toán"
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_cash_bank
+msgid "Kèm theo:"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_general_banks____last_update
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_general_funds____last_update
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_general_transfer____last_update
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_journal____last_update
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_move____last_update
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_move_line____last_update
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank____last_update
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_line____last_update
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_register____last_update
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_tax____last_update
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_res_company____last_update
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_res_partner_bank____last_update
+msgid "Last Modified on"
+msgstr "Sửa lần cuối vào"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__write_uid
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_line__write_uid
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_tax__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__write_date
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_line__write_date
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_tax__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_bank.py:0
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_cash.py:0
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_transfer.py:0
+#, python-format
+msgid "Load more... (%s remaining)"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_bank_in_out
+msgid "Loại tiền"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_cash_bank
+msgid "Lý do chi:"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_cash_bank
+msgid "Lý do thu:"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_cash_bank
+msgid "NGÀY"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_bank.py:0
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_cash.py:0
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_transfer.py:0
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__name
+#, python-format
+msgid "Name"
+msgstr "Tên"
+
+#. module: ev_account_cash_bank
+#: code:addons/ev_account_cash_bank/models/account_payment.py:0
+#, python-format
+msgid "New"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_bank_in_out
+msgid "Ngày giờ hiệu lực"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_bank_in_out
+msgid "Ngày in:"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_bank_in_out
+msgid "Người chuyển:"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_bank_in_out
+msgid "Người thụ hưởng:"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_bank_statement_line__x_is_not_payment
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_move__x_is_not_payment
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment__x_is_not_payment
+msgid "Not Payment"
+msgstr "Không ghi nhận thanh toán"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_tax__number_invoice
+msgid "Number Invoice"
+msgstr "Số hóa đơn"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_tax__number_invoice_form
+msgid "Number Invoice Form"
+msgstr "Mẫu số hóa đơn"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,help:ev_account_cash_bank.field_account_payment_cash_bank__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,help:ev_account_cash_bank.field_account_payment_cash_bank__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,help:ev_account_cash_bank.field_account_payment_cash_bank__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_cash_bank
+msgid "NĂM"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_bank_in_out
+msgid "Nội dung giao dịch:"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_cash_bank
+msgid "Nợ:"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_cash_bank
+msgid "PHIẾU CHI"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_cash_bank
+msgid "PHIẾU THU"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_bank.py:0
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_cash.py:0
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_transfer.py:0
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__partner_id
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_line__partner_id
+#, python-format
+msgid "Partner"
+msgstr "Đối tượng"
+
+#. module: ev_account_cash_bank
+#: code:addons/ev_account_cash_bank/wizard/account_payment_register.py:0
+#, python-format
+msgid "Partner is not Ref"
+msgstr "Nhà cung cấp không có mã! Vui lòng tạo mã nhà cung cấp"
+
+#. module: ev_account_cash_bank
+#: code:addons/ev_account_cash_bank/wizard/account_payment_register.py:0
+#, python-format
+msgid "Pay for bill: "
+msgstr "Thanh toán cho: "
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_bank_in_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_cash_in_form
+msgid "Payer"
+msgstr "Người nộp"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_line__payment_id
+msgid "Payment"
+msgstr "Đơn"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__amount_tax
+msgid "Payment Amount Tax"
+msgstr "Tổng giá trị thuế"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__amount_before_tax
+msgid "Payment Amount before tax"
+msgstr "Tổng giá trị trước thuế"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__payment_date
+msgid "Payment Date"
+msgstr "Ngày kế toán"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__payment_lines
+msgid "Payment Lines"
+msgstr "Chi tiết"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__payment_type
+msgid "Payment Type"
+msgstr "Loại"
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_bank_in_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_bank_out_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_cash_in_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_cash_out_form
+msgid "Payment cash line"
+msgstr "Chi tiết"
+
+#. module: ev_account_cash_bank
+#: code:addons/ev_account_cash_bank/wizard/account_payment_register.py:0
+#, python-format
+msgid "Payments"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_tax__percent_tax
+msgid "Percent Tax"
+msgstr "% thuế GTGT"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields.selection,name:ev_account_cash_bank.selection__account_payment_cash_bank__state__posted
+msgid "Posted"
+msgstr "Đã vào sổ"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__rate
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__rate_id
+msgid "Rate"
+msgstr "Tỉ giá"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__receiver
+msgid "Receiver"
+msgstr "Người nhận"
+
+#. module: ev_account_cash_bank
+#: code:addons/ev_account_cash_bank/models/account_payment.py:0
+#, python-format
+msgid "Record has been posted! Refresh your browser, please"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__ref
+msgid "Ref"
+msgstr "Mã đối tượng"
+
+#. module: ev_account_cash_bank
+#: model:ir.model,name:ev_account_cash_bank.model_account_payment_register
+msgid "Register Payment"
+msgstr "Ghi nhận thanh toán"
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.actions.act_window,help:ev_account_cash_bank.action_account_payments_bank_in
+msgid "Register a Bank In payment"
+msgstr "Tạo mới bản ghi báo có"
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.actions.act_window,help:ev_account_cash_bank.action_account_payments_bank_out
+msgid "Register a Bank Out payment"
+msgstr "Tạo mới bản ghi báo nợ"
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.actions.act_window,help:ev_account_cash_bank.action_account_payments_cash_in
+msgid "Register a Cash In payment"
+msgstr "Tạo mới bản ghi phiếu thu"
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.actions.act_window,help:ev_account_cash_bank.action_account_payments_cash_out
+msgid "Register a Cash Out payment"
+msgstr "Tạo mới bản ghi phiếu chi"
+
+#. module: ev_account_cash_bank
+#: model:ir.actions.report,name:ev_account_cash_bank.action_report_bank_in_out_pdf
+#: model:ir.actions.report,name:ev_account_cash_bank.action_report_cash_bank_pdf
+#: model:ir.ui.menu,name:ev_account_cash_bank.menu_cash_bank_report
+msgid "Report"
+msgstr "Báo cáo"
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_bank_in_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_bank_out_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_cash_in_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_cash_out_form
+msgid "Reset To Draft"
+msgstr "Trở về nháp"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_bank_in_out
+msgid "STK:"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__state
+msgid "Status"
+msgstr "Trạng thái"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,help:ev_account_cash_bank.field_account_payment_cash_bank__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_bank_in_out
+msgid "Số TK:"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_bank_in_out
+msgid "Số tiền"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_cash_bank
+msgid "Số tiền:"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_cash_bank
+msgid "Số:"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_cash_bank
+msgid "THÁNG"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_bank_out_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_cash_out_form
+msgid "Tax"
+msgstr "Thuế"
+
+#. module: ev_account_cash_bank
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_bank.py:0
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_cash.py:0
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_transfer.py:0
+#, python-format
+msgid "Tax Amount"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_bank.py:0
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_cash.py:0
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_transfer.py:0
+#, python-format
+msgid "Tax Declaration"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__tax_lines
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_bank_out_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_cash_out_form
+msgid "Tax Lines"
+msgstr "Thuế"
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_bank_out_form
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.view_cash_out_form
+msgid "Tax line"
+msgstr "Thuế"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,help:ev_account_cash_bank.field_account_payment_cash_bank__rate
+msgid "The rate of the currency to the currency of rate 1"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_bank.py:0
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_cash.py:0
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_transfer.py:0
+#, python-format
+msgid "Total"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_bank.py:0
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_cash.py:0
+#: code:addons/ev_account_cash_bank/models/account_general_ledger_transfer.py:0
+#, python-format
+msgid "Total %s"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: code:addons/ev_account_cash_bank/models/account_payment.py:0
+#: code:addons/ev_account_cash_bank/models/account_payment.py:0
+#, python-format
+msgid "Total amount must be greater than 0"
+msgstr "Tổng tiền phải lớn hơn 0"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,help:ev_account_cash_bank.field_account_payment_cash_bank__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_bank_in_out
+msgid "Tên tài khoản:"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_line__value
+msgid "Value"
+msgstr "Giá trị"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_line__value_natural_currency
+msgid "Value currency"
+msgstr "Giá trị quy đổi"
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_tax__partner_id
+msgid "Vendor"
+msgstr "Nhà cung cấp"
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_cash_bank
+msgid "Viết bằng chữ:"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,field_description:ev_account_cash_bank.field_account_payment_cash_bank__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model.fields,help:ev_account_cash_bank.field_account_payment_cash_bank__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: code:addons/ev_account_cash_bank/models/account_payment.py:0
+#, python-format
+msgid "You cannot delete record if the state is not 'Draft'."
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: code:addons/ev_account_cash_bank/models/account_payment.py:0
+#, python-format
+msgid "You do not have accounting details, please check again!"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model,name:ev_account_cash_bank.model_account_payment_cash_bank
+msgid "account.payment.cash.bank"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.model,name:ev_account_cash_bank.model_account_payment_tax
+msgid "account.payment.tax"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model:ir.actions.report,print_report_name:ev_account_cash_bank.action_report_bank_in_out_pdf
+#: model:ir.actions.report,print_report_name:ev_account_cash_bank.action_report_cash_bank_pdf
+msgid "object.name"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: code:addons/ev_account_cash_bank/wizard/account_payment_register.py:0
+#, python-format
+msgid "you can payments for multiple invoices with the same supplier."
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_cash_bank
+msgid "Đã nhận đủ số tiền (viết bằng chữ):"
+msgstr ""
+
+#. module: ev_account_cash_bank
+#: model_terms:ir.ui.view,arch_db:ev_account_cash_bank.report_account_cash_bank
+msgid "Địa chỉ:"
+msgstr ""

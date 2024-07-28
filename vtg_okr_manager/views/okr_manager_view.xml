@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem name="OKR"
+                  id="menu_main_okr_manager"
+                  web_icon="vtg_okr_manager,static/description/icon.png"
+                  sequence="10"/>
+
+        <record id="view_okr_filter_custom" model="ir.ui.view">
+            <field name="name">dpt.okr.manager.search</field>
+            <field name="model">dpt.okr.manager</field>
+            <field name="arch" type="xml">
+                <search string="OKR">
+                    <field name="name" string="Search"
+                           filter_domain="['|','|',('okr_code','ilike',self),('name','ilike',self),('employee_id','ilike',self)]"/>
+                    <field name="employee_id"/>
+                    <filter name="groupby_state" icon="terp-gtk-jump-to-rtl" string="Trạng Thái" domain="[]"
+                            context="{'group_by' :'state'}"/>
+                    <filter name="groupby_time_type" icon="terp-gtk-jump-to-rtl" string="Loại thời gian" domain="[]"
+                            context="{'group_by' :'time_type'}"/>
+                    <filter name="groupby_month" icon="terp-gtk-jump-to-rtl" string="Tháng" domain="[]"
+                            context="{'group_by' :'month'}"/>
+                    <filter name="groupby_precious" icon="terp-gtk-jump-to-rtl" string="Quý" domain="[]"
+                            context="{'group_by' :'precious'}"/>
+                    <filter name="groupby_year" icon="terp-gtk-jump-to-rtl" string="Năm" domain="[]"
+                            context="{'group_by' :'year'}"/>
+                </search>
+            </field>
+
+        </record>
+
+        <record id="dpt_okr_manager_tree_view" model="ir.ui.view">
+            <field name="name">Okr manager Tree</field>
+            <field name="model">dpt.okr.manager</field>
+            <field name="arch" type="xml">
+                <tree string="OKR VIEW">
+                    <field name="parent_id"/>
+                    <field name="okr_code" string="Mã mục tiêu"/>
+                    <field name="name" string="Tên mục tiêu"/>
+                    <field name="department_id" string="Sản phẩm"/>
+                    <field name="employee_id" string="Nhân viên"/>
+                    <field name="parent_id" string="Mục tiêu tầng trên"/>
+                    <field name="start_date" string="Ngày bắt đầu"/>
+                    <field name="end_date" string="Hạn chót"/>
+                    <field name="percent" widget="progressbar"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="dpt_okr_manager_tree_view2" model="ir.ui.view">
+            <field name="name">Okr manager Tree</field>
+            <field name="model">dpt.okr.manager</field>
+            <field name="field_parent">child_ids</field>
+            <field name="arch" type="xml">
+                <init_tree string="OKR VIEW" colos="blue:type == 'view', black:type != 'view'">
+                    <field name="parent_id"/>
+                    <field name="okr_code" string="Mã mục tiêu"/>
+                    <field name="name" string="Tên mục tiêu"/>
+                    <field name="department_id" string="Sản phẩm"/>
+                    <field name="employee_id" string="Nhân viên"/>
+                    <field name="parent_id" string="Mục tiêu tầng trên"/>
+                    <field name="start_date" string="Ngày bắt đầu"/>
+                    <field name="end_date" string="Hạn chót"/>
+                    <field name="percent" widget="progressbar"/>
+                    <field name="state"/>
+                </init_tree>
+            </field>
+        </record>
+
+
+        <record id="okr_manager_view_from" model="ir.ui.view">
+            <field name="name">Quản trị mục tiêu</field>
+            <field name="model">dpt.okr.manager</field>
+            <field name="arch" type="xml">
+                <!--<attribute name="duplicate"/>-->
+                <form>
+                    <header>
+                        <button name="action_registered" string="Đăng ký" type="object" states="draft"
+                                class="oe_highlight"/>
+                        <button name="action_confirm" string="Xác nhận" type="object"
+                                attrs="{'invisible': [('state','!=','wait_confirm')]}"
+                                confirm="Bạn chắc chắn muốn xác nhận?"
+                                class="oe_highlight"/>
+
+                        <button name="action_cancel" string="Từ chối" type="object" class="oe_highlight"
+                                attrs="{'invisible': [('state','!=','wait_confirm')]}"/>
+
+                        <button name="back_state" string="Quay lại" type="object"
+                                attrs="{'invisible': [('state','=','draft')]}"/>
+
+                        <field name="state" widget="statusbar"
+                               statusbar_visible="draft,wait_approved,confirmed"/>
+                    </header>
+                    <sheet>
+                        <label string='Tên' for="name"/>
+                        <field name="name" required="1" string="Tên mục tiêu"
+                               attrs="{'readonly': [('state','in',('wait_confirm', 'confirmed'))]}"/>
+                        <group>
+                            <group>
+                                <field name="okr_code" readonly="1" string="Mã mục tiêu"/>
+                                <field name="type_okr"
+                                       attrs="{'readonly': [('state','in',('wait_confirm', 'confirmed'))]}"/>
+                                <field name="parent_id" string="Mục tiêu tầng trên"
+                                       domain="[('state','!=','draft')]"
+                                       attrs="{'readonly': [('state','in',('wait_confirm', 'confirmed'))]}"/>
+                                <field name="department_id" string="Phòng"
+                                       attrs="{'readonly': [('state','in',('wait_confirm', 'confirmed'))]}"/>
+                                <field name="employee_id" string="Giao mục tiêu cho"
+                                       domain="[('department_id','=',department_id)]"
+                                       attrs="{'readonly': [('state','in',('wait_confirm', 'confirmed'))]}"/>
+                                <field name="percent" widget="progressbar"/>
+                            </group>
+                            <group>
+                                <field name="time_type" string="Loại thời gian"
+                                       attrs="{'readonly': [('state','in',('wait_confirm', 'confirmed'))]}"/>
+                                <field name="year" string="Năm"
+                                       attrs="{'invisible': [('time_type','!=','year')], 'readonly': [('state','in',('wait_confirm', 'confirmed'))]}"/>
+                                <field name="precious" string="Quí"
+                                       attrs="{'invisible': [('time_type','!=','precious')], 'readonly': [('state','in',('wait_confirm', 'confirmed'))]}"/>
+                                <field name="month" string="Tháng"
+                                       attrs="{'invisible': [('time_type','!=','month')], 'readonly': [('state','in',('wait_confirm', 'confirmed'))]}"/>
+                                <field name="day" string="Ngày"
+                                       attrs="{'invisible': [('time_type','!=','days')], 'readonly': [('state','in',('wait_confirm', 'confirmed'))]}"/>
+                                <field name="week" string="Tuần"
+                                       attrs="{'invisible': [('time_type','!=','week')], 'readonly': [('state','in',('wait_confirm', 'confirmed'))]}"/>
+                                <field name="start_date" strig="Ngày bắt đầu"
+                                       attrs="{'readonly': [('state','in',('wait_confirm', 'confirmed'))]}"/>
+                                <field name="end_date" string="Hạn chót"
+                                       attrs="{'readonly': [('state','in',('wait_confirm', 'confirmed'))]}"/>
+
+                            </group>
+                            <field name="reason_cancel" invisible="1"
+                                   string="Lý do hủy"/>
+                        </group>
+
+                        <notebook>
+                            <page string="Chỉ số (Kết quả/KPI)">
+                                <field name="kpi_line_ids" mode="tree" editable="bottom"
+                                       attrs="{'readonly': [('state','in',('wait_confirm', 'confirmed'))]}">
+                                    <tree editable="bottom">
+                                        <field name="type" string="Loại"/>
+                                        <field name="name" string="Tên Chỉ số"/>
+                                        <field name="value"/>
+                                        <field name="result" readonly="1" force_save="1"/>
+                                        <field name="percent" widget="progressbar"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Mục tiêu tầng dưới" attrs="{'invisible': [('state','=','draft')]}">
+                                <field name="child_ids" widget="many2many" readonly="1"
+                                       options="{'no_create': 1, 'no_create_edit': 1}">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="department_id"/>
+                                        <field name="employee_id"/>
+                                        <field name="start_date"/>
+                                        <field name="deadline"/>
+                                        <field name="okr_code"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dpt_okr_reason_cancel_view_from">
+            <field name="name">dpt.okr.manager</field>
+            <field name="model">dpt.okr.manager</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="reason_cancel"/>
+                    </group>
+                    <footer>
+                        <button name="action_reason_cancel" string="Confirm" type="object"
+                                class="oe_highlight"/>
+                        <button special="cancel" string="Cancel" class="btn btn-default"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_okr_manager" model="ir.actions.act_window">
+            <field name="name">Kho mục tiêu</field>
+            <field name="res_model">dpt.okr.manager</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="dpt_okr_manager_tree_view"/>
+        </record>
+
+        <record id="action_okr_manager_v2" model="ir.actions.act_window">
+            <field name="name">Kho mục tiêu</field>
+            <field name="res_model">dpt.okr.manager</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">init_tree,form</field>
+            <field name="domain">[('parent_id','=', False)]</field>
+            <field name="view_id" ref="dpt_okr_manager_tree_view"/>
+        </record>
+
+
+        <menuitem name="Mục tiêu dạng cây"
+                  action="action_okr_manager_v2"
+                  id="menu_okr_manager_my_okr_v2"
+                  parent="vtg_okr_manager.menu_main_okr_manager"
+                  sequence="2"/>
+
+        <menuitem name="Danh sách mục tiêu"
+                  action="action_okr_manager"
+                  id="menu_okr_manager_my_okr"
+                  parent="vtg_okr_manager.menu_main_okr_manager"
+                  sequence="1"/>
+    </data>
+</odoo>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="commission_product_template_config" model="ir.ui.view">
+        <field name="name">commission_product_template_config</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name="commission_product_config" string="Hoa hồng">
+                    <field name="commission_config_ids">
+                        <tree editable="bottom">
+                            <field name="product_id" invisible="1"/>
+                            <field name="type" required="1"/>
+                            <field name="discount_type" required="1"/>
+                            <field name="discount"/>
+                            <field name="rate"/>
+                        </tree>
+                    </field>
+                </page>
+
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

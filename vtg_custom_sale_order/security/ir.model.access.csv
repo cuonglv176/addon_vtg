@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_order_line_user,access_order_line_user,model_order_line_user,,1,1,1,1
+access_commission_employee_report,access_commission_employee_report,model_commission_employee_report,,1,1,1,1
+access_commission_product_config,access_commission_product_config,model_commission_product_config,,1,1,1,1

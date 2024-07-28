@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+
+<odoo>
+    <data noupdate="1">
+        <!--Email template for seller regarding approval-->
+        <record id="marketplace_email_template_for_seller_status_change_to_seller" model="mail.template">
+            <field name="name">Seller Request Status Mail From Admin To Seller</field>
+            <field name="email_from">{{ (object.company_id.email or ctx.get('company') and ctx.get('company').email or '') }}</field>
+            <field name="subject">Seller Status</field>
+            <field name="email_to">{{(object.email or '')}}</field>
+            <field name="model_id" ref="odoo_marketplace.model_res_partner"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="lang">{{object.lang}}</field>
+            <field name="body_html" type="html">
+<div style="font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; ">
+
+    <t t-if="object.state=='approved'">
+    <p>Hello <t t-out="object.name"/>,</p>
+
+    <p>Congratulations! Your request for becoming a seller on our shop has been approved. Enjoy selling!</p>
+    </t>
+
+    <t t-if="object.state=='denied'">
+    <p>Hello <t t-out="object.name"/>,</p>
+
+    <p>Sorry To Say!, your request for becoming a seller on our shop has been rejected.</p>
+    </t>
+
+    <t t-if="object.state=='pending'">
+    <p>Hello <t t-out="object.name"/>},</p>
+
+    <p>Your request for becoming a seller on our shop is pending for approval with us.</p>
+    </t>
+</div>
+            </field>
+        </record>
+    </data>
+</odoo>

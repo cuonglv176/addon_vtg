@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_account_bank_in_out">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="ev_account_cash_bank.report_account_cash_root">
+                    <div class="page" style="font-size: 22px; font-family: 'Times New Roman', Times, serif;">
+                        <div style="font-size: 26px;font-weight: bold; text-align: center;vertical-align: middle;">
+                            <span>
+                                <t t-if="o.payment_type == 'bank_out'">
+                                    <br/>GIẤY BÁO NỢ
+                                </t>
+                                <t t-if="o.payment_type == 'bank_in'">
+                                    <br/>GIẤY BÁO CÓ
+                                </t>
+                            </span>
+                        </div>
+                        <br/>
+                        <div style="text-align: right;">
+                            <span style="padding-right: 20px;">Ngày in: <t
+                                    t-esc="o.x_time_print"/></span>
+                        </div>
+                        <div name="contain" style="border: 1px solid black;">
+                            <div style="margin-top: 3%;margin-left: 1%;">
+                                <span style="">Số TK: <t t-esc="o.journal_id.bank_account_id.acc_number"/></span>
+                            </div>
+                            <br/>
+                            <div style="margin-left: 1%;">
+                                <span style="padding-left: 5px;">Tên tài khoản: <t
+                                        t-esc="o.journal_id.bank_account_id.bank_id.name"/></span>
+                            </div>
+                            <br/>
+                            <div style="margin-left: 1%;margin-left: 1%;width: 98%;line-height: 35px;">
+                                <span>
+                                    <t t-if="o.journal_id.bank_account_id.bank_id.name">
+                                        <t t-if="o.payment_type == 'bank_out'">
+                                            <span style="padding-left: 5px;"><t
+                                                    t-esc="o.journal_id.bank_account_id.bank_id.name + ' xin
+                                        trân trọng thông
+                                        báo: tài khoản của Quý khách
+                                        hàng đã được ghi Nợ với nội dung sau:'"/></span>
+                                        </t>
+                                        <t t-if="o.payment_type == 'bank_in'">
+                                            <span style="padding-left: 5px;"><t
+                                                    t-esc="o.journal_id.bank_account_id.bank_id.name + ' xin
+                                        trân trọng thông
+                                        báo: tài khoản của Quý khách
+                                        hàng đã được ghi Có với nội dung sau:'"/></span>
+                                        </t>
+                                    </t>
+                                </span>
+                            </div>
+                            <br/>
+                            <table style="font-size: 25px;border: 1px solid black; text-align: center; width: 98%; height: auto; margin-left: 1%;margin-right: 1%;margin-bottom: 4%;border-collapse: collapse;">
+                                <thead>
+                                    <th style="width: 20%; border: 1px solid black;">Ngày giờ hiệu lực</th>
+                                    <th style="width: 17%; border: 1px solid black;">Số tiền</th>
+                                    <th style="width: 15%; border: 1px solid black;">Loại tiền</th>
+                                    <th style="width: 65%; border: 1px solid black;">Diễn giải</th>
+                                </thead>
+                                <tr style="border: 1px solid black;">
+                                    <td style="border: 1px solid black;">
+                                        <t t-esc="o.x_time_confirm"/>
+                                    </td>
+                                    <td style="border: 1px solid black;">
+                                        <t t-esc="'{:,.0f}'.format(o.amount_total).replace(',', '.')"/>
+                                    </td>
+                                    <td style="border: 1px solid black;">
+                                        <t t-esc="o.currency_id.name"/>
+                                    </td>
+                                    <td style="text-align: initial;border: 1px solid black; line-height: 35px;">
+                                        STK: <t t-esc="o.partner_bank_id.acc_number"/><br/>
+                                        <t t-if="o.payment_type == 'bank_out'">
+                                            Người thụ hưởng: <t t-esc="o.partner_id.name"/><br/>
+                                        </t>
+                                        <t t-if="o.payment_type == 'bank_in'">
+                                            Người chuyển: <t t-esc="o.partner_id.name"/><br/>
+                                        </t>
+                                        Nội dung giao dịch: <t t-esc="o.description"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <report
+            id="action_report_bank_in_out_pdf"
+            string="Report"
+            model="account.payment.cash.bank"
+            report_type="qweb-pdf"
+            name="ev_account_cash_bank.report_account_bank_in_out"
+            file="ev_account_cash_bank.report_account_bank_in_out"
+            print_report_name="object.name"
+            paperformat="ev_account_cash_bank.paperformat_payment_card_report"
+            menu="False"
+    />
+
+</odoo>

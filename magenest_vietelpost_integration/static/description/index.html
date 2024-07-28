@@ -1,0 +1,367 @@
+<div class="row" style="margin: 0;position: relative;color: #000;background-position: center;background: #ffffff;border-bottom: 1px solid #e4e4e4;text-align: center; margin: auto; display: flex;justify-content: center;"><a href="https://magenest.com//" target="_blank"><img
+        src="images/magenest_header.png" style=" width: 400px; padding: 1rem 0rem; margin: auto"></a></div>
+<div class="row" style="margin:75px 0;position: relative;color: #000;background-position: center;background: #ffffff;border-bottom: 1px solid #e4e4e4; padding-bottom: 30px;">
+    <div class="col-md-7 col-sm-12 col-xs-12" style="padding: 0px">
+        <div style=" margin: 0 0 0px;padding: 20px 0 10;font-size: 23px;line-height: 35px;font-weight: 400;color: #000;border-top: 1px solid rgba(255,255,255,0.1);border-bottom: 1px solid rgba(255,255,255,0.11);text-align: left;">
+            <h3 style="font-size: 21px;margin-top: 8px;position: relative;">Integrate Viettel Post shipment with Odoo.</h3>
+        </div>
+        <h2 style="font-weight: 600;font-size: 1.8rem;margin-top: 15px;">Key Highlights</h2>
+        <ul style=" padding: 0 1px; list-style: none; ">
+            <li style="display: flex;align-items: center;padding: 8px 0;font-size: 18px;"><i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>Send shipping information from Odoo to Viettel Post - Aftership.</li>
+            <li style="display: flex;align-items: center;padding: 8px 0;font-size: 18px;"><i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>Update sales order status.</li>
+            <li style="display: flex;align-items: center;padding: 8px 0;font-size: 18px;"><i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>Automatically create shipment/delivery when creating sales orders.</li>
+        </ul>
+    </div>
+    <div class="col-md-5 col-sm-12 col-xs-12"><img src="images/export.png" class="img-responsive" alt=""></div>
+</div>
+<div>
+    <section class="oe_container" style="padding: 1rem 0rem 1rem; background-color: #ffffff !important;">
+        <div class="row py-4 px-3">
+            <div class="w-100" style="padding-top:30px;padding-bottom:45px;border-radius: 10px;">
+                <ul role="tablist" class="nav nav-pills justify-content-center" data-tabs="tabs" id="pills-tab" style="border: none;background: unset;">
+                    <li class="nav-item mr-1 mb-3"
+                        style="font-size: 1.05rem;font-weight: 400;transition: all .15s ease;color: #ffffff;background-color: #fff;box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);border: 2px solid #875a7b;font-family: 'Open Sans',sans-serif;width: 140px;border-radius: 0.30rem;"><a
+                            class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false" style="color: #000000;line-height: 33px;border: 0;border-radius: .25rem;font-weight: 400; text-align: center;">Manual</a></li>
+                    <li class="nav-item mr-1 mb-3"
+                        style="font-size: 1.05rem;font-weight: 400;transition: all .15s ease;color: #875a7b;background-color: #fff;box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);border: 2px solid #875a7b;font-family: 'Open Sans',sans-serif;width: 140px;border-radius: 0.30rem;"><a
+                            id="pills-home-tab" data-toggle="pill" href="#pills-home1" role="tab" aria-controls="pills-home" aria-selected="true" class="nav-link " style="color: #000000;line-height: 33px;border: 0;border-radius: .25rem;font-weight: 400; text-align: center;">Features </a></li>
+                    <li class="nav-item mr-1 mb-3"
+                        style="font-size: 1.05rem;font-weight: 400;transition: all .15s ease;color: #ffffff;background-color: #fff;box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);border: 2px solid #875a7b;font-family: 'Open Sans',sans-serif;width: 140px;border-radius: 0.30rem;"><a
+                            class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-video" role="tab" aria-controls="pills-profile" aria-selected="false" style="color: #000000;line-height: 33px;border: 0;border-radius: .25rem;font-weight: 400; text-align: center;">Screenshots</a></li>
+                </ul>
+
+                <div class="tab-content" id="pills-tabContent"
+                     style="padding-top: 30px; padding-bottom: 30px; padding: 30px; ">
+                    <div class="px-3 pt-1 tab-pane fade" id="pills-video" role="tabpanel" aria-labelledby="
+                  pills-home-tab">
+                        <h2 style="font-weight: 600;text-align: center;width: 100%;">Screenshots</h2>
+                        <hr style="margin-top: 0px;margin-bottom: 2%;border: 0;text-align: center;border-top: 3px solid #875A7B;width: 5%;">
+                        <div style=""><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/img1.png"></div><br>
+                        <div style=""><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/img2.png"></div><br>
+                        <div style=""><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/img3.png"></div><br>
+                        <div style=""><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/img4.png"></div><br>
+                        <div style=""><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/img5.png"></div><br>
+                        <div style=""><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/img6.png"></div><br>
+                        <div style=""><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/img7.png"></div><br>
+                        <div style=""><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/img8.png"></div><br>
+                        <div style=""><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/img8.png"></div><br>
+                        <div style=""><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/img9.png"></div><br>
+                        <div style=""><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/img10.png"></div><br>
+                    </div>
+
+                    <div class="px-3 pt-1 tab-pane fade " id="pills-home1" role="tabpanel" aria-labelledby="pills-home-tab">
+                        <h2 style="font-weight: 600;text-align: center;width: 100%;">Features</h2>
+                        <hr style="margin-top: 0px;margin-bottom: 2%;border: 0;text-align: center;border-top: 3px solid #875A7B;width: 5%;">
+                        <ul>
+                            <p class="mb8" style="font-family: Roboto;color: #000;list-style-type: square;font-size: 19px;line-height: 50px; background-color: #3a34380d;padding-left: 20px;border-radius: 7px;list-style: none;">
+                                <i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>Support all attributes provided by Aftership (via Aftership token)
+                                                                               Type of shipping: pickup at store, pickup at courier, door to door
+                                                                               Select Language and Slug Category.
+                            </p>
+                            <p class="mb8" style="font-family: Roboto;color: #000;list-style-type: square;font-size: 19px;line-height: 50px; background-color: #3a34380d;padding-left: 20px;border-radius: 7px;list-style: none;">
+                                <i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>Send shipping information from Odoo to Aftership
+                                                                               Delivery customer address
+                                                                               List of products and number of units per products.
+                            </p>
+
+                            <p class="mb8" style="font-family: Roboto;color: #000;list-style-type: square;font-size: 19px;line-height: 50px; background-color: #3a34380d;padding-left: 20px;border-radius: 7px;list-style: none;">
+                                <i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>Support real-time shipment orders status tracking
+                                                                                 Convenient for warehouse managers to check delivery status correctly.
+                            </p>
+
+                           <p class="mb8" style="font-family: Roboto;color: #000;list-style-type: square;font-size: 19px;line-height: 50px; background-color: #3a34380d;padding-left: 20px;border-radius: 7px;list-style: none;">
+                                <i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>Automatically create shipment/delivery when creating sales order
+                                                                               Shipping order will be added in Odoo’s quotations
+                                                                               Admin validates the created delivery.
+                            </p>
+
+                        </ul>
+                    </div>
+
+                    <div class="px-3 tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        <div class="tab-pane">
+                            <h2 style="font-weight: 600;text-align: center;width: 100%;">Manual</h2>
+                            <hr style="margin-top: 0px;margin-bottom: 2%;border: 0;text-align: center;border-top: 3px solid #875A7B;width: 5%;">
+                            <div>
+                                <section class="oe_container">
+                                    <div id="demo" class="row carousel slide  mb32" data-ride="carousel">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active" style="min-height: 0px;">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 mb16 mt16" style="float: left;">
+                                                    <h3 class="alert" style="font-weight:400;color: #091E42;background: #fff;text-align: left;border-radius: 0; font-size: 18px;"><i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>To enable the app, go to Sales module -> Settings -> Select Aftership API then Save.</h3>
+                                                    <div style=""><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/img1.png"></div>
+
+                                                    <h3 class="alert" style="font-weight:400;color: #091E42;background: #fff;text-align: left;border-radius: 0; font-size: 18px;"><i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>Viettel Post Shipping Method Configuration.</h3>
+                                                   <h3 class="alert" style="font-weight:400;color: #091E42;background: #fff;text-align: left;border-radius: 0; font-size: 18px;"><i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>In the quotation form, click on Add shipping.</h3>
+                                                    <div style=""><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/img2.png"></div>
+
+                                                    <h3 class="alert" style="font-weight:400;color: #091E42;background: #fff;text-align: left;border-radius: 0; font-size: 18px;"><i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>Click on the arrow icon (as in the screenshot below) to populate the shipping method form.</h3>
+                                                    <div style=""><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/img3.png"></div>
+
+                                                    <h3 class="alert" style="font-weight:400;color: #091E42;background: #fff;text-align: left;border-radius: 0; font-size: 18px;"><i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>In the form, fill in the following information.</h3>
+                                                    <h3 class="alert" style="font-weight:400;color: #091E42;background: #fff;text-align: left;border-radius: 0; font-size: 18px;"><i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>Name: Shipping method name.</h3>
+                                                    <h3 class="alert" style="font-weight:400;color: #091E42;background: #fff;text-align: left;border-radius: 0; font-size: 18px;"><i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>Active: Select this to enable the method.</h3>
+                                                    <h3 class="alert" style="font-weight:400;color: #091E42;background: #fff;text-align: left;border-radius: 0; font-size: 18px;"><i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>Provider: Viettel Post.</h3>
+                                                    <h3 class="alert" style="font-weight:400;color: #091E42;background: #fff;text-align: left;border-radius: 0; font-size: 18px;"><i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>In the ViettelPost Configuration tab, enter the ViettelPost - Aftership Token (Contact Aftership to get the token key).</h3>
+                                                    <h3 class="alert" style="font-weight:400;color: #091E42;background: #fff;text-align: left;border-radius: 0; font-size: 18px;"><i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>Save the configuration.</h3>
+                                                    <div style=""><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/img4.png"></div>
+
+                                                    <h3 class="alert" style="font-weight:400;color: #091E42;background: #fff;text-align: left;border-radius: 0; font-size: 18px;"><i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>Add Viettel Post Shipping Method to Quotation.</h3>
+                                                    <h3 class="alert" style="font-weight:400;color: #091E42;background: #fff;text-align: left;border-radius: 0; font-size: 18px;"><i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>Create a new sales order with products in the sales order line. Then Click on Add shipping button (see screenshot below).</h3>
+                                                    <div style=""><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/img2.png"></div>
+
+                                                    <h3 class="alert" style="font-weight:400;color: #091E42;background: #fff;text-align: left;border-radius: 0; font-size: 18px;"><i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>In the shipping method popup, select the method and open form.</h3>
+                                                    <h3 class="alert" style="font-weight:400;color: #091E42;background: #fff;text-align: left;border-radius: 0; font-size: 18px;"><i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>Choose Viettel Post and fill information about delivery order. Then Save Shipping Method..</h3>
+                                                    <div style=""><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/img3.png"></div>
+
+                                                    <h3 class="alert" style="font-weight:400;color: #091E42;background: #fff;text-align: left;border-radius: 0; font-size: 18px;"><i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>In the form, fill in the following information.</h3>
+                                                    <h3 class="alert" style="font-weight:400;color: #091E42;background: #fff;text-align: left;border-radius: 0; font-size: 18px;"><i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>Slug Category: Select shipping services.</h3>
+                                                    <h3 class="alert" style="font-weight:400;color: #091E42;background: #fff;text-align: left;border-radius: 0; font-size: 18px;"><i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>Delivery Type: Select delivery method (at courier, at store, door to door).</h3>
+                                                    <h3 class="alert" style="font-weight:400;color: #091E42;background: #fff;text-align: left;border-radius: 0; font-size: 18px;"><i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>Language: Select language.</h3>
+                                                    <h3 class="alert" style="font-weight:400;color: #091E42;background: #fff;text-align: left;border-radius: 0; font-size: 18px;"><i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>Pickup Note: Log note for delivery order.</h3>
+                                                    <div style=""><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/img5.png"></div>
+
+                                                    <h3 class="alert" style="font-weight:400;color: #091E42;background: #fff;text-align: left;border-radius: 0; font-size: 18px;"><i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>Back to popup. Select Add.</h3>
+                                                    <div style=""><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/img6.png"></div>
+
+                                                    <h3 class="alert" style="font-weight:400;color: #091E42;background: #fff;text-align: left;border-radius: 0; font-size: 18px;"><i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>A shipment will be created in Aftership with a tracking number. Shipment status is Pending.</h3>
+                                                    <div style=""><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/img11.png"></div>
+
+                                                    <h3 class="alert" style="font-weight:400;color: #091E42;background: #fff;text-align: left;border-radius: 0; font-size: 18px;"><i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>In Odoo sales orders form, a delivery will be created automatically when the quotation is confirmed. Click on Delivery tab, select the delivery/shipment then Validate it.</h3>
+                                                    <div style=""><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/img12.png"></div>
+                                                    <div style=""><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/img7.png"></div>
+
+                                                    <h3 class="alert" style="font-weight:400;color: #091E42;background: #fff;text-align: left;border-radius: 0; font-size: 18px;"><i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>After confirming the delivery order in odoo, the tracking order will be automatically transferred status from pending to delivered.</h3>
+                                                    <div style=""><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/img14.png"></div>
+
+                                                     <h3 class="alert" style="font-weight:400;color: #091E42;background: #fff;text-align: left;border-radius: 0; font-size: 18px;"><i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>When having a delivery order being returned, choose Return.</h3>
+                                                     <div style=""><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/img9.png"></div>
+
+                                                     <h3 class="alert" style="font-weight:400;color: #091E42;background: #fff;text-align: left;border-radius: 0; font-size: 18px;"><i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>With the sale order being returned, the tracking order will automatically create a returned delivery with shipping information and status is pending.</h3>
+                                                     <div style=""><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/img14.png"></div>
+
+                                                    <h3 class="alert" style="font-weight:400;color: #091E42;background: #fff;text-align: left;border-radius: 0; font-size: 18px;"><i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>When the delivery order is cancelled, choose Cancel.</h3>
+                                                    <div style=""><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/img8.png"></div>
+
+                                                    <h3 class="alert" style="font-weight:400;color: #091E42;background: #fff;text-align: left;border-radius: 0; font-size: 18px;"><i class="fa fa-check-circle-o" style="width:40px; color:#07B700"></i>With the sale order being cancelled, the tracking order will automatically be transferred with status is exception.</h3>
+                                                    <div style=""><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/img13.png"></div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="carousel-control-prev" href="#demo" data-slide="prev" style="left:-25px;width: 35px;color: #000;"> <span class="carousel-control-prev-icon"><i class="fa fa-chevron-left" style="font-size:24px"></i></span> </a> <a class="carousel-control-next"
+                                                                                                                                                                                                                                                                       href="#demo" data-slide="next"
+                                                                                                                                                                                                                                                                       style="right:-25px;width: 35px;color: #000;">
+                                        <span class="carousel-control-next-icon"><i class="fa fa-chevron-right" style="font-size:24px"></i></span> </a>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- faq tab-->
+                    <div class="px-2 px-lg-4 pt-3 tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                        <ul class="list-unstyled">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="oe_container" style="padding: 2rem 3rem 1rem;">
+        <h2 style="font-weight: 600;text-align: center;margin-bottom: 25px;width: 100%;">Suggested Products</h2>
+        <hr style="margin-top: 0px;margin-bottom: 2%;border: 0;text-align: center;border-top: 3px solid #875A7B;width: 5%;">
+        <div id="demo1" class="row carousel slide" data-ride="carousel">
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="min-height: 0px;">
+                    <div class="col-xs-12 col-sm-4 col-md-4 mb16 mt16" style="float: left;">
+                        <a href="https://apps.odoo.com/apps/modules/13.0/attendance_faceid_magenest/" target="_blank">
+                            <div style="box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);border-radius: 10px;"><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/img15.png"></div>
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 mb16 mt16" style="float: left;">
+                        <a href="https://apps.odoo.com/apps/modules/13.0/delivery_ahamove_magenest/" target="_blank">
+                            <div style="box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);border-radius: 10px;"><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/img16.png"></div>
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 mb16 mt16" style="float: left;">
+                        <a href="https://apps.odoo.com/apps/modules/12.0/odoo_push_magento_integration/" target="_blank">
+                            <div style="box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);border-radius: 10px;"><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/mageto.png"></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="carousel-item" style="min-height: 0px;">
+                    <div class="col-xs-12 col-sm-4 col-md-4 mb16 mt16" style="float: left;">
+                        <a href="https://apps.odoo.com/apps/modules/13.0/project_task_check_list/" target="_blank">
+                            <div style="box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);border-radius: 10px;"><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/project_task_check_list.png"></div>
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 mb16 mt16" style="float: left;">
+                        <a href="https://apps.odoo.com/apps/modules/13.0/2fa_prevent_bruteforce_attack/" target="_blank">
+                            <div style="box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);border-radius: 10px;"><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/img17.png"></div>
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-4 mb16 mt16" style="float: left;">
+                        <a href="https://apps.odoo.com/apps/modules/13.0/advanced_notification/" target="_blank">
+                            <div style="box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);border-radius: 10px;"><img class="img img-responsive center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="images/covid.png"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo1" data-slide="prev" style="left:-25px;width: 35px;color: #000;"> <span class="carousel-control-prev-icon"><i class="fa fa-chevron-left" style="font-size:24px"></i></span> </a> <a class="carousel-control-next" href="#demo1" data-slide="next"
+                                                                                                                                                                                                                                            style="right:-25px;width: 35px;color: #000;"> <span
+                class="carousel-control-next-icon"><i class="fa fa-chevron-right" style="font-size:24px"></i></span> </a>
+        </div>
+    </section>
+    <section class="row" style="padding: 2rem 3rem 1rem;margin:0px">
+        <h2 style="font-weight: 600;margin-bottom: 20px;text-align: center;width: 100%;">Our Service</h2>
+        <hr style="margin-top: 0px;margin-bottom: 2%;border: 0;text-align: center;border-top: 3px solid #875A7B;width: 5%;">
+        <div class="row" style=" display: flex; justify-content: center; flex-wrap: wrap;width: 100%; ">
+            <!-- <div style="display:flex;padding-top: 20px;justify-content: space-between;"> -->
+            <div class="col-md-2 col-sm-6 col-xs-12">
+                </a></div>
+<!--            <h3 class="oe_slogan" style="font-weight: 800;text-align: center;font-size: 14px;width: 100%;margin: 0;margin-top: 14px;color: #000 !important;margin-top: 5px;opacity: 1 !important;line-height: 17px;"><a href="https://magenest.com//odoo-customization-and-installation/"-->
+<!--                                                                                                                                                                                                                        style="list-style: none; color:#000; text-decoration: none; font-family: 'Montserrat',sans-serif;">-->
+<!--                Odoo Customization </a></h3>-->
+        </div>
+        <div class="col-md-2 col-sm-6 col-xs-12">
+            <div style="width:75px;height:75px;background:#fff; border-radius:100%;margin: auto;"><a href="https://magenest.com//odoo-erp-implementation/" target="_blank"> <img src="https://ionicframework.com/img/meta/products-advisory-og.png" style="width: 100%;border-radius: 100%;"/> </a>
+            </div>
+            <h3 class="oe_slogan" style="font-weight: 800;text-align: center;font-size: 14px;width: 100%;margin: 0;margin-top: 14px;color: #000 !important;margin-top: 5px;opacity: 1 !important;line-height: 17px;"><a href="https://magenest.com//odoo-erp-implementation/" target="_blank"
+                                                                                                                                                                                                                        style="list-style: none; color:#000; text-decoration: none; font-family: 'Montserrat',sans-serif;">
+                Advisory </a></h3>
+        </div>
+        <div class="col-md-2 col-sm-6 col-xs-12">
+            <div style="width:75px;height:75px;background:#fff; border-radius:100%;margin: auto;"><a href="https://magenest.com//odoo-erp-integration/" target="_blank"> <img src="https://cdn.lynda.com/course/756288/756288-637286256276268328-16x9.jpg" style="width: 100%;border-radius: 100%;"/> </a></div>
+            <h3 class="oe_slogan" style="font-weight: 800;text-align: center;font-size: 14px;width: 100%;margin: 0;margin-top: 14px;color: #000 !important;margin-top: 5px;opacity: 1 !important;line-height: 17px;"><a href="https://magenest.com//odoo-erp-integration/" target="_blank"
+                                                                                                                                                                                                                        style="list-style: none; color:#000; text-decoration: none; font-family: 'Montserrat',sans-serif;">
+                Odoo Integration </a></h3>
+        </div>
+        <div class="col-md-2 col-sm-6 col-xs-12">
+            <div style="width:75px;height:75px;background:#fff; border-radius:100%;margin: auto;"><a href="https://magenest.com//odoo-erp-support/" target="_blank"> <img src="https://lh3.googleusercontent.com/ZWgztcTuoAeclLk6_ndbmmPWS02pPIlu7Zbpl6CEB909dga9HC1k8xrQF8jak__6qYBVT4y11S9eazvOZuBZmGYez_3P9ONpKdcsDBQ=w1064-v0" style="width: 100%;border-radius: 100%;"/> </a></div>
+            <h3 class="oe_slogan" style="font-weight: 800;text-align: center;font-size: 14px;width: 100%;margin: 0;margin-top: 14px;color: #000 !important;margin-top: 5px;opacity: 1 !important;line-height: 17px;"><a href="https://magenest.com//odoo-erp-support/" target="_blank"
+                                                                                                                                                                                                                        style="list-style: none; color:#000; text-decoration: none; font-family: 'Montserrat',sans-serif;">
+                Solusion Design</a></h3>
+        </div>
+        <div class="col-md-2 col-sm-6 col-xs-12">
+            <div style="width:75px;height:75px;background:#fff; border-radius:100%;margin: auto;"><a href="https://magenest.com//hire-odoo-developer/" target="_blank"> <img src="https://www.mp-plus.com/wp-content/uploads/2018/11/Service-1.jpg" style="width: 100%;border-radius: 100%;"/> </a></div>
+            <h3 class="oe_slogan" style="font-weight: 800;text-align: center;font-size: 14px;width: 100%;margin: 0;margin-top: 14px;color: #000 !important;margin-top: 5px;opacity: 1 !important;line-height: 17px;"><a href="https://magenest.com//hire-odoo-developer/" target="_blank"
+                                                                                                                                                                                                                        style="list-style: none; color:#000; text-decoration: none; font-family: 'Montserrat',sans-serif;">
+                Manager Service</a></h3>
+            </a>
+        </div>
+        <div class="col-md-2 col-sm-6 col-xs-12">
+            <div style="width:75px;height:75px;background:#fff; border-radius:100%;margin: auto;"><a href="https://magenest.com//hire-odoo-developer/" target="_blank"> <img src="https://wrmllc.com/wp-content/uploads/2018/11/crm-implementation-tips-1-1080x675.png" style="width: 100%;border-radius: 100%;"/> </a></div>
+            <h3 class="oe_slogan" style="font-weight: 800;text-align: center;font-size: 14px;width: 100%;margin: 0;margin-top: 14px;color: #000 !important;margin-top: 5px;opacity: 1 !important;line-height: 17px;"><a href="https://magenest.com//hire-odoo-developer/" target="_blank"
+                                                                                                                                                                                                                        style="list-style: none; color:#000; text-decoration: none; font-family: 'Montserrat',sans-serif;">
+                Implementation</a></h3>
+            </a>
+        </div>
+        <div class="col-md-2 col-sm-6 col-xs-12">
+            <div style="width:75px;height:75px;background:#fff; border-radius:100%;margin: auto;"><a href="https://magenest.com//hire-odoo-developer/" target="_blank"> <img src="data:image/jpeg;base64,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" style="width: 100%;border-radius: 100%;"/> </a></div>
+            <h3 class="oe_slogan" style="font-weight: 800;text-align: center;font-size: 14px;width: 100%;margin: 0;margin-top: 14px;color: #000 !important;margin-top: 5px;opacity: 1 !important;line-height: 17px;"><a href="https://magenest.com//hire-odoo-developer/" target="_blank"
+                                                                                                                                                                                                                        style="list-style: none; color:#000; text-decoration: none; font-family: 'Montserrat',sans-serif;">
+                Digital Ecommerce</a></h3>
+            </a>
+        </div>
+
+        <!-- </div> -->
+</div>
+</section>
+<section class="row" style="padding: 2rem 3rem 1rem;margin:0px">
+    <div class="row" style="margin: 0">
+        <h2 style="font-weight: 600;margin-bottom: 20px;text-align: center;width: 100%;">Our Partners</h2>
+        <hr style="margin-top: 0px;margin-bottom: 2%;border: 0;text-align: center;border-top: 3px solid #875A7B;width: 5%;">
+        <!-- <div style="display:flex;justify-content: space-between;flex-wrap:wrap;"> -->
+        <div class="row" style="width: 100%">
+            <div class="col-md-4 col-sm-6 col-xs-12" style=" margin-bottom: 10px; ">
+                <div>
+                    <div style="width:75px;height:75px;background:#875A7B; border-radius:100%;float: left;text-align: left;"><a href="https://magenest.com//odoo/industries/best-trading-erp/" target="_blank"> <img src="https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png" alt="Odoo Industry" style="    border-radius: 100%;width:100%;"/> </a></div>
+                </div>
+                <div style="width:70%;float:left;">
+                    <h3 class="oe_slogan" style=" text-align: left;font-size: 14px;font-weight:800;width: auto;margin: 0;margin-top: 14px;color: #000 !important;margin-top: 5px;opacity: 1 !important;line-height: 17px;float: left;margin-top: 4px;margin-left: 16px;"><a
+                            href="https://magenest.com//odoo/industries/best-trading-erp/" target="_blank" style="list-style: none; color:#000; text-decoration: none;font-family: 'Montserrat',sans-serif;"> AWS </a></h3>
+                    <h3 class="oe_slogan" style=" text-align: left;font-size: 12px;width: auto;margin: 0;margin-top:5px;color: #000 !important;margin-top: 5px;opacity: 1 !important;line-height: 17px;float: left;margin-top: 5px;margin-left: 16px; font-family: 'Montserrat',sans-serif;"> AWS Consulting Partner.</h3>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12" style=" margin-bottom: 10px; ">
+                <div>
+                    <div style="width:75px;height:75px;background:#875A7B; border-radius:100%;float: left;text-align: left;"><a href="https://magenest.com//odoo/industries/manufacturing-erp-software/" target="_blank"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAwFBMVEX////yYyJNTU0/Pz9KSkpBQUE7Ozv29vZFRUU8PDzLy8taWlrm5ubxWADyYR3xVAC6urpnZ2f+9vTyXRH1jWr85N33pYz60MTyWwj5u6nzcT/R0dHw8PDGxsbAwMCYmJjr6+uxsbGTk5OKioqmpqba2tpwcHB+fn54eHhfX19vb2+NjY34tZ397uj2mnn0e0v4rpP6xrX83dLzbDH6zLv0g1f0iGQsLCz2oYPzaSv1lnP+8uwqKir1h1zzd0TzcDiQ155MAAALXklEQVR4nO2cC3uaSBeAyTAMgxCNsW3spyAoeEmaNk13e9m22///r74zyGVuapI2mGzOu8/uGgdweB0OZw6I4yAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiDIn+X25vzYXXgufH8/GI8+HrsXz4N3/dHJSf/0w+2xO/L0ufh0elLSH7y6PnZnnjav/z7tn9SMTt8cuz9PmPOvkirB+BuGrh28HY9ONPqn/2LostAEK00Xhi6D158HfZsrEbrGN8fu3dPi66lxBGLosmMJVhi67Nz+0oNVf3wyNnT98/3YHT0+16+MYHV6cnF+M9AH22j07th9PTLnb3ZJ+W5KHPf/OnZ/j8lby+H2vi443P6rpajQ+Pfro/b3iFhsDD7INj6ODJeD9y+yeHP90wxWn/Tj7I2RUoxOX17oOn9jpAvWCG6L/58uuu/vMfloBqvBjtzgwswsXlTosoXuD7v3/+1IH4T9wdeXErpe6apOxkawUjBKN2LCaM6A/Klgz3YOLvD0OB8YMfvgTFkpCm5X+mwslH1hjP3wd29lJRYIf6vzXaPJgmB1lxoMhC5F1+iVsciZRwjxsp2b8Bm00+FvdL17FFn3uDBRXsg4KGuPjEPtj06PEy+63yqyrHtd8jp/L6URu2QRVuxa/5IeW1ZA2cNlHQ5WKhC6DsjihC92rBwxQulxZbnk4bIGlszqdfue7fh8N94ri+ec0B3nuxmn6yF9vrLMxptBm299taTqF6d7ZQWRtyvE+4R6Z/8lWZDYS7LejAc/9VT1gCzmLym1JwexS7zp5j8jq0zsZVkjuWKz5ZCs8j/WEA8W1074PGRFSRJv88Udsq7/KRMpVRZI6b+Vlzo4shzPHuKnTByfz0NWnPiOn6XipV3WTVWM0WXB4JJD12FZMzghWrJ4iPxsashKk/l6s9ms52eppdNFnOVnE1tL3Zr1du58kWRZorZOXNEHnagH24mlJf2ZE+ZzZyZeW2X9r5ZgyBI5fju4DsvaEeJB06WjySrWgcc5BbgXrLXdLubUdT3Pc91NLHbpC/8ifQfRjEIjh1aaS2/3GP9SNi88F1q9tnXlwidBnseBYKZsxy23w6/q6NErnGW0cDJ/p6z+blkn4/vIgtyTboy2SUDcWJOVu5x6kJuFhHuU8EBRPA845WIB+JctyiyNtVZyD1o9N4D9pB6ZtLJg7MDQWIhmDl8EyKFx2bIQX4pIigGvkTWDrcPHlNvhwdX2A+LCuVzHTjbtQFbiEtcI8dBX4qiyckbcYRLBGn4aLwPI/eNmcX8I45PmRTqNJnP44pdOFLSy/KVLOFucFUWRQCsNEkVWCvLZcpad5VfcI5SVrfPNcLiBnBj+N9zk26XTEAIsW2W9YpKtAggfpBzdUeYM4Z89h+Gfk+UQM8RPoSczVVYPIv5Zu0QCQ8xt/hpy4ubNX3PmrVJJVgiti8bcAgTVtoQsHwZVVrfmLmnjFMSsIG0/MnUpcWfNdnIPBln5Lc+Es0nSiSwI8cw3moJIlRVSN5EXyT3SvDGHxXvK6nxFm42uFJPwedXGt7LomhPJSOZtv6aqVT4bwkBTPqUQ07FS7FmW5NuWR5cVMSPEb8rwLsuKXUi7FNxmQMIGXHUDGQyCWlbCCL9SWuEYXzc6IEqlcmPYZsmqLHDsxvKSTgFiV2qnHl2WM9RDvNCXVD0f1jvoqT11Vk3biusiYZONLGKeQGCUbqOkkKWMljpnqVtbWSlExdxROXP1jPrxZUH8CZTPhAMzqPaqFkLdL6m6Oky0w3o3gona5sReLQvOH5oOIYTPyxfiMNSyXnjLnTQvW1mz7SlHJaTa0Hp8Wb4e4gmtdqaVlZ3pyVgjK/Ms00tWy1pbJp8pq04OoEOPAEVglwWnHH1gbQsnSrh9fFllFi+lynGTTOyb7lzWFlZUi0nbN6uNM9tObqqqHugItLQlsssqmLEkkMK5Qxm2HciCDspf8LpRtEcWjIBKFldyioq8OsUW7VGltG730TL72yErE7N+EzgOZ/LfHchqR4kgbfd+l6zibAHZdrUOs+mIq42LnTTnd5BblMPt7rIW3FpKWlen7ZouZEEUZs0O5+3UWpflwyx2tiIM5oii5Fx2f8qatEmiqJLSuTBvcFVF+LvLWlKqZQklM81hF7KUQg1pY5AqK14TT8xvQRMPwlU1GsUs0JRVT3fECPQM6tL/3WVtqLWSBF8skSN8J7IgxHvVa5hDN8mLMjckkGmKggNM+5f5BBKORpZlZNWyINAT1wJb30+WHpzafVCuIXQiSyrUyNGhlQWTWAqzWLKaJUVarb5dzmeWiXhZiyplwfmqmFgo7ifrKY2stlDjc+nM2MqCyTAls0hZvQnwenLvlIluHbNsZ7GK5xmz2kKNyPOagd3IyiDVDqfa6lU/L21HSJ06SLMXC3/ibKicgbqRJcJ6+dUN5fHeyIK5nlwt2a5edT83p4bl5exy4xNrnlVzd1m5fYSG9VyjoiNZVaGmUOaJtSyIS2qngKz+rkXemWqNfj3dEWvaIvOWu8uCVMSewXtK4agjWVWhBoKAVCOoZUFXjbh01RwY8PXqM5qsmUgPbRcmJ0lSCrm7LCewSYePCZSDvCNZVaFGndnWskTNUk8P3DqDF13W7gHwSVOiyTyz6uAELrtnBi8SNmpchaKULpU3upIlailFz1Xek0aWnh4IQ2GzGFf7vBDXHqqShiika5+c1BbuIQu6YEYC2AP1i+hKFowGvlioBaJa1hR6qpZSIk5bWQUcwvJqM8/Nm1p1DimcdgA1542DsqTxDBmbp54qCm5Uw7qSVRZqqHruavYK0jCl9BYRdw1HWv1nBmE8rCNtsXaDXLpgsYETo1KWgN2uqoX7Zaln0il0QYnxBfRWv9mtM1nQTULUaNzImjC53O1nQXA19criRFVohymjR9ezPF+EHmcz+VJYCjsFizcrr2HF6oDaLwsGLL0Ul962ixQw3Qpm9Xb8PNC/hC5lQZZMtEqdVIOHXHVYnhDT+Ip4wZVohLc21dGZrsvrn1xIEw7l64aRuGeOXsWRqFrMKRxOdYTbL8uBGRYll5d1rCpgVc5X2aQoJnkoLjEadbTHk+VSVVbiUqqmntJEes4o9dxwQ5nHPSYUZQz2pb0uXcxCxgLGNuUVeFmW4y+YuCINjcyFOMOaMWqTxWhT0Y8ZV65Ip0vxkZ4bBOKbcUMz8fpDssxbuxMSareEkJCos9VhSJra2mQpbmUIoKfD6oaELHQZUc5GUTXJbifSFcVKXNcXhzlnmzZji3+wH7osGtImUEWLkLMgbAdQvCxvt+BgfmiWZx3pRwO/Icv2owHH9/XERX/DVxZJ4yzr9SZSSjWd7rqNPva0tGgaz4dwOG7m8gnEt/woQe2V72tLTJN8sVrkiVkV2nL77/a24wfLOsLPUWDCaBak/Z1u/yQfv40fLqt/+vNxH/WQJObtWoQaKWRnnN+MRw+UdfrrsX9CtwmYPjfsBeaF1w65fjV4iKxBBz/OFMUuLbCQXff1dsXtp/b1XWX91cnPfsXNHHLAjSA9YkccWBqNrP7nOh5dfOubsroBciOYU06q6F3MPZFqd9yHPTSy6kfPyD+h7lyWU4j78Fy+Wa9WQwqv6Rfzkv3xaGWJ5zeIh2DIb3Quy5mut8l2CWeXO389dQxkWcbjVY4gCw7FHHJOSO85Gc6elCpNls5RZDnixtwoitIu8s778Wnfc44GR5L1VLk2f2XeRPwX/8Qek9tfVl39wXt8FpSFj339yRj6w2mQlvOv2jNXDjzv4YVzrT7UFZ+MuJ/m+Q07H06DSOCDqO/DOT7i/D7gw/MRBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQ5N78H4578x5LTR6kAAAAAElFTkSuQmCC"
+                                                                                                                                                                                                                               alt="Odoo Industry" style="    border-radius: 100%;width:100%;"/> </a>
+                    </div>
+                </div>
+                <div style="width:70%;float:left;" style=" margin-bottom: 10px; ">
+                    <h3 class="oe_slogan" style=" text-align: left;font-size: 14px;font-weight:800;width: auto;margin: 0;margin-top: 14px;color: #000 !important;margin-top: 5px;opacity: 1 !important;line-height: 17px;float: left;margin-top: 4px;margin-left: 16px;"><a
+                            href="https://magenest.com//odoo/industries/manufacturing-erp-software/" target="_blank" style="list-style: none; color:#000; text-decoration: none;font-family: 'Montserrat',sans-serif;">Magento</a></h3>
+                    <h3 class="oe_slogan" style=" text-align: left;font-size: 12px;width: auto;margin: 0;margin-top:5px;color: #000 !important;margin-top: 5px;opacity: 1 !important;line-height: 17px;float: left;margin-top: 5px;margin-left: 16px;font-family: 'Montserrat',sans-serif;">Magento Commerce is the best eCommerce platform in the world. </h3>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12" style=" margin-bottom: 10px; ">
+                <div>
+                    <div style="width:75px;height:75px;background:#875A7B; border-radius:100%;float: left;text-align: left;"><a href="https://magenest.com//odoo/industries/restaurant-management/" target="_blank"> <img src="https://tranthinhlam.com/wp-content/uploads/2019/12/odoo-la-gi.jpg"
+                                                                                                                                                                                                                          alt="Odoo Industry" style="    border-radius: 100%;width:100%;"/> </a>
+                    </div>
+                </div>
+                <div style="width:70%;float:left;">
+                    <h3 class="oe_slogan" style=" text-align: left;font-size: 14px;font-weight:800;width: auto;margin: 0;margin-top: 14px;color: #000 !important;margin-top: 5px;opacity: 1 !important;line-height: 17px;float: left;margin-top: 4px;margin-left: 16px;"><a
+                            href="https://magenest.com//odoo/industries/restaurant-management/" target="_blank" style="list-style: none; color:#000; text-decoration: none;font-family: 'Montserrat',sans-serif;">Odoo</a></h3>
+                    <h3 class="oe_slogan" style=" text-align: left;font-size: 12px;width: auto;margin: 0;margin-top:5px;color: #000 !important;margin-top: 5px;opacity: 1 !important;line-height: 17px;float: left;margin-top: 5px;margin-left: 16px;font-family: 'Montserrat',sans-serif;"> Odoo is the best management software to run a
+                        company with its ecosystem of integrated apps. </h3>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12" style=" margin-bottom: 10px; ">
+                <div>
+                    <div style="width:75px;height:75px;background:#875A7B; border-radius:100%;float: left;text-align: left;"><a href="https://magenest.com//odoo/industries/pos/" target="_blank"> <img src="https://tuyendung.ominext.com/wp-content/uploads/2018/09/salesforce.png" alt="Odoo Industry"
+                                                                                                                                                                                                        style="    border-radius: 100%;width:100%;"/> </a></div>
+                </div>
+                <div style="width:70%;float:left;">
+                    <h3 class="oe_slogan" style=" text-align: left;font-size: 14px;font-weight:800;width: auto;margin: 0;margin-top: 14px;color: #000 !important;margin-top: 5px;opacity: 1 !important;line-height: 17px;float: left;margin-top: 4px;margin-left: 16px;"><a
+                            href="https://magenest.com//odoo/industries/pos/" target="_blank" style="list-style: none; color:#000; text-decoration: none;font-family: 'Montserrat',sans-serif;"> Salesforce</a></h3>
+                    <h3 class="oe_slogan" style=" text-align: left;font-size: 12px;width: auto;margin: 0;margin-top:5px;color: #000 !important;margin-top: 5px;opacity: 1 !important;line-height: 17px;float: left;margin-top: 5px;margin-left: 16px;font-family: 'Montserrat',sans-serif;"> we make sure that you get the most out
+                        of Salesforce solutions. </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<section class="oe_container" style="padding: 0% 0% 6% 0%;">
+    <center>
+        <div class="col-md-12" style="margin: auto !important;
+         width: 70%;
+         padding: 30px;">
+            <h2 style="font-weight: 600;text-align: center;width: 100%;">Need Any Help?</h2>
+            <hr style="margin-top: 0px;margin-bottom: 2%;border: 0;text-align: center;border-top: 3px solid #875A7B;width: 5%;">
+            <h4 style="font-size:16px;"> If you have anything to share with us based on your use of this module, please let us know. We are ready to offer our support. </h4>
+            <div class="col-md-6" style="float:left; padding:20px;">
+                <h4><i class="fa fa-envelope"></i>Email us </h4>
+                <p>sales@magenest.com</p>
+            </div>
+            <div class="col-md-6" style="float:left; padding:20px;">
+                <h4><i class="fa fa-phone"></i> Contact Us </h4>
+                <a href="https://magenest.com/en/contact-us/" target="_blank"> https://magenest.com/en/contact-us/</a>
+            </div>
+        </div>
+    </center>
+</section>
+<section class="oe_container" style="padding: 0% 0% 6% 0%;">
+    <div class="oe_slogan" style="margin-bottom: 0px;">
+        <div style=" display: flex; justify-content: center; flex-wrap: wrap; ">
+        </div>
+        <br>
+        <img src="https://static.magenest.com/media/logo/stores/1/new-logo-01_1.png" style="width: 190px; margin-bottom: 25px;margin-top: 30px;" class="center-block">
+        <div style=" display: flex; justify-content: center; flex-wrap: wrap; "><a href="https://twitter.com/cybrosys" target="_blank"><i class="fa fa-2x fa-twitter"
+                                                                                                                                          style="color:white;background: #00a0d1;width:35px;height: 35px;padding-top: 7px;font-size: 21px;margin-right: 6px;border-radius: 100%;"></i></a>
+            </td>
+            <a href="https://www.linkedin.com/company/cybrosys-technologies-pvt-ltd" target="_blank"><i class="fa fa-2x fa-linkedin" style="color:white;background: #31a3d6;width:35px;height: 35px;padding-top: 7px;font-size: 21px;margin-right: 6px;border-radius: 100%;"></i></a>
+            </td>
+            <a href="https://www.facebook.com/cybrosystechnologies" target="_blank"><i class="fa fa-2x fa-facebook" style="color:white;background: #3b5998;width:35px;  height: 35px;padding-top: 7px;font-size: 21px;margin-right: 6px;border-radius: 100%;"></i></a>
+            </td>
+            <a href="https://in.pinterest.com/cybrosys" target="_blank"><i class="fa fa-2x fa-pinterest" style="color:white;background: #ac0f18;width:35px;height: 35px;padding-top: 7px;font-size: 21px;margin-right: 6px;border-radius: 100%;"></i></a>
+            </td>
+        </div>
+    </div>
+</section>
+</div>

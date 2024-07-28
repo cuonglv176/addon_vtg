@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+
+<odoo>
+    <data noupdate="1">
+
+        <record id="website.default_website" model="website">
+            <field name="mp_product_count">True</field>
+            <field name="mp_sale_count">True</field>
+            <field name="mp_shipping_address">True</field>
+            <field name="mp_seller_since">True</field>
+            <field name="mp_seller_t_c">True</field>
+            <field name="mp_seller_contact_btn">True</field>
+            <field name="mp_seller_review">True</field>
+            <field name="mp_return_policy">True</field>
+            <field name="mp_shipping_policy">True</field>
+            <field name="mp_recently_product">10</field>
+            <field name="mp_review_load_no">10</field>
+            <field name="mp_review_auto_publish">False</field>
+            <field name="mp_show_seller_list">True</field>
+            <field name="auth_signup_uninvited">b2c</field>
+            <field name="mp_show_sell_menu_header">True</field>
+            <field name="mp_show_sell_menu_footer">True</field>
+        </record>
+
+        <!-- Marketplace Config settings -->
+        <function model="ir.default" name="set" eval="('res.config.settings', 'internal_categ', ref('product.product_category_all'))"/>
+
+        <function model="ir.default" name="set" eval="('res.config.settings', 'mp_auto_product_approve', False)"/>
+
+        <function model="ir.default" name="set" eval="('res.config.settings', 'mp_warehouse_id', ref('stock.warehouse0'), False, ref('base.main_company'))"/>
+
+        <function model="ir.default" name="set" eval="('res.config.settings', 'mp_seller_payment_limit', 0)"/>
+
+        <function model="ir.default" name="set" eval="('res.config.settings', 'mp_next_payment_request', 0)"/>
+
+        <function model="ir.default" name="set" eval="('res.config.settings', 'mp_auto_approve_qty', False)"/>
+
+        <function model="ir.default" name="set" eval="('res.config.settings', 'auto_approve_seller', False)"/>
+
+        <function model="ir.default" name="set" eval="('res.config.settings', 'mp_commission', 0.0)"/>
+
+        <function model="ir.default" name="set" eval="('res.config.settings', 'enable_notify_admin_4_new_seller', False)"/>
+
+        <function model="ir.default" name="set" eval="('res.config.settings', 'enable_notify_seller_4_new_seller', False)"/>
+
+        <function model="ir.default" name="set" eval="('res.config.settings', 'enable_notify_admin_on_seller_approve_reject', False)"/>
+
+        <function model="ir.default" name="set" eval="('res.config.settings', 'enable_notify_seller_on_approve_reject', False)"/>
+
+        <function model="ir.default" name="set" eval="('res.config.settings', 'enable_notify_admin_on_product_approve_reject', False)"/>
+
+        <function model="ir.default" name="set" eval="('res.config.settings', 'enable_notify_seller_on_product_approve_reject', False)"/>
+
+        <function model="ir.default" name="set" eval="('res.config.settings', 'enable_notify_seller_on_new_order', False)"/>
+
+        <function model="ir.default" name="set" eval="('res.config.settings', 'notify_admin_4_new_seller_m_tmpl_id', False)"/>
+
+        <function model="ir.default" name="set" eval="('res.config.settings', 'notify_seller_4_new_seller_m_tmpl_id', False)"/>
+
+        <function model="ir.default" name="set" eval="('res.config.settings', 'notify_admin_on_seller_approve_reject_m_tmpl_id', False)"/>
+
+        <function model="ir.default" name="set" eval="('res.config.settings', 'notify_seller_on_approve_reject_m_tmpl_id', False)"/>
+
+        <function model="ir.default" name="set" eval="('res.config.settings', 'notify_admin_on_product_approve_reject_m_tmpl_id', False)"/>
+
+        <function model="ir.default" name="set" eval="('res.config.settings', 'notify_seller_on_product_approve_reject_m_tmpl_id', False)"/>
+
+        <function model="ir.default" name="set" eval="('res.config.settings', 'notify_seller_on_new_order_m_tmpl_id', False)"/>
+
+        <function model="ir.default" name="set" eval="('res.config.settings', 'show_visit_shop', True)"/>
+
+        <function model="ir.default" name="set" eval="('res.config.settings', 'enable_notify_admin_4_new_seller', True)"/>
+        <function model="ir.default" name="set" eval="('res.config.settings', 'enable_notify_seller_4_new_seller', True)"/>
+        <function model="ir.default" name="set" eval="('res.config.settings', 'enable_notify_admin_on_seller_approve_reject', True)"/>
+        <function model="ir.default" name="set" eval="('res.config.settings', 'enable_notify_seller_on_approve_reject', True)"/>
+        <function model="ir.default" name="set" eval="('res.config.settings', 'enable_notify_admin_on_product_approve_reject', True)"/>
+        <function model="ir.default" name="set" eval="('res.config.settings', 'enable_notify_seller_on_product_approve_reject', True)"/>
+        <function model="ir.default" name="set" eval="('res.config.settings', 'enable_notify_seller_on_new_order', True)"/>
+
+        <function model="ir.default" name="set" eval="('res.config.settings', 'notify_admin_4_new_seller_m_tmpl_id', ref('marketplace_email_template_for_admin_by_seller'))"/>
+        <function model="ir.default" name="set" eval="('res.config.settings', 'notify_seller_4_new_seller_m_tmpl_id', ref('marketplace_email_template_for_seller_by_admin'))"/>
+        <function model="ir.default" name="set" eval="('res.config.settings', 'notify_admin_on_seller_approve_reject_m_tmpl_id', ref('marketplace_email_template_for_seller_status_change_to_admin'))"/>
+        <function model="ir.default" name="set" eval="('res.config.settings', 'notify_seller_on_approve_reject_m_tmpl_id', ref('marketplace_email_template_for_seller_status_change_to_seller'))"/>
+        <function model="ir.default" name="set" eval="('res.config.settings', 'notify_admin_on_product_approve_reject_m_tmpl_id', ref('marketplace_template_for_product_status_changeto_admin'))"/>
+        <function model="ir.default" name="set" eval="('res.config.settings', 'notify_seller_on_product_approve_reject_m_tmpl_id', ref('marketplace_template_for_product_status_change_to_seller'))"/>
+        <function model="ir.default" name="set" eval="('res.config.settings', 'notify_seller_on_new_order_m_tmpl_id', ref('marketplace_template_for_order_to_seller'))"/>
+        <function model="ir.default" name="set" eval="('res.config.settings', 'seller_payment_product_id', ref('odoo_marketplace.mp_seller_payment_product_demo_data'))"/>
+    </data>
+</odoo>

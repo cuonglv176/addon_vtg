@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+id_account_payment_cash_bank,name_account_payment_cash_bank,model_account_payment_cash_bank,account.group_account_user,1,1,1,1
+id_account_payment_line,name_account_payment_line,model_account_payment_line,,1,1,1,1
+id_account_payment_tax,name_account_payment_tax,model_account_payment_tax,,1,1,1,1
+
+
+

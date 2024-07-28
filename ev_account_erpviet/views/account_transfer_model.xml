@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="view_transfer_model_tree_inherit" model="ir.ui.view">
+            <field name="name">account.transfer.model.custom</field>
+            <field name="model">account.transfer.model</field>
+            <field name="inherit_id" ref="account_auto_transfer.view_transfer_model_tree"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//tree" position="attributes">
+					<attribute name="default_order">create_date desc</attribute>
+		        </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

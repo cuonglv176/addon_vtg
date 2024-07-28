@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="stock_inventory_cut_tree_view" model="ir.ui.view">
+        <field name="name">Tồn kho Cắt</field>
+        <field name="model">stock.inventory.cut</field>
+        <field name="arch" type="xml">
+            <tree string="Tồn kho cắt">
+                <field name="user_id"/>
+                <field name="location_id"/>
+                <field name="product_id"/>
+                <field name="quantity"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="stock_inventory_cut_form_view" model="ir.ui.view">
+        <field name="name">Tồn kho Cắt</field>
+        <field name="model">stock.inventory.cut</field>
+        <field name="arch" type="xml">
+            <form string="Tồn kho cắt">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_order" type="object" class="oe_stat_button" string="Đơn hàng"
+                                icon="fa-list-alt"/>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="user_id"/>
+                            <field name="location_id"/>
+                            <field name="product_id"/>
+                        </group>
+                        <group>
+                            <field name="quantity"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="stock_inventory_cut_pivot_view" model="ir.ui.view">
+        <field name="name">Tồn kho Cắt</field>
+        <field name="model">stock.inventory.cut</field>
+        <field name="arch" type="xml">
+            <pivot string="Tồn kho cắt">
+                <field name="user_id" type="col"/>
+                <field name="location_id" type="col"/>
+                <field name="product_id" type="row"/>
+                <field name="quantity" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="stock_inventory_cut_view_action" model="ir.actions.act_window">
+        <field name="name">Tồn kho Cắt</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">stock.inventory.cut</field>
+        <field name="view_mode">tree,form,pivot</field>
+    </record>
+
+    <menuitem id="stock_inventory_cut_crm_menu" name="Tồn kho Sản phẩm cắt" parent="crm.crm_menu_sales"
+              action="stock_inventory_cut_view_action" sequence="99"/>
+    <menuitem id="stock_inventory_cut_stock_menu" name="Tồn kho Sản phẩm cắt" parent="stock.menu_warehouse_report"
+              action="stock_inventory_cut_view_action" sequence="99"/>
+
+</odoo>

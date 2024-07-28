@@ -1,0 +1,25 @@
+<odoo>
+    <data>
+        <record id="view_account_fiscal_year_form_custom" model="ir.ui.view">
+            <field name="name">account.fiscal.year.custom</field>
+            <field name="model">account.fiscal.year</field>
+            <field name="inherit_id" ref="account_accountant.action_account_fiscal_year_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet" position="inside">
+                    <notebook>
+                        <page string="Account Fiscal Month">
+                            <field name="lines">
+                                <tree editable="1">
+                                    <field name="account_fiscal_year_id" invisible="1"/>
+                                    <field name="name"/>
+                                    <field name="date_from"/>
+                                    <field name="date_to"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

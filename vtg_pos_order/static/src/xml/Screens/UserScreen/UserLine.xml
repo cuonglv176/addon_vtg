@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="UserLine" owl="1">
+        <tr t-attf-class="client-line {{highlight}}" t-att-data-id="props.user.id"
+            t-on-click="trigger('click-user', {user: props.user})">
+            <td>
+                <t t-esc="props.user.name or ''" />
+            </td>
+            <td class="client-line-email">
+                <t t-esc="props.user.login or ''" />
+                <span t-if="highlight"><br/></span>
+            </td>
+            <td class="client-line-last-column-placeholder oe_invisible"></td>
+        </tr>
+    </t>
+
+</templates>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_commission_employee_pivot" model="ir.ui.view">
+        <field name="name">commission.employee.report.pivot</field>
+        <field name="model">commission.employee.report</field>
+        <field name="arch" type="xml">
+            <pivot string="BÁO CÁO CHI TIẾT HOA HỒNG THEO NHÂN VIÊN" sample="1">
+                <field name="user_id" type="col"/>
+                <field name="date_order" interval="month" type="row"/>
+                <field name="discount_amount" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="commission_employee_report_view_tree" model="ir.ui.view">
+        <field name="name">commission.employee.report.view.tree</field>
+        <field name="model">commission.employee.report</field>
+        <field name="arch" type="xml">
+            <tree string="BÁO CÁO CHI TIẾT HOA HỒNG THEO NHÂN VIÊN">
+                <field name="order_name"/>
+                <field name="date_order" optional="show"/>
+                <field name="product_categ_id" optional="hide"/>
+                <field name="product_id" optional="show" />
+                <field name="user_id" optional="show"/>
+                <field name="quantity" optional="show"/>
+                <field name="discounted_amount" optional="show" sum="Sum of Discounted Amount"/>
+                <field name="rate" optional="show" />
+                <field name="calculate_amount" optional="show" sum="Sum of Calculate Amount"/>
+                <field name="percent" optional="show" />
+                <field name="discount_amount" optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_commission_employee_search" model="ir.ui.view">
+        <field name="name">commission.employee.report.search</field>
+        <field name="model">commission.employee.report</field>
+        <field name="arch" type="xml">
+            <search string="BÁO CÁO CHI TIẾT HOA HỒNG THEO NHÂN VIÊN">
+                <filter string="Date" name="year" date="date_order" default_period="this_year"/>
+                <filter name="month" date="date_order" default_period="this_month"/>
+                <separator/>
+                <field name="order_name"/>
+                <field name="user_id"/>
+                <field name="product_id"/>
+                <field name="product_categ_id"/>
+                <group expand="1" string="Group By">
+                    <filter string="Nhân viên" name="User" context="{'group_by':'user_id'}"/>
+                    <filter string="Đơn hàng" name="order_name" context="{'group_by':'order_name'}"/>
+                    <filter string="Ngày lập hóa đơn" name="date_order" context="{'group_by':'date_order'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_commission_employee" model="ir.actions.act_window">
+        <field name="name">BÁO CÁO CHI TIẾT HOA HỒNG THEO NHÂN VIÊN</field>
+        <field name="res_model">commission.employee.report</field>
+        <field name="view_mode">tree,pivot</field>
+        <field name="search_view_id" ref="view_commission_employee_search"/>
+    </record>
+
+    <menuitem id="menu_sale_order_commission_employee" name="BÁO CÁO CHI TIẾT HOA HỒNG THEO NHÂN VIÊN"
+              action="action_commission_employee" parent="sale.menu_sale_report" sequence="5"/>
+    <menuitem id="menu_pos_order_commission_employee" name="BÁO CÁO CHI TIẾT HOA HỒNG THEO NHÂN VIÊN"
+              action="action_commission_employee" parent="point_of_sale.menu_point_rep" sequence="5"/>
+</odoo>

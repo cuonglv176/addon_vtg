@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="approval_search_view_search_inherit" model="ir.ui.view">
+            <field name="name">approval_search_view_search_inherit</field>
+            <field name="model">approval.request</field>
+            <field name="inherit_id" ref="approvals.approval_search_view_search"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="product_line_ids" string="Sản phẩm"
+                           filter_domain="[('product_line_ids.product_id', 'ilike', self)]"/>
+                    <field name="x_bank_holder"/>
+                    <field name="x_bank_account"/>
+                    <field name="x_bank"/>
+                </field>
+                <xpath expr="//search" position="inside">
+                    <group expand="0" string="Group By" colspan="16">
+                        <filter string="Sản phẩm" name="request_product_ids"
+                                context="{'group_by':'request_product_ids'}"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="approval_product_line_view_tree_inherit" model="ir.ui.view">
+            <field name="name">approval_product_line_view_tree_inherit</field>
+            <field name="model">approval.product.line</field>
+            <field name="model">approval.product.line</field>
+            <field name="inherit_id" ref="approvals.approval_product_line_view_tree"/>
+            <field name="arch" type="xml">
+                <field name="quantity" position="after">
+                    <field name="x_price_unit_currency"/>
+                    <field name="x_exchange_rate"/>
+                    <field name="x_price_unit"/>
+                    <field name="x_tax_ids" widget="many2many_tags"/>
+                    <field name="x_price_total"/>
+                    <field name="x_partner_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="approval_request_view_form_inherit" model="ir.ui.view">
+            <field name="name">approval_request_view_form_inherit</field>
+            <field name="model">approval.request</field>
+            <field name="inherit_id" ref="approvals.approval_request_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='amount']" position="before">
+                    <field name="amount_pay" attrs="{'invisible': [('has_product', '!=', 'no')]}"/>
+                </xpath>
+
+                <xpath expr="//field[@name='amount']" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                    <attribute name="force_save">1</attribute>
+                    <attribute name="attrs">{'invisible': [('has_product', '!=', 'no')]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='amount']" position="after">
+                    <field name="x_purchase_state"/>
+                    <field name="x_bank_holder"/>
+                    <field name="x_bank_account"/>
+                    <field name="x_bank"/>
+                </xpath>
+
+
+            </field>
+        </record>
+
+        <record id="product_template_form_view_inherit_n" model="ir.ui.view">
+            <field name="name">product_template_form_view_inherit_n</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//div[@name='options']" position="inside">
+                    <span class="d-inline-block">
+                        <field name="x_is_expense"/>
+                        <label for="x_is_expense"/>
+                    </span>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

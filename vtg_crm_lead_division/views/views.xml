@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="vtg_crm_lead_division_form_view" model="ir.ui.view">
+            <field name="name">crm.lead.division.form</field>
+            <field name="model">crm.lead.division</field>
+            <field name="arch" type="xml">
+                <form string="vtg crm lead division">
+                    <header>
+<!--                        <button name="action_confirm" type="object" states="draft" string="Xác nhận"-->
+<!--                                class="oe_highlight"/>-->
+<!--                        <button name="action_cancel" type="object" states="confirmed" string="Hủy"/>-->
+                        <field name="state" readonly="1"
+                               statusbar_visible="draft,confirmed,cancel" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <h3 class="text-center">Mã:
+                            <field name="name" readonly="1" force_save="1"/>
+                        </h3>
+                        <group>
+                            <group>
+                                <field name="team_id" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="total_lead"/>
+                            </group>
+                            <group>
+                                <field name="date" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="department_id" readonly="1" force_save="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Chi tiết phân lead">
+                                <field name="line_ids" editable="bottom"
+                                       attrs="{'readonly':[('state','!=','draft')]}">
+                                    <tree string="Chi tiết KPI" editable="bottom">
+                                        <field name="date" readonly="1" force_save="1"/>
+                                        <field name="user_id"/>
+                                        <field name="qty_lead"/>
+                                        <field name="lead_count"/>
+                                        <field name="ok" widget="boolean_toggle"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="vtg_crm_lead_division_tree_view" model="ir.ui.view">
+            <field name="name">crm.lead.division.tree</field>
+            <field name="model">crm.lead.division</field>
+            <field name="arch" type="xml">
+                <tree decoration-success="state == 'confirmed'">
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="team_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="vtg_crm_lead_division_action" model="ir.actions.act_window">
+            <field name="name">DIVISION</field>
+            <field name="res_model">crm.lead.division</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="vtg_crm_lead_division_tree_view"/>
+        </record>
+
+
+
+        <menuitem id="vtg_crm_lead_division_menu" name="Phân chia Lead"
+                  action="vtg_crm_lead_division_action"
+                  sequence="2"
+                  parent="crm.crm_menu_root"
+                  groups="vtg_security.group_vtg_employee_team_sale"
+        />
+
+    </data>
+</odoo>

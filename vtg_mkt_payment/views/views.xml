@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+       <record id="vtg_crm_mkt_payment_tree_view" model="ir.ui.view">
+            <field name="name">crm.mkt.payment.tree</field>
+            <field name="model">vtg.crm.mkt.payment</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="date"/>
+                    <field name="user_id"/>
+                    <field name="reason"/>
+                    <field name="bank"/>
+                    <field name="amount" widget="monetary"/>
+                    <field name="lead_check"/>
+                    <field name="amount_account" widget="monetary"/>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="receive"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="vtg_crm_mkt_payment_action" model="ir.actions.act_window">
+            <field name="name">Tạm ứng</field>
+            <field name="res_model">vtg.crm.mkt.payment</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="vtg_crm_mkt_payment_tree_view"/>
+        </record>
+
+        <menuitem id="vtg_crm_kpi_mkt_menu" name="Tạm ứng"
+                  action="vtg_crm_mkt_payment_action"
+                  sequence="3"
+        />
+
+
+    </data>
+</odoo>

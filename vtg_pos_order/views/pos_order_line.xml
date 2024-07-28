@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="view_pos_pos_user_inherit_form" model="ir.ui.view">
+        <field name="name">view_pos_pos_user_inherit_form</field>
+        <field name="model">pos.order.line</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='lines']/tree/field[@name='qty']" position="before">
+                <field name="user_id"/>
+                <field name="user_master_id"/>
+                <field name="user_assistant_id"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

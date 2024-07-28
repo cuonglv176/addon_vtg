@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="view_warehouse_form_branch_inherit" model="ir.ui.view">
+        <field name="name">view.warehouse.form.branch.inherit</field>
+        <field name="model">stock.warehouse</field>
+        <field name="inherit_id" ref="stock.view_warehouse"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="x_branch_id" placeholder="e.g. Branch"
+                       options="{'no_create': True, 'no_create_edit': True}"/>
+            </field>
+
+        </field>
+    </record>
+
+</odoo>

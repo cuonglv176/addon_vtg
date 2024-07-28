@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_account_form_inherit_active" model="ir.ui.view">
+            <field name="name">account.account.custom</field>
+            <field name="model">account.account</field>
+            <field name="inherit_id" ref="account.view_account_form"/>
+            <field name="arch" type="xml">
+                <field name="group_id" position="after">
+                    <field name="active" widget="boolean_toggle"/>
+                    <field name="x_required_analytic" widget="boolean_toggle"/>
+                    <field name="x_required_expense_item" widget="boolean_toggle"/>
+                    <field name="x_required_product" widget="boolean_toggle"/>
+                    <field name="x_required_partner" widget="boolean_toggle"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_account_form_tree_inherit_active" model="ir.ui.view">
+            <field name="name">account.account.tree.custom</field>
+            <field name="model">account.account</field>
+            <field name="inherit_id" ref="account.view_account_list"/>
+            <field name="arch" type="xml">
+                <field name="reconcile" position="after">
+                    <field name="active" widget="boolean_toggle"/>
+                    <field name="x_required_analytic" widget="boolean_toggle"/>
+                    <field name="x_required_expense_item" widget="boolean_toggle"/>
+                    <field name="x_required_product" widget="boolean_toggle"/>
+                    <field name="x_required_partner" widget="boolean_toggle"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

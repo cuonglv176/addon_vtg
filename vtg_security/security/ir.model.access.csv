@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_res_partner_director,access_res_partner_director,base.model_res_partner,vtg_security.group_vtg_director,1,0,0,0
+access_crm_lead_director,access_crm_lead_director,crm.model_crm_lead,vtg_security.group_vtg_director,1,0,0,0
+access_crm_lead_booking,access_crm_lead_booking_director,vtg_custom_lead.model_crm_lead_booking,vtg_security.group_vtg_director,1,0,0,0
+access_crm_lead_booking_detail,access_crm_lead_booking_detail_director,vtg_custom_lead.model_crm_lead_booking_detail,vtg_security.group_vtg_director,1,0,0,0
+access_vtg_branch,access_vtg_branch_director,vtg_custom_lead.model_vtg_branch,vtg_security.group_vtg_director,1,0,0,0
+access_sale_order,access_sale_order_director,sale.model_sale_order,vtg_security.group_vtg_director,1,0,0,0
+access_sale_order_line,access_sale_order_line_director,sale.model_sale_order_line,vtg_security.group_vtg_director,1,0,0,0

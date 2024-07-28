@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_config_settings_account_erpviet_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.account.erpviet</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="40"/>
+            <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <div id="analytic" position="after">
+                    <div class="row mt16 o_settings_container" id="account_erpviet_settings">
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <label for="x_allow_record_account_move"/>
+                                <div class="text-muted">
+                                    Allow access to the following journal entries.
+                                </div>
+                                <field name="x_allow_record_account_move"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>

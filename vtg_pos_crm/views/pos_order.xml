@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_pos_pos_booking_form_inherit" model="ir.ui.view">
+        <field name="name">view.pos.pos.booking.form.inherit</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+        <field name="arch" type="xml">
+            <field name="session_id" position="after">
+                <field name="booking_id"/>
+                <field name="marketing_id"/>
+                <field name="department_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_pos_order_booking_tree_inherit" model="ir.ui.view">
+        <field name="name">view.pos.order.booking.tree.inherit</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_order_tree"/>
+        <field name="arch" type="xml">
+            <field name="pos_reference" position="after">
+                <field name="booking_id"/>
+            </field>
+        </field>
+    </record>
+
+    <menuitem id="menu_pos_order_sale" name="Đơn hàng POS" parent="sale.sale_order_menu"
+              action="point_of_sale.action_pos_pos_form" sequence="2"/>
+</odoo>

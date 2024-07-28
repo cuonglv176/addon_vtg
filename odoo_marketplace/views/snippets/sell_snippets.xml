@@ -1,0 +1,860 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+<odoo>
+
+    <template id="snippet_1_section_1" name="Format 1">
+        <section>
+            <div>
+                <div class="leftContainer">
+                    <div class="promo">
+                        <div class="sell_page_main_div_snipp2" >
+                            <div class="sell_page_main_div_snipp2_bg_img" style="background-image: url('/odoo_marketplace/static/src/img/Hero-Banner.png')">
+                                <div class="inner_page_main_div_2">
+                                    <h2 class="mb-2 main_head_snipp_2">Why still Offline, Start Selling Online with us!</h2>
+                                    <div class="my-2 main_center_snipp2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </div>
+                                    <div class="my-2" style="font-family: Open Sans;font-style: normal;font-weight: 600;font-size: 22px;line-height: 165.7%;text-transform: capitalize;color: #FFF;">Why still Offline, Start Selling Online with us!</div>
+                                    <div class="mb-2 store_button" id="open_store_button">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+    <template id="snippet_1_section_2" name="Format 1">
+        <section>
+            <div class="container-fluid" style="padding-bottom:45px;padding-top:16px;">
+                <div class="row px-4">
+                    <h2 class="ml-4" style="padding:5px;text-transform: uppercase;font-weight:600;">Process Of Selling with Us</h2>
+                </div>
+                <div class="row mb16 px-4 py-2 justify-content-center" >
+                    <div class="col-md-10 mb-3" style="background: #FFFFFF;box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.15);border-radius: 2px;font-family: 'Open Sans', sans-serif;border-radius: 10px;">
+                        <div class="col-md-12 d-flex align-items-center my-3 pl-2">
+                            <div>
+                                <img src="/odoo_marketplace/static/src/img/snippet_1/icon-shop.png" class="mx-auto" alt="Shop Icon"/>
+                            </div>
+                            <div class="ml-3" style="color:#333333;font-weight: 600;font-size: 18px;line-height: 34px;color:#554D4D;">
+                                <h3>Open A New Shop</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-12 pl-2" style="color: #777777;text-align: justify; font-size: 16px;line-height: 26px;font-weight:400;">
+                            <div><p>By opening a shop at our marketplace you can expose more of your products to more potential customers. Your best opportunity for growth could be selling in our online marketplace.
+                            </p></div>
+                        </div>
+                    </div>
+                    <div class="col-md-10 mb-3" style="background: #FFFFFF;box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.15);border-radius: 2px;font-family: 'Open Sans', sans-serif;border-radius: 10px;">
+                        <div class="col-md-12 d-flex align-items-center my-3 pl-2">
+                            <div>
+                                <img src="/odoo_marketplace/static/src/img/snippet_1/icon-product.png" class="mx-auto" alt="Product Icon"/>
+                            </div>
+                            <div class="ml-3" style="color:#333333;font-weight: 600;font-size: 18px;line-height: 34px;color:#554D4D;">
+                                <h3>Sell Products</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-12 pl-2" style="color: #777777;text-align: justify; font-size: 16px;line-height: 26px;font-weight:400;">
+                            <div><p>Business is all about trading. It's all about creating a product so good that people pay for it. Increase your sales figure from our high traffic channel.
+                            </p></div>
+                        </div>
+                    </div>
+                    <div class="col-md-10 mb-3" style="background: #FFFFFF;box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.15);border-radius: 2px;font-family: 'Open Sans', sans-serif;border-radius: 10px;">
+                        <div class="col-md-12 d-flex align-items-center my-3 pl-2">
+                            <div>
+                                <img src="/odoo_marketplace/static/src/img/snippet_1/icon-commission.png" class="mx-auto" alt="Commission Icon"/>
+                            </div>
+                            <div class="ml-3" style="color:#333333;font-weight: 600;font-size: 18px;line-height: 34px;color:#554D4D;">
+                                <h3>Get Quick Commission</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-12 pl-2" style="color: #777777;text-align: justify; font-size: 16px;line-height: 26px;font-weight:400;">
+                            <div><p>Be smart and start earning the commission whenever a product of yours is sold through our website. Commission Management provides full transparency and flexibility for both buy-side and sell-side.
+                            </p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+    <template id="snippet_1_section_3" name="Format 1">
+        <section>
+            <div class="container" style="margin-bottom:35px;">
+                <div class="row mt16 ml-sm-2">
+                    <div class="col-10 offset-1">
+                        <h2 style="padding:5px;text-transform: uppercase;font-weight:600;font-size:22px;font-family:Open Sans;">Here are some great Facilities/Perks of our Marketplace Store</h2>
+                    </div>
+                </div>
+                <div class="row mt64 ">
+                    <div class="col-md-10 offset-md-1 d-flex align-items-center" style="
+                    /* border-radius: 145px 122px 135px 7.5px; */
+                    border-radius: 200px 10px 10px 200px;
+                    -moz-border-radius: 200px 10px 10px 200px;
+                    -webkit-border-radius: 200px 10px 10px 200px;
+                    border: 0px dashed #080208;z-index:9;
+                    ">
+                        <div class="row d-flex align-items-center justify-content-start " >
+                            <div class="col-md-10">
+                                <div class="row d-flex align-items-center justify-content-start px-1 py-3 border_right_content top_border_extent" style="">
+                                    <div class="col-md-5 col-sm-12 d-flex justify-content-center justify-content-md-start">
+                                        <div class="d-flex align-items-center justify-content-center" style="background: #FFFFFF;box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25); padding:4px;border-radius:50%;width: 250px;height: 250px;">
+                                            <img src="/odoo_marketplace/static/src/img/snippet_1/icon-1.png" style="height:150px;" class="img-fluid"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7 col-sm-12">
+                                        <div class="feature-text">Open a New Shop</div>
+                                        <div class="">By opening a shop at our marketplace you can expose more of your products to more potential customers. Your best opportunity for growth could be selling in our online marketplace.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:-2px;z-index:-99999;">
+                    <div class="col-md-10 offset-md-1 d-flex align-items-center" style="
+                    /* border-radius: 145px 122px 135px 7.5px; */
+                    border-radius: 10px 200px 200px 10px;
+                    -moz-border-radius: 10px 200px 200px 10px;
+                    -webkit-border-radius: 10px 200px 200px 10px;
+                    border: 0px dashed #080208;
+                    ">
+                        <div class="row d-flex align-items-center justify-content-end" >
+                            <div class="col-md-10">
+                                <div class="row d-flex align-items-center justify-content-start px-1 py-3 border_left_content" style="">
+                                    <div class="col-md-7  col-sm-12">
+                                        <div class="feature-text">Multi Support</div>
+                                        <div class="">Our company does not want to be in a single-vendor lock-in arrangement, Multi-vendor support setups bring a numerous of benefits thus we provide Multi-vendor/seller support.</div>
+                                    </div>
+                                    <div class="col-md-5 col-sm-12 d-flex justify-content-center justify-content-md-end">
+                                        <div class="d-flex align-items-center justify-content-center" style="background: #FFFFFF;box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25); padding:4px;border-radius:50%;width: 250px;height: 250px;">
+                                            <img src="/odoo_marketplace/static/src/img/snippet_1/icon-2.png" style="height:150px;" class="img-fluid"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:-2px;" >
+                    <div class="col-md-10 offset-md-1 d-flex align-items-center" style="
+                    /* border-radius: 145px 122px 135px 7.5px; */
+                    border-radius: 200px 10px 10px 200px;
+                    -moz-border-radius: 200px 10px 10px 200px;
+                    -webkit-border-radius: 200px 10px 10px 200px;
+                    border: 0px dashed #080208;z-index:9;
+                    ">
+                        <div class="row d-flex align-items-center justify-content-start " >
+                            <div class="col-md-10">
+                                <div class="row d-flex align-items-center justify-content-start px-1 py-3 border_right_content" style="">
+                                    <div class="col-md-5 col-sm-12 d-flex justify-content-center justify-content-md-start">
+                                        <div class="d-flex align-items-center justify-content-center" style="background: #FFFFFF;box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25); padding:4px;border-radius:50%;width: 250px;height: 250px;">
+                                            <img src="/odoo_marketplace/static/src/img/snippet_1/icon-3.png" style="height:150px;" class="img-fluid"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7 col-sm-12">
+                                        <div class="feature-text">Commission Management</div>
+                                        <div class="">Since trust and transparency are an important aspect of a business hence we follow Commission Management that provides the full transparency that shows our sellers the commission charged when their product is sold from our website.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:-2px;z-index:-99999;">
+                    <div class="col-md-10 offset-md-1 d-flex align-items-center" style="
+                    /* border-radius: 145px 122px 135px 7.5px; */
+                    border-radius: 10px 200px 200px 10px;
+                    -moz-border-radius: 10px 200px 200px 10px;
+                    -webkit-border-radius: 10px 200px 200px 10px;
+                    border: 0px dashed #080208;
+                    ">
+                        <div class="row d-flex align-items-center justify-content-end" >
+                            <div class="col-md-10">
+                                <div class="row d-flex align-items-center justify-content-start px-1 py-3 border_left_content" style="">
+                                    <div class="col-md-7  col-sm-12">
+                                        <div class="feature-text">Various Invoice Generated Option </div>
+                                        <div class="">Our company does not want to be in a single-vendor lock-in arrangement, Multi-vendor support setups bring a numerous of benefits thus we provide Multi-vendor/seller support.</div>
+                                    </div>
+                                    <div class="col-md-5 col-sm-12 d-flex justify-content-center justify-content-md-end">
+                                        <div class="d-flex align-items-center justify-content-center" style="background: #FFFFFF;box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25); padding:4px;border-radius:50%;width: 250px;height: 250px;">
+                                            <img src="/odoo_marketplace/static/src/img/snippet_1/icon-4.png" style="height:150px;" class="img-fluid"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:-2px;">
+                    <div class="col-md-10 offset-md-1 d-flex align-items-center" style="
+                    /* border-radius: 145px 122px 135px 7.5px; */
+                    border-radius: 200px 10px 10px 200px;
+                    -moz-border-radius: 200px 10px 10px 200px;
+                    -webkit-border-radius: 200px 10px 10px 200px;
+                    border: 0px dashed #080208;z-index:9;
+                    ">
+                        <div class="row d-flex align-items-center justify-content-start " >
+                            <div class="col-md-10">
+                                <div class="row d-flex align-items-center justify-content-start px-1 py-3 border_right_content" style="">
+                                    <div class="col-md-5 col-sm-12 d-flex justify-content-center justify-content-md-start">
+                                        <div class="d-flex align-items-center justify-content-center" style="background: #FFFFFF;box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25); padding:4px;border-radius:50%;width: 250px;height: 250px;">
+                                            <img src="/odoo_marketplace/static/src/img/snippet_1/icon-5.png" style="height:150px;" class="img-fluid"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7 col-sm-12">
+                                        <div class="feature-text">Product Collection And Management</div>
+                                        <div class="">Our company does not want to be in a single-vendor lock-in arrangement, Multi-vendor support setups bring a numerous of benefits thus we provide Multi-vendor/seller support.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:-2px;z-index:-99999;">
+                    <div class="col-md-10 offset-md-1 d-flex align-items-center" style="
+                    /* border-radius: 145px 122px 135px 7.5px; */
+                    border-radius: 10px 200px 200px 10px;
+                    -moz-border-radius: 10px 200px 200px 10px;
+                    -webkit-border-radius: 10px 200px 200px 10px;
+                    border: 0px dashed #080208;
+                    ">
+                        <div class="row d-flex align-items-center justify-content-end" >
+                            <div class="col-md-10">
+                                <div class="row d-flex align-items-center justify-content-start px-1 py-3 border_left_content show_bottom_border" style="">
+                                    <div class="col-md-7 col-sm-12">
+                                        <div class="feature-text">View Other Seller Profile</div>
+                                        <div class="">The marketplace is made up of items offered by a variety of different merchants, both companies, and individuals. Now you can take a peek inside their seller profile and look at what other sellers are selling.</div>
+                                    </div>
+                                    <div class="col-md-5 col-sm-12 d-flex justify-content-center justify-content-md-end">
+                                        <div class="d-flex align-items-center justify-content-center" style="background: #FFFFFF;box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25); padding:4px;border-radius:50%;width: 250px;height: 250px;">
+                                            <img src="/odoo_marketplace/static/src/img/snippet_1/icon-6.png" style="height:150px;" class="img-fluid"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+    <template id="snippet_2_section_1" name="Format 2">
+        <section>
+                <div class="leftContainer">
+                <div class="promo">
+                    <div class="sell_page_main_div_snipp3" >
+                        <div class="sell_page_main_div_snipp3_bg_img" style="background-image: url('/odoo_marketplace/static/src/img/Hero-Banner.png')">
+
+                            <div class="inner_page_main_div_3 text-center">
+                                <h2 class="display-4 mb-4">Why still Offline, Start Selling Online with us!</h2>
+                                <p class="lead my-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                                <div id="open_store_button">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+    <template id="snippet_2_section_2" name="Format 2">
+        <section>
+            <div class="container-fluid" style="padding-bottom:45px;padding-top:16px;margin-top: 120px;">
+                <div class="row px-4">
+                    <h2 class="mx-auto" style="padding:5px;text-transform: uppercase;font-weight:600;">Process Of Selling with Us</h2>
+                </div>
+                <div class="container">
+                    <div class="row mb16 mt32 justify-content-center" >
+                        <div class="col-md-4 text-center d-flex flex-column" style="font-family: 'Open Sans', sans-serif;">
+                                <div class="my-1">
+                                    <img src="/odoo_marketplace/static/src/img/snippet_2/icon-shop.png" class="mx-auto"/>
+                                </div>
+                                <div class="my-1" style="color:#333333;font-weight: 600;font-size: 18px;line-height: 34px;color:#554D4D;">
+                                    <h3>Open A New Shop</h3>
+                                </div>
+
+                                <div style="color: #777777;text-align: justify; font-size: 16px;line-height: 26px;font-weight:400;">
+                                    <div><p>By opening a shop at our marketplace you can expose more of your products to more potential customers. Your best opportunity for growth could be selling in our online marketplace.
+                                    </p></div>
+                                </div>
+                        </div>
+                        <div class="col-md-4 text-center d-flex flex-column" style="font-family: 'Open Sans', sans-serif;">
+                                <div class="my-1">
+                                    <img src="/odoo_marketplace/static/src/img/snippet_2/icon-product.png" class="mx-auto"/>
+                                </div>
+                                <div class="my-1" style="color:#333333;font-weight: 600;font-size: 18px;line-height: 34px;color:#554D4D;">
+                                    <h3>Sell Products</h3>
+                                </div>
+
+                                <div class="my-1" style="color: #777777;text-align: justify; font-size: 16px;line-height: 26px;font-weight:400;">
+                                    <div><p>Business is all about trading. It's all about creating a product so good that people pay for it. Increase your sales figure from our high traffic channel.
+                                </p></div>
+                                </div>
+                        </div>
+                        <div class="col-md-4 text-center d-flex flex-column" style="font-family: 'Open Sans', sans-serif;">
+                                <div class="my-1">
+                                    <img src="/odoo_marketplace/static/src/img/snippet_2/icon-commission.png" class="mx-auto"/>
+                                </div>
+                                <div class="my-1" style="color:#333333;font-weight: 600;font-size: 18px;line-height: 34px;color:#554D4D;">
+                                    <h3>Get Quick Commission</h3>
+                                </div>
+
+                                <div class="my-1" style="color: #777777;text-align: justify; font-size: 16px;line-height: 26px;font-weight:400;">
+                                    <div><p>Be smart and start earning the commission whenever a product of yours is sold through our website. Commission Management provides full transparency and flexibility for both buy-side and sell-side.
+                                </p></div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+    <template id="snippet_2_section_3" name="Format 2">
+        <section>
+            <div class="container" style="margin-bottom:35px;">
+                <div class="row mt16">
+                    <h2 class="mx-auto" style="padding:5px;text-transform: uppercase;font-weight:600;font-size:22px;font-family:Open Sans;">Here are some great Facilities/Perks of our Marketplace Store</h2>
+                </div>
+                <div class="row mt64">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-1 d-flex align-items-center justify-content-center px-3">
+                                <h2 style="font-family: Open Sans;font-style: normal;font-weight: 300;font-size: 108px;line-height: 65.7%;text-transform: capitalize;color: #ECF1FF;">1</h2>
+                            </div>
+                            <div class="col-11" style="background: #FFFFFF;box-shadow: 0px 2px 13px rgba(0, 0, 0, 0.1);border-radius: 10px;">
+                               <div class="row p-4 d-flex align-items-center justify-content-center">
+                                    <div class="col-md-2 col-sm-12 text-center my-1 img_border">
+                                        <img src="/odoo_marketplace/static/src/img/snippet_2/icon-1.png" style="height:92px;width:92px;" class="img-fluid"/>
+                                    </div>
+
+                                    <div class="col-md-10 col-sm-12">
+                                        <div class="feature-text my-1">Open a New Shop</div>
+                                            <div class="my-1">By opening a shop at our marketplace you can expose more of your products to more potential customers. Your best opportunity for growth could be selling in our online marketplace.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt64">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-1 d-flex align-items-center justify-content-center px-3">
+                                <h2 style="font-family: Open Sans;font-style: normal;font-weight: 300;font-size: 108px;line-height: 65.7%;text-transform: capitalize;color: #ECF1FF;">2</h2>
+                            </div>
+                            <div class="col-11" style="background: #FFFFFF;box-shadow: 0px 2px 13px rgba(0, 0, 0, 0.1);border-radius: 10px;">
+                               <div class="row p-4 d-flex align-items-center justify-content-center">
+                                    <div class="col-md-2 col-sm-12 text-center my-1 img_border">
+                                        <img src="/odoo_marketplace/static/src/img/snippet_2/icon-2.png" style="height:92px;width:92px;" class="img-fluid"/>
+                                    </div>
+
+                                    <div class="col-md-10 col-sm-12">
+                                        <div class="feature-text my-1">Multi Support</div>
+                                        <div class="my-1">Our company does not want to be in a single-vendor lock-in arrangement, Multi-vendor support setups bring a numerous of benefits thus we provide Multi-vendor/seller support.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt64">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-1 d-flex align-items-center justify-content-center px-3">
+                                <h2 style="font-family: Open Sans;font-style: normal;font-weight: 300;font-size: 108px;line-height: 65.7%;text-transform: capitalize;color: #ECF1FF;">3</h2>
+                            </div>
+                            <div class="col-11" style="background: #FFFFFF;box-shadow: 0px 2px 13px rgba(0, 0, 0, 0.1);border-radius: 10px;">
+                               <div class="row p-4 d-flex align-items-center justify-content-center">
+                                    <div class="col-md-2 col-sm-12 text-center my-1 img_border">
+                                        <img src="/odoo_marketplace/static/src/img/snippet_2/icon-3.png" style="height:92px;width:92px;" class="img-fluid"/>
+                                    </div>
+
+                                    <div class="col-md-10 col-sm-12">
+                                        <div class="feature-text my-1">Commission Management</div>
+                                        <div class="my-1">Since trust and transparency are an important aspect of a business hence we follow Commission Management that provides the full transparency that shows our sellers the commission charged when their product is sold from our website.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt64">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-1 d-flex align-items-center justify-content-center px-3">
+                                <h2 style="font-family: Open Sans;font-style: normal;font-weight: 300;font-size: 108px;line-height: 65.7%;text-transform: capitalize;color: #ECF1FF;">4</h2>
+                            </div>
+                            <div class="col-11" style="background: #FFFFFF;box-shadow: 0px 2px 13px rgba(0, 0, 0, 0.1);border-radius: 10px;">
+                               <div class="row p-4 d-flex align-items-center justify-content-center">
+                                    <div class="col-md-2 col-sm-12 text-center my-1 img_border">
+                                        <img src="/odoo_marketplace/static/src/img/snippet_2/icon-4.png" style="height:92px;width:92px;" class="img-fluid"/>
+                                    </div>
+
+                                    <div class="col-md-10 col-sm-12">
+                                        <div class="feature-text my-1">Various Invoice Generated Option </div>
+                                        <div class="my-1">Our company does not want to be in a single-vendor lock-in arrangement, Multi-vendor support setups bring a numerous of benefits thus we provide Multi-vendor/seller support.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt64">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-1 d-flex align-items-center justify-content-center px-3">
+                                <h2 style="font-family: Open Sans;font-style: normal;font-weight: 300;font-size: 108px;line-height: 65.7%;text-transform: capitalize;color: #ECF1FF;">5</h2>
+                            </div>
+                            <div class="col-11" style="background: #FFFFFF;box-shadow: 0px 2px 13px rgba(0, 0, 0, 0.1);border-radius: 10px;">
+                               <div class="row p-4 d-flex align-items-center justify-content-center">
+                                    <div class="col-md-2 col-sm-12 text-center my-1 img_border">
+                                        <img src="/odoo_marketplace/static/src/img/snippet_2/icon-5.png" style="height:92px;width:92px;" class="img-fluid"/>
+                                    </div>
+
+                                    <div class="col-md-10 col-sm-12">
+                                        <div class="feature-text my-1">Product Collection And Management</div>
+                                        <div class="my-1">Our company does not want to be in a single-vendor lock-in arrangement, Multi-vendor support setups bring a numerous of benefits thus we provide Multi-vendor/seller support.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt64">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-1 d-flex align-items-center justify-content-center px-3">
+                                <h2 style="font-family: Open Sans;font-style: normal;font-weight: 300;font-size: 108px;line-height: 65.7%;text-transform: capitalize;color: #ECF1FF;">6</h2>
+                            </div>
+                            <div class="col-11" style="background: #FFFFFF;box-shadow: 0px 2px 13px rgba(0, 0, 0, 0.1);border-radius: 10px;">
+                               <div class="row p-4 d-flex align-items-center justify-content-center">
+                                    <div class="col-md-2 col-sm-12 text-center my-1 img_border">
+                                        <img src="/odoo_marketplace/static/src/img/snippet_2/icon-6.png" style="height:92px;width:92px;" class="img-fluid"/>
+                                    </div>
+
+                                    <div class="col-md-10 col-sm-12">
+                                        <div class="feature-text my-1">View Other Seller Profile</div>
+                                        <div class="my-1">The marketplace is made up of items offered by a variety of different merchants, both companies, and individuals. Now you can take a peek inside their seller profile and look at what other sellers are selling.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+    <template id="snippet_3_section_1" name="Format 3">
+        <section>
+            <div class="leftContainer">
+                <div class="promo">
+                    <div class="sell_page_main_div_snipp4">
+                        <div class="sell_page_main_div_snipp4_bg_img" style="background-image: url('/odoo_marketplace/static/src/img/Hero-Banner.png')">
+
+                            <div class="inner_page_main_div_4 text-center mt16">
+                                <h2 class="display-4 mb-4 main_head">Why still Offline, Start Selling Online with us!</h2>
+                                <p class="lead my-2">Selling Your Site,  best opportunity for growth!!!</p>
+                                <div id="open_store_button">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center align-items-center">
+                            <div class="my-4 text-center">
+                                <p>More than <span style="font-weight:bold;"> 5,000 Sellers</span> are part of our <span style="font-weight:bold;">Marketplace Store,</span> <br/>Join us today and get all the excited perks.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+    <template id="snippet_3_section_2" name="Format 3">
+        <section>
+            <div class="container-fluid" style="padding-bottom:45px;padding-top:16px;margin-top: 20px;">
+                <div class="row px-4">
+                    <h2 class="mx-auto" style="padding:5px;text-transform: uppercase;font-weight:600;font-size: 22px;">Process Of Selling with Us</h2>
+                </div>
+                <div class="container">
+                    <div class="row mb16 mt32 justify-content-center" >
+                        <div class="col-md-4 text-center d-flex flex-column" >
+                            <div class="p-4" style="font-family: Poppins, sans-serif;background: #FFFFFF;box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);border-radius: 20px; height:100% !important;">
+                                <div class="d-flex align-items-center flex-column flex-lg-row">
+                                    <div class="m-2">
+                                        <img src="/odoo_marketplace/static/src/img/snippet_3/icon-shop.png" class="mx-auto"/>
+                                    </div>
+                                    <div class="m-2" style="color:#333333;font-weight: 600;font-size: 18px;line-height: 34px;color:#554D4D;">
+                                        <p>Open A New Shop</p>
+                                    </div>
+                                </div>
+                                <div style="color: #777777;text-align: justify; font-size: 16px;line-height: 26px;font-weight:400;">
+                                    <p>By opening a shop at our marketplace you can expose more of your products to more potential customers. Your best opportunity for growth could be selling in our online marketplace.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center d-flex flex-column" >
+                            <div class="p-4" style="font-family: Poppins, sans-serif;background: #FFFFFF;box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);border-radius: 20px;height:100% !important;">
+                                <div class="d-flex align-items-center flex-column flex-lg-row">
+                                    <div class="m-2">
+                                        <img src="/odoo_marketplace/static/src/img/snippet_3/icon-product.png" class="mx-auto"/>
+                                    </div>
+                                    <div class="m-2" style="color:#333333;font-weight: 600;font-size: 18px;line-height: 34px;color:#554D4D;">
+                                        <p>Sell Products</p>
+                                    </div>
+                                </div>
+                                <div style="color: #777777;text-align: justify; font-size: 16px;line-height: 26px;font-weight:400;">
+                                    <p>Business is all about trading. It's all about creating a product so good that people pay for it. Increase your sales figure from our high traffic channel.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center d-flex flex-column" >
+                            <div class="p-4" style="font-family: Poppins, sans-serif;background: #FFFFFF;box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);border-radius: 20px;height:100% !important;">
+                                <div class="d-flex align-items-center flex-column flex-lg-row">
+                                    <div class="m-2">
+                                        <img src="/odoo_marketplace/static/src/img/snippet_3/icon-commission.png" class="mx-auto"/>
+                                    </div>
+                                    <div class="m-2" style="color:#333333;font-weight: 600;font-size: 18px;line-height: 34px;color:#554D4D;">
+                                        <p>Get Quick Commission</p>
+                                    </div>
+                                </div>
+                                <div style="color: #777777;text-align: justify; font-size: 16px;line-height: 26px;font-weight:400;">
+                                    <p>Be smart and start earning the commission whenever a product of yours is sold through our website. Commission Management provides full transparency and flexibility for both buy-side and sell-side.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+    <template id="snippet_3_section_3" name="Format 3">
+        <section>
+            <div class="container-fluid" style="background: #FCFFFE;">
+                <div class="container my-4" style="margin-bottom:35px;">
+                <div class="row text-center">
+                    <h2 class="mx-auto mt-4" style="padding:5px;text-transform: uppercase;font-weight:600;font-size:22px;font-family:Open Sans;">Here are some great Facilities/Perks of our <br/>Marketplace Store</h2>
+                </div>
+                <div class="row mt64 px-3">
+                    <div class="col-md-7 col-sm-12 d-flex">
+                        <div>
+                            <div style="height:10px;width:10px;border:3px solid #A9C7FA;margin-top:18px;">
+                            </div>
+                        </div>
+                        <div class="text-center mx-2">
+                            <h2 style="font-family: Poppins;font-style: normal;font-weight: 600;font-size: 54px;line-height: 75.7%;text-transform: capitalize;color: #A9C7FA;">1</h2>
+                        </div>
+                        <div class="px-4 py-2">
+                            <div class="feature-text">Open a New Shop</div>
+                            <div style="font-family: Poppins;font-style: normal;font-weight: normal;font-size: 16px;line-height: 165.7%;text-transform: capitalize;color: #4C5267;">By opening a shop at our marketplace you can expose more of your products to more potential customers. Your best opportunity for growth could be selling in our online marketplace.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-12 d-flex justify-content-center align-items-center">
+                        <div>
+                            <img src="/odoo_marketplace/static/src/img/snippet_3/illustration-open-a-store.png" style="height:150px;" class="img-fluid"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt64 px-3">
+                    <div class="col-md-5 col-sm-12 d-flex justify-content-center align-items-center">
+                        <div>
+                            <img src="/odoo_marketplace/static/src/img/snippet_3/illustration-Support.png" style="height:150px;" class="img-fluid"/>
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-sm-12 d-flex">
+                        <div>
+                            <div style="height:10px;width:10px;border:3px solid #A9C7FA;margin-top:18px;">
+                            </div>
+                        </div>
+                        <div class="text-center mx-2">
+                            <h2 style="font-family: Poppins;font-style: normal;font-weight: 600;font-size: 54px;line-height: 75.7%;text-transform: capitalize;color: #A9C7FA;">2</h2>
+                        </div>
+                        <div class="px-4 py-2">
+                            <div class="feature-text">Multi Support</div>
+                            <div style="font-family: Poppins;font-style: normal;font-weight: normal;font-size: 16px;line-height: 165.7%;text-transform: capitalize;color: #4C5267;">Our company does not want to be in a single-vendor lock-in arrangement, Multi-vendor support setups bring a numerous of benefits thus we provide Multi-vendor/seller support.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt64 px-3">
+                    <div class="col-md-7 col-sm-12 d-flex">
+                        <div>
+                            <div style="height:10px;width:10px;border:3px solid #A9C7FA;margin-top:18px;">
+                            </div>
+                        </div>
+                        <div class="text-center mx-2">
+                            <h2 style="font-family: Poppins;font-style: normal;font-weight: 600;font-size: 54px;line-height: 75.7%;text-transform: capitalize;color: #A9C7FA;">3</h2>
+                        </div>
+                        <div class="px-4 py-2">
+                            <div class="feature-text">Commission Management</div>
+                            <div style="font-family: Poppins;font-style: normal;font-weight: normal;font-size: 16px;line-height: 165.7%;text-transform: capitalize;color: #4C5267;">Since trust and transparency are an important aspect of a business hence we follow Commission Management that provides the full transparency that shows our sellers the commission charged when their product is sold from our website.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-12 d-flex justify-content-center align-items-center">
+                        <div>
+                            <img src="/odoo_marketplace/static/src/img/snippet_3/Illustration-commission.png" style="height:150px;" class="img-fluid"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt64 px-3">
+                    <div class="col-md-5 col-sm-12 d-flex justify-content-center align-items-center">
+                        <div>
+                            <img src="/odoo_marketplace/static/src/img/snippet_3/illustration-generate-invoice.png" style="height:150px;" class="img-fluid"/>
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-sm-12 d-flex">
+                        <div>
+                            <div style="height:10px;width:10px;border:3px solid #A9C7FA;margin-top:18px;">
+                            </div>
+                        </div>
+                        <div class="text-center mx-2">
+                            <h2 style="font-family: Poppins;font-style: normal;font-weight: 600;font-size: 54px;line-height: 75.7%;text-transform: capitalize;color: #A9C7FA;">4</h2>
+                        </div>
+                        <div class="px-4 py-2">
+                            <div class="feature-text">Various Invoice Generated Option </div>
+                            <div style="font-family: Poppins;font-style: normal;font-weight: normal;font-size: 16px;line-height: 165.7%;text-transform: capitalize;color: #4C5267;">Our company does not want to be in a single-vendor lock-in arrangement, Multi-vendor support setups bring a numerous of benefits thus we provide Multi-vendor/seller support.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt64 px-3">
+                    <div class="col-md-7 col-sm-12 d-flex">
+                        <div>
+                            <div style="height:10px;width:10px;border:3px solid #A9C7FA;margin-top:18px;">
+                            </div>
+                        </div>
+                        <div class="text-center mx-2">
+                            <h2 style="font-family: Poppins;font-style: normal;font-weight: 600;font-size: 54px;line-height: 75.7%;text-transform: capitalize;color: #A9C7FA;">5</h2>
+                        </div>
+                        <div class="px-4 py-2">
+                            <div class="feature-text">Product Collection And Management</div>
+                            <div style="font-family: Poppins;font-style: normal;font-weight: normal;font-size: 16px;line-height: 165.7%;text-transform: capitalize;color: #4C5267;">Since trust and transparency are an important aspect of a business hence we follow Commission Management that provides the full transparency that shows our sellers the commission charged when their product is sold from our website.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-12 d-flex justify-content-center align-items-center">
+                        <div>
+                            <img src="/odoo_marketplace/static/src/img/snippet_3/Illustration-manage-collection.png" style="height:150px;" class="img-fluid"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt64 px-3">
+                    <div class="col-md-5 col-sm-12 d-flex justify-content-center align-items-center">
+                        <div>
+                            <img src="/odoo_marketplace/static/src/img/snippet_3/illustration-generate-invoice (1).png" style="height:150px;" class="img-fluid"/>
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-sm-12 d-flex">
+                        <div>
+                            <div style="height:10px;width:10px;border:3px solid #A9C7FA;margin-top:18px;">
+                            </div>
+                        </div>
+                        <div class="text-center mx-2">
+                            <h2 style="font-family: Poppins;font-style: normal;font-weight: 600;font-size: 54px;line-height: 75.7%;text-transform: capitalize;color: #A9C7FA;">6</h2>
+                        </div>
+                        <div class="px-4 py-2">
+                            <div class="feature-text">View Other Seller Profile</div>
+                            <div style="font-family: Poppins;font-style: normal;font-weight: normal;font-size: 16px;line-height: 165.7%;text-transform: capitalize;color: #4C5267;">The marketplace is made up of items offered by a variety of different merchants, both companies, and individuals. Now you can take a peek inside their seller profile and look at what other sellers are selling.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+    </template>
+    <template id="snippet_4_section_1" name="Format 4">
+        <section>
+            <div class="leftContainer">
+                <div class="promo">
+                    <div style="height: 500px;">
+                    </div>
+                    <div class="hilight" style="padding:5%">
+                    </div>
+                    <div class="sell_page_main_div" style="background-image: url('/odoo_marketplace/static/src/img/Hero-Banner.png')">
+                        <h2>Why still Offline, Start Selling Online with us!</h2>
+                        <div id="open_store_button">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+    <template id="snippet_4_section_2" name="Format 4">
+        <section>
+            <div class="container-fluid" style="padding-bottom:45px;padding-top:16px;background-color: #f9f9f8;">
+                <div class="row justify-content-center">
+                    <h2 class="text-center" style="padding:5px;">More than 5,000 Sellers are part of our Marketplace Store,<br/>Join us today and get all the excited perks.</h2>
+                </div>
+                <div class="row mt64 justify-content-center">
+                    <div class="col-md-3 col-md-offset-2 text-center">
+                        <img src="/odoo_marketplace/static/src/img/snippet_4/icon-new-shop.png" alt="feature-a"/>
+                        <div class="feature-text">Open a New Shop</div>
+                        <div class="text-center">By opening a shop at our marketplace you can expose more of your products to more potential customers. Your best opportunity for growth could be selling in our online marketplace.</div>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <img src="/odoo_marketplace/static/src/img/snippet_4/icon-sell-products.png" alt="feature-b"/>
+                        <div class="feature-text">Sell Products</div>
+                        <div class="text-center">Business is all about trading. It's all about creating a product so good that people pay for it. Increase your sales figure from our high traffic channel.</div>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <img src="/odoo_marketplace/static/src/img/snippet_4/icon-commission.png" alt="feature-c"/>
+                        <div class="feature-text">Get Quick Commission</div>
+                        <div class="text-center">Be smart and start earning the commission whenever a product of yours is sold through our website. Commission Management provides full transparency and flexibility for both buy-side and sell-side.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+    <template id="snippet_4_section_3" name="Format 4">
+        <section>
+            <div class="container" style="margin-bottom:35px;">
+                <div class="row mt16  justify-content-center">
+                    <h2 class="text-center" style="padding:5px;">Here are some great Facilities/Perks of our<br/>Marketplace Store</h2>
+                </div>
+                <div class="row mt64 mb32 justify-content-center">
+                    <div class="col-md-5 offset-1 text-center mt32 mb16 row">
+                        <div class="col-md-1 mb16">
+                            <div class="mp_hexagon">#01</div>
+                        </div>
+                        <div class="col-md-11" style="padding-left:23px;">
+                            <div class="feature-text text-left">Open a New Shop</div>
+                            <div class="text-left">You can quickly start expanding your business and have a full-fledged online store without having to deal with the hassle of maintaining and investing in an e-commerce website for your products. So, start setting up your business in our marketplace.</div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 text-center" style="height:140px;padding-left:35px;">
+                        <div class="carousel-inner">
+                            <div class="item oe_img_bg oe_custom_bg active" style="height:140px;background-image: url('/odoo_marketplace/static/src/img/snippet_4/illustration-new-shop.png');background-size: contain;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt128 mb32 hidden-xs  justify-content-center">
+                    <div class="col-md-2 offset-4" style="height:150px;">
+                        <div class="carousel-inner">
+                            <div class="item oe_img_bg oe_custom_bg active" style="height:150px;background-image: url('/odoo_marketplace/static/src/img/snippet_4/illustration-multi-support.png');background-size: contain;background-position: right;"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 text-center mt32 row" style="padding-left: 0px;">
+                        <div class="col-md-1 mb16">
+                            <div class="mp_hexagon">#02</div>
+                        </div>
+                        <div class="col-md-11" style="padding-left:23px;">
+                            <div class="feature-text text-left">Multi Support</div>
+                            <div class="text-left">Our company does not want to be in a single-vendor lock-in arrangement, Multi-vendor support setups bring a numerous of benefits thus we provide Multi-vendor/seller support.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt128 mb32  justify-content-center">
+                    <div class="col-md-5 offset-1 text-center mt32 mb16 row">
+                        <div class="col-md-1 mb16">
+                            <div class="mp_hexagon">#03</div>
+                        </div>
+                        <div class="col-md-11" style="padding-left:23px;">
+                            <div class="feature-text text-left">Commission Management</div>
+                            <div class="text-left">Since trust and transparency are an important aspect of a business hence we follow Commission Management that provides the full transparency that shows our sellers the commission charged when their product is sold from our website.</div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 text-center" style="height:140px;padding-left:35px;">
+                        <div class="carousel-inner">
+                            <div class="item oe_img_bg oe_custom_bg active" style="height:140px;background-image: url('/odoo_marketplace/static/src/img/snippet_4/illustration-commission.png');background-size: contain;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt128 mb32 hidden-xs  justify-content-center">
+                    <div class="col-md-2 offset-4" style="height:150px;">
+                        <div class="carousel-inner">
+                            <div class="item oe_img_bg oe_custom_bg active" style="height:150px;background-image: url('/odoo_marketplace/static/src/img/snippet_4/illustration-invoice-generate.png');background-size: contain;background-position: right;"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 text-center mt32 row" style="padding-left: 0px;">
+                        <div class="col-md-1 mb16">
+                            <div class="mp_hexagon">#04</div>
+                        </div>
+                        <div class="col-md-11" style="padding-left:23px;">
+                            <div class="feature-text text-left">Various Invoice Generation Option</div>
+                            <div class="text-left">Having well presented and easy to understand invoices will make you look more professional, so we will provide various invoice generation option making sure that you are using the right invoicing tool.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt128 mb32 justify-content-center">
+                    <div class="col-md-5 offset-1 text-center mt32 mb16 row">
+                        <div class="col-md-1 mb16">
+                            <div class="mp_hexagon">#05</div>
+                        </div>
+                        <div class="col-md-11" style="padding-left:23px;">
+                            <div class="feature-text text-left">Product Collection &amp; Management</div>
+                            <div class="text-left">Consumers spend more time researching product purchases online before they buy. This makes quality product content on your eCommerce store more important than ever. It's all a part of a better customer experience, which can lead to an increase in your eCommerce sales.</div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 text-center" style="height:140px;padding-left:35px;">
+                        <div class="carousel-inner">
+                            <div class="item oe_img_bg oe_custom_bg active" style="height:140px;background-image: url('/odoo_marketplace/static/src/img/snippet_4/illustration-product-collection.png');background-size: contain;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt128 mb32 hidden-xs justify-content-center">
+                    <div class="col-md-2 offset-4" style="height:150px;">
+                        <div class="carousel-inner">
+                            <div class="item oe_img_bg oe_custom_bg active" style="height:150px;background-image: url('/odoo_marketplace/static/src/img/snippet_4/illustration-seller-profile.png');background-size: contain;background-position: right;"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 text-center mt32 row" style="padding-left: 0px;">
+                        <div class="col-md-1 mb16">
+                            <div class="mp_hexagon">#06</div>
+                        </div>
+                        <div class="col-md-11" style="padding-left:23px;">
+                            <div class="feature-text text-left">View Other Seller Profile</div>
+                            <div class="text-left">The marketplace is made up of items offered by a variety of different merchants, both companies, and individuals. Now you can take a peek inside their seller profile and look at what other sellers are selling.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <!-- Snippet Menu -->
+    <template id="snippet_format_menus" inherit_id="website.snippets" >
+        <xpath expr="//t[@id='default_snippets']" position="inside">
+            <div id="s_mv_products_panel" class="o_panel">
+                <div class="o_panel_header">
+                    <!-- <i class="fa fa-product-hunt"/>  -->
+                    Marketplace Snippets
+                </div>
+                <div>
+                    <div class="text-center"><b>Banner</b></div>
+                    <div class="o_panel_body wk_o_panel_body" style="">
+                        <t t-snippet="odoo_marketplace.snippet_1_section_1" t-thumbnail="/odoo_marketplace/static/src/img/snippet_1/banner-1.png"/>
+                        <t t-snippet="odoo_marketplace.snippet_2_section_1" t-thumbnail="/odoo_marketplace/static/src/img/snippet_2/banner-2.png"/>
+                        <t t-snippet="odoo_marketplace.snippet_3_section_1" t-thumbnail="/odoo_marketplace/static/src/img/snippet_3/banner-3.png"/>
+                        <t t-snippet="odoo_marketplace.snippet_4_section_1" t-thumbnail="/odoo_marketplace/static/src/img/snippet_4/banner-4.png"/>
+                    </div>
+                </div>
+                <div>
+                    <div class="text-center"><b>Process</b></div>
+                    <div class="o_panel_body wk_o_panel_body" style="">
+                        <t t-snippet="odoo_marketplace.snippet_1_section_2" t-thumbnail="/odoo_marketplace/static/src/img/snippet_1/marketplace-process-1.png"/>
+                        <t t-snippet="odoo_marketplace.snippet_2_section_2" t-thumbnail="/odoo_marketplace/static/src/img/snippet_2/marketplace-process-2.png"/>
+                        <t t-snippet="odoo_marketplace.snippet_3_section_2" t-thumbnail="/odoo_marketplace/static/src/img/snippet_3/marketplace-process-3.png"/>
+                        <t t-snippet="odoo_marketplace.snippet_4_section_2" t-thumbnail="/odoo_marketplace/static/src/img/snippet_4/marketplace-process-4.png"/>
+                    </div>
+                </div>
+                <div>
+                    <div class="text-center"><b>Flow</b></div>
+                    <div class="o_panel_body wk_o_panel_body" style="">
+                    <t t-snippet="odoo_marketplace.snippet_1_section_3" t-thumbnail="/odoo_marketplace/static/src/img/snippet_1/marketplace-flow-1.png"/>
+                    <t t-snippet="odoo_marketplace.snippet_2_section_3" t-thumbnail="/odoo_marketplace/static/src/img/snippet_2/marketplace-flow-2.png"/>
+                    <t t-snippet="odoo_marketplace.snippet_3_section_3" t-thumbnail="/odoo_marketplace/static/src/img/snippet_3/marketplace-flow-3.png"/>
+                    <t t-snippet="odoo_marketplace.snippet_4_section_3" t-thumbnail="/odoo_marketplace/static/src/img/snippet_4/marketplace-flow-4.png"/>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

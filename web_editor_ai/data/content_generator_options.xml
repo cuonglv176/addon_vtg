@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record model="content.generator.options" id="cg_option_1">
+            <field name="type">length</field>
+            <field name="name">Short</field>
+        </record>
+        <record model="content.generator.options" id="cg_option_2">
+            <field name="type">length</field>
+            <field name="name">Medium</field>
+        </record>
+        <record model="content.generator.options" id="cg_option_3">
+            <field name="type">length</field>
+            <field name="name">Long</field>
+        </record>
+
+        <record model="content.generator.options" id="cg_option_5">
+            <field name="type">tone</field>
+            <field name="name">Professional</field>
+        </record>
+        <record model="content.generator.options" id="cg_option_6">
+            <field name="type">tone</field>
+            <field name="name">Informational</field>
+        </record>
+        <record model="content.generator.options" id="cg_option_7">
+            <field name="type">tone</field>
+            <field name="name">Creative</field>
+        </record>
+        <record model="content.generator.options" id="cg_option_8">
+            <field name="type">tone</field>
+            <field name="name">Casual</field>
+        </record>
+
+        <record model="content.generator.options" id="cg_option_9">
+            <field name="type">format</field>
+            <field name="name">Product description</field>
+        </record>
+        <record model="content.generator.options" id="cg_option_10">
+            <field name="type">format</field>
+            <field name="name">Paragraph</field>
+        </record>
+        <record model="content.generator.options" id="cg_option_11">
+            <field name="type">format</field>
+            <field name="name">Email</field>
+        </record>
+        <record model="content.generator.options" id="cg_option_12">
+            <field name="type">format</field>
+            <field name="name">List</field>
+        </record>
+
+           <record id="web_editor_ai_model" model="ir.config_parameter">
+            <field name="key">web_editor_ai.model</field>
+            <field name="value">gpt-3.5-turbo</field>
+        </record>
+
+    </data>
+</odoo>

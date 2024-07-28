@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="account.menu_finance_configuration" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('ev_account_cash_bank.group_account_chief')])]"/>
+        </record>
+         <record id="account_accountant.menu_action_change_lock_date" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('ev_account_cash_bank.group_account_chief')])]"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_vtg_district,vtg_connect_shipping.vtg_district,model_vtg_district,base.group_user,1,1,0,0
+access_vtg_wards,vtg_connect_shipping.vtg_wards,model_vtg_wards,base.group_user,1,1,0,0

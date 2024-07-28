@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="cost_factor_tree_view" model="ir.ui.view">
+            <field name="name">cost_factor_tree_view</field>
+            <field name="model">cost.factor</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="code"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="cost_factor_form_view" model="ir.ui.view">
+            <field name="name">cost_factor_form</field>
+            <field name="model">cost.factor</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" required="1"/>
+                                <field name="is_raw_material_directly"/>
+                            </group>
+                            <group>
+                                <field name="code" required="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_cost_factor_form" model="ir.actions.act_window">
+            <field name="name">Cost Factor</field>
+            <field name="res_model">cost.factor</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_cost_factor" parent="account.account_management_menu"
+                  name="Cost Factor"
+                  groups="account.group_account_user"
+                  action="action_cost_factor_form" sequence="101"/>
+
+    </data>
+</odoo>

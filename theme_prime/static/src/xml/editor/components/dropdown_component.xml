@@ -1,0 +1,86 @@
+<?xml version="1.0" ?>
+<templates>
+    <t t-name="theme_prime.dropdown_component">
+        <div t-attf-class="tp-dropdown-component tp-rounded-border dropdown #{widget.isEnabled ? ' ' : 'tp-disabled-component'}">
+            <t t-value="widget._getRecordByID(widget.recordID)" t-set="record"/>
+            <button t-attf-class="btn tp-dropdown-placeholder tp-rounded-border dropdown-toggle shadow-sm #{widget.buttonClasses}" t-att-id="widget.uid" data-toggle="dropdown">
+                <t t-call="theme_prime.tp_dropdown_placeholder"/>
+            </button>
+            <div class="dropdown-menu tp-dropdown-menu tp-rounded-border" t-att-aria-labelledby="widget.uid">
+                <t t-call="theme_prime.dropdown_component_items">
+                    <t t-set="records" t-value="widget.records"/>
+                </t>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="theme_prime.dropdown_component_items">
+        <t t-foreach="records" t-as="record">
+            <a t-att-data-record-id="record.id" t-attf-class="dropdown-item #{widget.recordID === record.id ? 'text-primary' : ''}" href="#">
+                <t t-call="theme_prime.tp_dropdown_placeholder"/>
+            </a>
+        </t>
+    </t>
+
+    <t t-name="theme_prime.tp_dropdown_placeholder">
+        <span><i t-if="record.iconClass" t-att-class="record.iconClass"/> <t t-out="record.title"/></span>
+    </t>
+
+    <t t-name="theme_prime.cardGrid_component">
+        <div class="row">
+            <t t-foreach="widget.records" t-as="record">
+                <div t-attf-class="col-3 mb-3 position-relative tp-category-card-component #{widget.activeRecordID === record.id ? 'tp-active-card' : ' '}" t-att-data-category-id="record.id">
+                    <i class="fa fa-check-circle"/>
+                    <div class="row no-gutters tp-rounded-border border">
+                        <div class="p-2 border-bottom border-right col-3">
+                            <img loading="lazy" class="img o_image_64_cover img-fluid" t-attf-src="/web/image?model=product.public.category&amp;id=#{record.id}&amp;field=image_128"/>
+                        </div>
+                        <div class="py-4 border-bottom col-9 text-muted px-3 text-truncate">
+                            <h6 class="mb-0 text-uppercase font-weight-bold text-primary" t-esc="record.name"/>
+                            <p class="text-muted small mb-0"> <t t-esc="widget._getCount(record.id)" /> Products </p>
+                        </div>
+                        <div class="p-2 col-6">
+                            <h6 class="mb-2 small text-muted">Style: </h6>
+                            <div t-attf-data-field-name="#{record.id}_style" data-component="DropDownComponent" data-options='{"buttonClasses":"btn d-flex justify-content-between btn-sm bg-primary bg-white border w-100 shadow-none"}'/>
+                        </div>
+                        <div class="p-2 col-6">
+                            <h6 class="mb-2 small text-muted">Products: </h6>
+                            <div t-attf-data-field-name="#{record.id}_productListing" t-attf-data-dependency="#{record.id}_style" data-component="DropDownComponent" data-options='{"buttonClasses":"btn d-flex justify-content-between btn-sm bg-primary bg-white border w-100 shadow-none", "componentEnable": "s_tp_hierarchical_category_style_5"}'/>
+                        </div>
+                        <div class="p-2 col-6">
+                            <div t-attf-data-field-name="#{record.id}_child" data-component="RangeComponent" data-options='{"title": "Child:"}'/>
+                        </div>
+                        <div class="p-2 col-6">
+                            <div t-attf-data-field-name="#{record.id}_limit" data-component="RangeComponent" data-options='{"title": "Sub Child:"}'/>
+                        </div>
+                        <div class="p-2 col-3 text-center">
+                            <div t-attf-data-field-name="#{record.id}_brand" data-options='{"title": "Brands", "iconClass": "fa fa-tag"}' data-component="toggleButtonComponent"/>
+                        </div>
+                        <div class="p-2 col-3 text-center">
+                            <div t-attf-data-field-name="#{record.id}_label" data-options='{"title": "Label", "iconClass": "fa fa-bookmark"}' data-component="toggleButtonComponent"/>
+                        </div>
+                        <div class="p-2 col-3 text-center">
+                            <div t-attf-data-field-name="#{record.id}_count" data-options='{"title": "Count", "iconClass": "fa fa-hashtag"}' data-component="toggleButtonComponent"/>
+                        </div>
+                        <div class="p-2 col-3 text-center">
+                            <div t-attf-data-field-name="#{record.id}_background" data-component="toggleButtonComponent" data-options='{"imageMode": true, "title": "Bg. Image", "iconClass":"fa fa-picture-o"}'/>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </div>
+    </t>
+
+    <t t-name="theme_prime.toggleButtonComponent">
+        <div class="tp-image-component position-relative">
+            <t t-call="theme_prime.toggleButtonComponentContent"/>
+        </div>
+    </t>
+
+    <t t-name="theme_prime.toggleButtonComponentContent">
+        <i t-attf-class="#{widget.iconClass} rounded-circle tp-image-icon tp-cursor-pointer #{widget.value ? 'tp-bg-soft-primary' : ' '}" t-att-title="widget.title"/>
+        <i t-if="widget.imageMode" t-attf-class="fa fa-times text-center text-white tp-cursor-pointer tp-remove-image #{widget.value ? '' : 'd-none'}" title="Remove Image"/>
+        <small t-attf-class="d-block mt-1 text-center #{widget.value ? 'text-primary' : 'text-muted'}" t-esc="widget.title"/>
+    </t>
+
+</templates>

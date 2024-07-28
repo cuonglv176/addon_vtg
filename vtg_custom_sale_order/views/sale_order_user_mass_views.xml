@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="view_sale_order_user_mass" model="ir.ui.view">
+        <field name="name">sale.order.user.mass.form</field>
+        <field name="model">sale.order.user.mass</field>
+        <field name="arch" type="xml">
+            <form string="Assign user to sale">
+                <group string="Assign these sale to">
+                    <field name="team_id" kanban_view_ref="%(sales_team.crm_team_view_kanban)s"/>
+                    <field name="user_id" domain="[('sale_team_id','=',team_id)]"/>
+                </group>
+                <footer>
+                    <button string="Cập nhật" name="action_apply" type="object" class="btn-primary" data-hotkey="q"/>
+                    <button string="Hủy" class="btn-secondary" special="cancel" data-hotkey="z"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_sale_order_user_convert" model="ir.actions.act_window">
+        <field name="name">Cập nhật nhân viên kinh doanh</field>
+        <field name="res_model">sale.order.user.mass</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_sale_order_user_mass"/>
+        <field name="target">new</field>
+        <field name="context">{}</field>
+        <field name="binding_model_id" ref="model_sale_order"/>
+        <field name="binding_view_types">list</field>
+    </record>
+
+    <record id="view_order_form_vtg_custom_sale_order" model="ir.ui.view">
+        <field name="name">view_order_form_vtg_custom_sale_order</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']/tree" position="inside">
+                <button name="action_confirm_users" type="object" icon="fa-list" width="0.1"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="sale_order_line_editable_view_form" model="ir.ui.view">
+        <field name="name">sale_order_line_editable_view_form</field>
+        <field name="model">sale.order.line</field>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <form string="Chi tiết bán hàng">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="product_id" readonly="1"/>
+                            <field name="product_uom_qty" readonly="1"/>
+                            <field name="product_uom" readonly="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page id="user_employee" string="Nhân viên">
+                            <field name="line_user_ids" />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="order_line_user_view_tree" model="ir.ui.view">
+        <field name="name">order_line_user_view_tree</field>
+        <field name="model">order.line.user</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="type" force_save="1" optional="show"/>
+                <field name="user_id" options="{'no_create': True, 'no_create_edit': True}"/>
+                <field name="discount_type"/>
+                <field name="discount"/>
+                <field name="amount" readonly="1"/>
+                <field name="sale_line_id" invisible="1" force_save="1"/>
+                <field name="pos_line_id" invisible="1" force_save="1"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

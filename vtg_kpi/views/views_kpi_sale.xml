@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="vtg_crm_kpi_sale_form_view" model="ir.ui.view">
+            <field name="name">crm.kpi.sale.form</field>
+            <field name="model">crm.kpi.sale</field>
+            <field name="arch" type="xml">
+                <form string="vtg crm kpi sale">
+                    <header>
+                        <button name="action_confirm" type="object" states="draft" string="Xác nhận"
+                                class="oe_highlight"/>
+                        <button name="action_cancel" type="object" states="confirmed" string="Hủy"/>
+                        <field name="state" readonly="1"
+                               statusbar_visible="draft,confirmed,cancel" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <h3 class="text-center">Mã KPI:
+                            <field name="name" readonly="1" force_save="1"/>
+                        </h3>
+                        <group>
+                            <group>
+                                <field name="team_id" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="user_id" attrs="{'readonly':[('state','!=','draft')]}"
+                                       domain="[('sale_team_id','=',team_id)]"/>
+                                <field name="amount_per_lead" widget="monetary" readonly="1" force_save="1"/>
+                                <field name="currency_id" invisible="1"/>
+                            </group>
+                            <group>
+                                <field name="month" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="date_start" readonly="1" force_save="1"/>
+                                <field name="date_end" readonly="1" force_save="1"/>
+                            </group>
+                        </group>
+                        <h5>LEAD</h5>
+                        <group>
+                            <group string="Dự kiến">
+                                <field name="lead_count_kpi"/>
+                                <field name="lead_count_kpi_per_day" force_save="1" readonly="1"/>
+                            </group>
+                            <group string="Thực tế">
+                                <field name="lead_count" readonly="1" force_save="1"/>
+                                <field name="lead_count_percent" widget="percentpie" nolabel="1"/>
+                            </group>
+                        </group>
+                        <h5>DOANH THU</h5>
+                        <group>
+                            <group string="Dự kiến">
+                                <field name="amount_total_kpi" widget="monetary"/>
+                            </group>
+                            <group string="Thực tế">
+                                <field name="amount_total" widget="monetary" readonly="1" force_save="1"/>
+                                <field name="amount_total_percent" widget="percentpie" nolabel="1"/>
+                                <field name="amount_total_khc" widget="monetary" readonly="1" force_save="1"/>
+                                <field name="amount_total_khm" widget="monetary" readonly="1" force_save="1"/>
+                                <field name="amount_total_khtt" widget="monetary" readonly="1" force_save="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Chi tiết KPI">
+                                <field name="line_ids" editable="bottom"
+                                       attrs="{'readonly':[('state','!=','draft')]}">
+                                    <tree string="Chi tiết KPI" editable="bottom">
+                                        <field name="week"/>
+                                        <field name="date_start"/>
+                                        <field name="date_end"/>
+                                        <field name="user_id"/>
+                                        <field name="team_id"/>
+                                        <field name="qty_lead_target"/>
+                                        <field name="qty_lead"/>
+                                        <field name="amount_per_lead_target"/>
+                                        <field name="amount_per_lead" readonly="1" force_save="1"/>
+                                        <field name="amount_target"/>
+                                        <field name="amount" readonly="1" force_save="1" sum="total"/>
+                                        <field name="amount_target_khm"/>
+                                        <field name="amount_khm" readonly="1" force_save="1"/>
+                                        <field name="amount_target_khc"/>
+                                        <field name="amount_khc" readonly="1" force_save="1"/>
+                                        <field name="amount_target_khgt"/>
+                                        <field name="amount_khgt" readonly="1" force_save="1"/>
+                                        <field name="amount_khtt" readonly="1" force_save="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Kết quả theo ngày">
+                                <field name="line_day_ids" editable="bottom">
+                                    <tree string="Kết quả theo ngày" editable="bottom">
+                                        <field name="date"/>
+                                        <field name="user_id"/>
+                                        <field name="qty_lead"/>
+                                        <field name="qty_lead_kh"/>
+                                        <field name="amount" sum="total"/>
+                                        <field name="amount_reality" sum="total"/>
+                                        <field name="amount_khm"/>
+                                        <field name="amount_khc"/>
+                                        <field name="amount_khgt"/>
+                                        <field name="amount_khtt"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Danh sách đơn hàng">
+                                <field name="sale_ids">
+                                    <tree string="Danh sách đơn hàng">
+                                        <field name="date_order"/>
+                                        <field name="name"/>
+                                        <field name="partner_id"/>
+                                        <field name="amount_total" sum="total"/>
+                                        <field name="state"/>
+                                    </tree>
+                                </field>
+                            </page>
+
+                            <page string="Doanh số theo đơn hàng">
+                                <field name="line_sale_order_ids">
+                                    <tree string="Doanh số theo đơn hàng">
+                                        <field name="date"/>
+                                        <field name="order_id"/>
+                                        <field name="team_id"/>
+                                        <field name="user_id"/>
+                                        <field name="amount" sum="total"/>
+                                        <field name="amount_reality" sum="total"/>
+                                    </tree>
+                                </field>
+                            </page>
+
+                            <page string="Doanh số theo đơn hàng2" invisible="1">
+                                <field name="line_sale_order2_ids" force_save="1">
+                                    <tree string="Doanh số theo đơn hàng">
+                                        <field name="date"/>
+                                        <field name="order_id"/>
+                                        <field name="team_id"/>
+                                        <field name="user_id"/>
+                                        <field name="amount" sum="total"/>
+                                        <field name="amount_reality" sum="total"/>
+                                    </tree>
+                                </field>
+                            </page>
+
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="vtg_crm_kpi_sale_tree_view" model="ir.ui.view">
+            <field name="name">crm.kpi.sale.tree</field>
+            <field name="model">crm.kpi.sale</field>
+            <field name="arch" type="xml">
+                <tree decoration-success="state == 'confirmed'">
+                    <field name="name"/>
+                    <field name="team_id"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="vtg_crm_kpi_sale_action" model="ir.actions.act_window">
+            <field name="name">KPI SALE</field>
+            <field name="res_model">crm.kpi.sale</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="vtg_crm_kpi_sale_tree_view"/>
+        </record>
+
+        <menuitem id="vtg_crm_kpi_sale_menu" name="KPI Sale"
+                  action="vtg_crm_kpi_sale_action"
+                  sequence="2"
+                  parent="vtg_kpi.vtg_crm_kpi_menu"
+                  groups="vtg_security.group_vtg_employee_team_sale"
+        />
+
+    </data>
+</odoo>

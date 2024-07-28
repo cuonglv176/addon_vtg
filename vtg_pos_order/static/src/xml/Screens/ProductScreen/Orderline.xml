@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates id="template" xml:space="preserve">
+    <t t-name="OrderlineVTG" t-inherit="point_of_sale.Orderline" t-inherit-mode="extension" owl="1">
+        <xpath expr="//ul[hasclass('info-list')]" position="after">
+            <ul t-if="props.line.selected">
+                <button class="button" t-on-click="trigger('click-user')" style="margin: 5px">
+                    Nhân viên
+                </button>
+                <button class="button" t-on-click="trigger('click-user-master')" style="margin: 5px">
+                    Thợ chính
+                </button>
+                <button class="button" t-on-click="trigger('click-user-assistant')" style="margin: 5px">
+                    Thợ phụ
+                </button>
+            </ul>
+
+        </xpath>
+    </t>
+</templates>

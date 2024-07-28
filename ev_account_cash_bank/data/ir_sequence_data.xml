@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="seq_cash_expense" model="ir.sequence">
+            <field name="name">Cash Out</field>
+            <field name="code">cash.out</field>
+            <field name="prefix">PC%(y)s%(month)s/</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_cash_in" model="ir.sequence">
+            <field name="name">Cash In</field>
+            <field name="code">cash.in</field>
+            <field name="prefix">PT%(y)s%(month)s/</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_bank_expense" model="ir.sequence">
+            <field name="name">Bank Out</field>
+            <field name="code">bank.out</field>
+            <field name="prefix">UNC%(y)s%(month)s/</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_bank_in" model="ir.sequence">
+            <field name="name">Bank In</field>
+            <field name="code">bank.in</field>
+            <field name="prefix">BC%(y)s%(month)s/</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>

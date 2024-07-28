@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_config_settings_view_form_ai" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.ai</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="40"/>
+            <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='integration']" position="after">
+                    <h2>OpenAI</h2>
+                    <div class="row mt16 o_settings_container" name="openai">
+                        <div class="col-12 col-lg-6 o_setting_box" id="openai_settings">
+
+                            <div class="o_setting_right_pane">
+                                <label string="API key" for="openai_api_key" />
+                                <div>
+                                    <field name="openai_api_key" password="True"/>
+                                </div>
+                                <div>
+                                    <a href="https://platform.openai.com/account/api-keys" class="oe_link" target="_blank">
+                                        <i class="fa fa-arrow-right"/> Generate an OpenAI API key
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-6 o_setting_box" id="openai_settings">
+
+                            <div class="o_setting_right_pane">
+                                <div>
+                                    <button name="action_open_content_generator_options" icon="fa-arrow-right" type="object" string="Change Content Generator options" class="btn-link"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-6 o_setting_box" id="openai_model">
+                            <div class="o_setting_right_pane">
+
+                                <label string="Model" for="openai_model" />
+                                <div class="text-muted">
+                                    Select GPT-4 only if you have access to the GPT4 model!
+                                </div>
+                                <div>
+                                    <field name="openai_model"/>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

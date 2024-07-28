@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="seq_crm_lead_division" model="ir.sequence">
+        <field name="name">Crm lead division</field>
+        <field name="code">crm.lead.division</field>
+        <field name="prefix">DIVISION%(y)s/%(month)s/</field>
+        <field name="padding">2</field>
+    </record>
+</odoo>

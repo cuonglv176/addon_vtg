@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="BookingListScreen" owl="1">
+        <div class="clientlist-screen screen" t-on-activate-edit-mode="activateEditMode">
+            <div class="screen-content" style="max-width: none !important">
+                <div class="top-content">
+                    <div class="button back" t-on-click="back">
+                        <i class="fa fa-angle-double-left"/>
+                        Discard
+                    </div>
+                    <div t-if="isNextButtonVisible" t-on-click="clickNext"
+                          class="button next highlight">
+                        <t t-if="!env.isMobile">
+                            <t t-esc="nextButton.text" />
+                        </t>
+                        <t t-else="">
+                            <i t-if="nextButton.command === 'deselect'" class="fa fa-trash"/>
+                            <i t-elif="nextButton.command === 'set'" class="fa fa-check"/>
+                        </t>
+                    </div>
+                    <div t-if="!state.detailIsShown" class="searchbox-client top-content-center">
+                        <input placeholder="Search Bookings" size="1" t-on-keyup="updateBookingList"/>
+                        <span class="search-clear-client"></span>
+                    </div>
+<!--                    <div class="button back" t-on-click="searchBooking()" t-if="!state.detailIsShown">-->
+<!--                        <span class="database-icon">-->
+<!--                            <i class="fa fa-database"/>-->
+<!--                        </span>-->
+<!--                        <span class="load-customer-search">-->
+<!--                                Load Bookings-->
+<!--                        </span>-->
+<!--                    </div>-->
+                </div>
+                <section class="full-content">
+                    <div class="client-window">
+                        <div class="orders">
+                            <t t-if="bookings.length !== 0">
+                                <div class="header-row">
+                                    <div class="col wide">Booking Code</div>
+                                    <div class="col wide">Type Customer</div>
+                                    <div class="col wide">Partner</div>
+                                    <div class="col">State</div>
+                                    <div class="col">User</div>
+                                    <div class="col">Partner Phone</div>
+                                    <div class="col">Booking Date</div>
+                                    <div class="col">Branch</div>
+                                    <div class="col">Slot Time</div>
+                                    <div class="col">Sent Date</div>
+                                    <div class="col">Status</div>
+                                </div>
+                                <t t-foreach="bookings" t-as="booking">
+<!--                                    <div t-attf-class="order-row {{'highlight' if isHighlighted(booking) else ''}}" t-on-click="trigger('click-booking', booking)">-->
+                                    <div t-attf-class="order-row" t-on-click="trigger('click-booking', booking)">
+                                        <div class="col">
+                                            <t t-esc="booking.name"/>
+                                        </div>
+                                        <div class="col">
+                                            <t t-esc="getTypeCustomer(booking)"/>
+                                        </div>
+                                        <div class="col">
+                                            <t t-esc="booking.partner_name"/>
+                                        </div>
+                                        <div class="col">
+                                            <t t-esc="getState(booking)"/>
+                                        </div>
+                                        <div class="col">
+                                            <t t-esc="getUser(booking)"/>
+                                        </div>
+                                        <div class="col">
+                                            <t t-esc="booking.partner_phone"/>
+                                        </div>
+                                        <div class="col">
+                                            <t t-esc="getDate(booking)"/>
+                                        </div>
+                                        <div class="col">
+                                            <t t-esc="getBranch(booking)"/>
+                                        </div>
+                                        <div class="col">
+                                            <t t-esc="booking.slot_time"/>
+                                        </div>
+                                        <div class="col">
+                                            <t t-esc="getSentDate(booking)"/>
+                                        </div>
+                                        <div class="col">
+                                            <t t-esc="getStatus(booking)"/>
+                                        </div>
+                                    </div>
+                                </t>
+                            </t>
+                            <t t-else="">
+                                <div class="empty-order-list" style="text-align: center">
+                                    <i role="img" aria-label="Shopping cart" title="Shopping cart"
+                                       class="fa fa-shopping-cart" style="font-size: 100px"></i>
+                                    <h1>No Booking found</h1>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </t>
+
+</templates>

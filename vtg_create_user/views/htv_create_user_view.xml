@@ -1,0 +1,73 @@
+<odoo>
+    <data>
+        <record id="vtg_reseller_users_form_view" model="ir.ui.view">
+            <field name="name">vtg.reseller.users.form</field>
+            <field name="model">vtg.reseller.users</field>
+            <field name="arch" type="xml">
+                <form string="vtg list reseller">
+                    <header>
+                        <button name="action_create_user" type="object" states="draft" string="Tạo tài khoản"
+                                class="oe_highlight"/>
+                        <button name="action_close_user" type="object" states="done" string="Đóng tài khoản"
+                                class="oe_highlight"/>
+                        <button name="action_open_user" type="object" states="close" string="Mở tài khoản"
+                                class="oe_highlight"/>
+                        <button name="action_reset_password" type="object" states="done,running" string="Reset mật khẩu"
+                                class="oe_highlight"/>
+                        <field name="state" readonly="1"
+                               statusbar_visible="draft,done,running,close" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <field name="state_users" invisible="1"/>
+                        <widget name="web_ribbon" title="Chưa xác thực" bg_color="bg-danger"
+                                attrs="{'invisible': [('state_users', '=', 'active')]}"/>
+                        <widget name="web_ribbon" title="Chưa xác thực" bg_color="bg-primary"
+                                attrs="{'invisible': [('state_users', '!=', 'active')]}"/>
+                        <group>
+                            <group>
+                                <field name="employee_id" domain="[('user_id','=',False)]"/>
+                                <field name="name" readonly="1" force_save="1"/>
+                                <field name="phone" readonly="1" force_save="1"/>
+                                <field name="user_template_id" create="0"/>
+                            </group>
+                            <group>
+                                <field name="login" widget="email" readonly="1" force_save="1"/>
+                                <field name="password" password="True" invisible="1"/>
+                                <field name="user_id" readonly="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="vtg_reseller_users_tree_view" model="ir.ui.view">
+            <field name="name">vtg.reseller.users.tree</field>
+            <field name="model">vtg.reseller.users</field>
+            <field name="arch" type="xml">
+                <tree string="Danh sách người dùng" decoration-danger="state == 'close'"
+                      decoration-success="state == 'done'">
+                    <field name="name"/>
+                    <field name="login"/>
+                    <field name="phone"/>
+                    <field name="user_template_id"/>
+                    <field name="state_users"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="vtg_reseller_users_action" model="ir.actions.act_window">
+            <field name="name">Danh sách người dùng</field>
+            <field name="res_model">vtg.reseller.users</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="vtg_reseller_users_tree_view"/>
+        </record>
+
+        <menuitem id="vtg_reseller_users_menu" name="Danh sách người dùng"
+                  action="vtg_reseller_users_action"
+                  sequence="40"
+                  web_icon="vtg_create_user,static/description/icon.png"/>
+    </data>
+</odoo>

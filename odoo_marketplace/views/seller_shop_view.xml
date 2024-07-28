@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+
+<odoo>
+	<data>
+        <record id="wk_seller_shop_form_view" model="ir.ui.view">
+            <field name="name">seller.shop.form</field>
+            <field name="model">seller.shop</field>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <form string="Seller Shop" create="0">
+                    <header>
+                        <field name="state" widget="statusbar" statusbar_visible="pending,approved,denied" attrs="{'invisible':['|',('id','=',False),('seller_id', '=', False)]}"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box" attrs="{'invisible':[('state', 'in', ('pending','denied'))]}">
+                            <button name="toggle_active" type="object"
+                                    class="oe_stat_button" icon="fa-archive" groups="odoo_marketplace.marketplace_officer_group">
+                                <field name="active" widget="boolean_button"
+                                    options='{"terminology": "archive"}'/>
+                            </button>
+                            <button name="website_publish_button" type="object" class="oe_stat_button" icon="fa-globe">
+                                <field name="website_published" widget="website_publish_button"/>
+                            </button>
+                        </div>
+                        <field name="shop_logo" widget='image' class="oe_avatar"/>
+                        <div class="oe_title">
+                            <div class="oe_edit_only">
+                                <label for="name"/>
+                            </div>
+                            <h1>
+                                <field name="name" default_focus="1" placeholder="Shop Name" required="1"/>
+                            </h1>
+                        </div>
+                        <field class="profile_or_shop_id" name="id" invisible="1"/>
+                        <group>
+                            <label for="url" string="Shop Url"/>
+                            <div>
+                                <field name="url" widget="url" style="width: 61%%" readonly="1"/>
+                                <field name="url_handler" class="oe_edit_only seller_shop_url" style="width: 38%%;padding-right:20px;" required="1" placeholder="Unique Shop URL handler..."/>
+                                <span aria-label="Edit" class="fa fa-pencil url_validation oe_edit_only" title="Edit"></span>
+                                <span class="text-danger oe_edit_only" id="profile_url_error" style="display:none;margin-left:17px;"></span>
+                                <div class="oe_edit_only oe_grey">
+                                    URL handler must be unique and do not change it frequently for the purpose of SEO.
+                                    First time URL handler will be filled automatically on the basis of name but from next time you have to fill it manually if you want to change.
+                                </div>
+                            </div>
+                        </group>
+                        <group>
+                            <div>
+                                <label for="shop_banner" style="font-weight:600"/>
+                            </div>
+                            <h6 class="oe_inline oe_grey oe_right">
+                                Banner image size must be 1298 x 400 px for perfect view.
+                            </h6>
+                        </group>
+                        <group>
+                            <div>
+                                <field name="shop_banner" class="mp_shop_image" widget="image" options='{"size": [825, 250]}'/>
+                            </div>
+                        </group>
+                        <group>
+                            <field name="shop_tag_line" required="1" placeholder="Tag line for shop..."/>
+                            <field name="description"/>
+                            <field name="seller_id" groups="odoo_marketplace.marketplace_officer_group" widget="selection" options="{'no_create': True}"/>
+                        </group>
+                        <group>
+                            <group>
+                                <label for="street" string="Address"/>
+                                <div class="o_address_format">
+                                    <field name="street" placeholder="Street..." class="o_address_street" />
+                                    <field name="street2" placeholder="Street 2..." class="o_address_street" />
+                                    <field name="city" placeholder="City" class="o_address_city" />
+                                    <field name="state_id" class="o_address_state" placeholder="State" options="{'no_open': True}"/>
+                                    <field name="zip" placeholder="ZIP" class="o_address_zip"/>
+                                    <field name="country_id" placeholder="Country" class="o_address_country" options="{'no_open': True, 'no_create': True}"/>
+                                </div>
+                            </group>
+                            <group>
+                                <field name="phone"/>
+                                <field name="shop_mobile"/>
+                                <field name="email"/>
+                                <field name="fax"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="seller_products" string="Products">
+                                <field name="seller_product_ids" mode="kanban" context="{'kanban_view_ref':'odoo_marketplace.wk_seller_product_template_kanban_view','form_view_ref':'odoo_marketplace.wk_seller_product_template_form_view'}"/>
+                            </page>
+                            <page name="seller_shop_t_c" string="Terms &amp; Conditions">
+                                <field name="shop_t_c"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_ids"/>
+                    </div>
+                    <footer invisible="not context.get('seller_id', False)">
+                        <button string="Create Shop" name="save" type="object" class="oe_highlight"/>
+                         or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="wk_seller_shop_kanban_view" model="ir.ui.view">
+            <field name="name">seller.shop.kanban</field>
+            <field name="model">seller.shop</field>
+            <field name="arch" type="xml">
+                <kanban quick_create="false" create="0" class="oe_background_grey o_account_kanban" disable_draggable="true">
+                    <field name="name"/>
+                    <field name="shop_logo"/>
+                    <field name="description"/>
+                    <field name="shop_mobile"/>
+                    <field name="shop_tag_line"/>
+                    <field name="seller_product_ids"/>
+                    <field name="seller_id"/>
+                    <field name="sequence"/>
+                    <field name="color"/>
+                    <field name="id"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_global_click">
+                                <div class="o_dropdown_kanban dropdown" groups="odoo_marketplace.marketplace_seller_group">
+                                    <a class="dropdown-toggle btn" data-toggle="dropdown" href="#" role="button">
+                                        <span class="fa fa-bars fa-lg" aria-label="Dropdown"/>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                        <t t-if="widget.editable"><li><a type="edit">Edit Shop</a></li></t>
+                                        <t t-if="widget.deletable"><li><a type="delete">Delete</a></li></t>
+                                        <li><ul class="oe_kanban_colorpicker" data-field="color"/></li>
+                                    </ul>
+                                </div>
+                                <div class="oe_kanban_content oe_kanban_details">
+                                    <div style="margin-bottom: 5px;font-size: 14px;">
+                                        <b>
+                                            <field name="name"/>
+                                        </b>
+                                    </div>
+                                    <div>
+                                        <div class="o_kanban_image">
+                                            <img alt="Shop Logo" t-att-src="kanban_image('seller.shop', 'shop_logo', record.id.raw_value)"  class="o_image_64_contain"/>
+                                        </div>
+                                        <div name="tags">
+                                            <ul>
+                                                <li>
+                                                    <b>Seller: </b>
+                                                    <field name="seller_id"/>
+                                                </li>
+                                                <li t-if="record.shop_mobile.raw_value">
+                                                    <b>Mobile: </b>
+                                                    <field name="shop_mobile"/>
+                                                </li>
+                                                <li>
+                                                    <b>Total Products: </b>
+                                                    <field name="total_product"/>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="oe_kanban_partner_links" style="margin-top:5px;margin-bottom:5px;">
+                                    <div class="pull-right" style="position: absolute;right: 7px;bottom: 7px;">
+                                        <img alt="Seller" t-att-src="kanban_image('res.partner', 'image_128', record.seller_id.raw_value)" t-att-title="record.seller_id.value" width="30" height="30" class="oe_kanban_avatar pull-right"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="wk_seller_shop_tree_view" model="ir.ui.view">
+            <field name="name">seller.shop.tree</field>
+            <field name="model">seller.shop</field>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <tree string="Sellers" create="0">
+                    <field name="sequence"/>
+                    <field name="name"/>
+                    <field name="seller_id"/>
+                    <field name="shop_mobile"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Filters -->
+        <record id="wk_seller_shop_view_filter" model="ir.ui.view">
+            <field name="name">seller.shop.form</field>
+            <field name="model">seller.shop</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" filter_domain="['|','|',('display_name','ilike',self),('ref','=',self),('email','ilike',self)]"/>
+                    <field name="url_handler" string="Profile Handler"/>
+                    <field name="seller_id"/>
+                    <filter string="Pending" name="pending" domain="[('state','=','pending')]"/>
+                    <filter string="Approved" name="approved" domain="[('state','=','approved')]"/>
+                    <filter string="Denied" name="denied" domain="[('state','=','denied')]"/>
+                    <separator/>
+                    <filter string="Published" domain="[('website_published','=',True)]" name="published_on_website"
+                            />
+                    <filter string="Unpublished" domain="[('website_published','=',False)]" name="unpublished_on_website"/>
+                    <group  string="Group By">
+                        <filter string="Seller" context="{'group_by':'seller_id'}" name="shop_seller_filter" groups="odoo_marketplace.marketplace_officer_group"/>
+                        <filter string="By Month" context="{'group_by':'create_date'}" name="shop_create_date_filter" groups="odoo_marketplace.marketplace_officer_group"/>
+                    </group>
+               </search>
+            </field>
+        </record>
+
+		<!-- Seller Dashboard Sellers Actions -->
+        <record id="wk_seller_shop_action" model="ir.actions.act_window">
+            <field name="name">Shop</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">seller.shop</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="context">{'no_archive': 1}</field>
+            <field name="view_id" ref="wk_seller_shop_kanban_view"/>
+            <field name="search_view_id" ref="wk_seller_shop_view_filter"/>
+            <field name="help" type="html">
+                <p>
+                    <b><u>To create your shop follow these steps.</u></b>
+                </p>
+                <p>Step 1 Go to your profile</p>
+                <p>
+                    <img src="/odoo_marketplace/static/src/img/shop_help1.png" class="pull-left" style="width: 150%;margin-top: 10px;margin-bottom: 20px;" alt="Image"/>
+                </p>
+                <p>Step 2</p>
+                <p>
+                    <img src="/odoo_marketplace/static/src/img/shop_help2.png" class="pull-left" style="width: 150%;margin-top: 10px;margin-bottom: 20px;" alt="Image"/>
+                </p>
+            </field>
+        </record>
+
+        <record id="wk_seller_shop_form_view_for_officer" model="ir.ui.view">
+            <field name="name">seller.shop.form.officer</field>
+            <field name="model">seller.shop</field>
+            <field name="inherit_id" ref="odoo_marketplace.wk_seller_shop_form_view"/>
+            <field name="groups_id" eval="[(6, 0, [ref('odoo_marketplace.marketplace_officer_group') ])]"/>
+            <field name="arch" type="xml">
+                <field name="message_ids" position="before">
+                    <field name="message_follower_ids"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="wk_seller_shop_action2" model="ir.actions.act_window">
+            <field name="name">Create Shop</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">seller.shop</field>
+            <field name="binding_view_types">form</field>
+            <field name="target">new</field>
+            <field name="context">{"default_seller_id":context.get("active_id")}</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wk_seller_shop_form_view"/>
+        </record>
+	</data>
+</odoo>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_applicant_log_note_form_view" model="ir.ui.view">
+            <field name="name">hr.applicant.log.note.form</field>
+            <field name="model">hr.applicant.log.note</field>
+            <field name="arch" type="xml">
+                <form string="vtg log note">
+                    <sheet>
+                        <h3 class="text-center">CẬP NHẬT GHI CHÚ:
+                        </h3>
+                        <group>
+                            <group>
+                                <field name="content"/>
+                                <field name="contact_form"/>
+                            </group>
+                            <group>
+                                <field name="result"/>
+                                <field name="applicant_id" readonly="1" force_save="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Ghi chú">
+                                <field name="note" widget="html"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <footer>
+                        <button string="Lưu" class="btn-primary" special="save" data-hotkey="v"/>
+                        <button string="Hủy" special="cancel" data-hotkey="z"/>
+                    </footer>
+                </form>
+
+            </field>
+        </record>
+
+
+        <record id="vtg_hr_applicant_log_note_action_new" model="ir.actions.act_window">
+            <field name="name">Log Note</field>
+            <field name="res_model">hr.applicant.log.note</field>
+            <field name="view_mode">form,tree</field>
+            <field name="domain">[('applicant_id', '=', active_id)]</field>
+            <field name="context">{'search_default_applicant_id': active_id, 'default_applicant_id': active_id}
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

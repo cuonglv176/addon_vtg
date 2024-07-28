@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="BookingButton" owl="1">
+        <div class="control-button" t-on-click="onClick">
+            <t t-if="booking">
+                <t t-esc="booking.name"/>
+            </t>
+            <t t-esc="booking"/>
+            <span>Booking</span>
+        </div>
+    </t>
+
+</templates>

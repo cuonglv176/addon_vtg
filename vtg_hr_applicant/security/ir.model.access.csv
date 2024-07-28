@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_vtg_hr_channel,vtg_hr_applicant.vtg_hr_channel,model_vtg_hr_channel,base.group_user,1,1,1,1
+access_vtg_hr_source,vtg_hr_applicant.vtg_hr_source,model_vtg_hr_source,base.group_user,1,1,1,1

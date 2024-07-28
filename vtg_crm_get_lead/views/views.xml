@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="vtg_crm_lead_notification_form_view" model="ir.ui.view">
+            <field name="name">crm.lead.notification.form</field>
+            <field name="model">crm.lead.notification</field>
+            <field name="arch" type="xml">
+                <form string="Thông báo">
+                    <h1>
+                        <field name="name" readonly="1"/>
+                    </h1>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

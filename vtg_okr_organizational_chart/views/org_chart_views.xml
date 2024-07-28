@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <record id="okr_organization_dashboards" model="ir.actions.client">
+      <field name="name">Organizational Chart</field>
+      <field name="tag">okr_organization_chart</field>
+  </record>
+
+  <menuitem id="menu_okr_organizational_chart"
+    name="OKR Chart"
+    action="okr_organization_dashboards"
+    parent="vtg_okr_manager.menu_main_okr_manager"
+    groups="base.group_user"
+    sequence="4"/>
+
+</odoo>

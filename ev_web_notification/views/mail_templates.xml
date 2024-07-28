@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="_assets_primary_variables" inherit_id="web._assets_primary_variables">
+            <xpath expr="//link[last()]" position="after">
+                <link rel="stylesheet" type="text/scss" href="/ev_web_notification/static/src/scss/variables.scss"/>
+            </xpath>
+        </template>
+
+        <template id="assets_backend" name="mail assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <!-- systray -->
+                <script type="text/javascript" src="/ev_web_notification/static/src/js/systray/mail_notification_manager.js"></script>
+                <script type="text/javascript" src="/ev_web_notification/static/src/js/systray/systray_activity_menu.js"></script>
+            </xpath>
+        </template>
+
+        <template id="assets_frontend" inherit_id="web.assets_frontend" name="Frontend notification">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/mail/static/src/js/thread_windows/abstract_thread_window.js"></script>
+                <script type="text/javascript" src="/mail/static/src/js/services/mail_notification_manager.js"></script>
+                <script type="text/javascript" src="/mail/static/src/js/document_viewer.js"></script>
+                <script type="text/javascript" src="/mail/static/src/js/thread_widget.js"></script>
+                <script type="text/javascript" src="/mail/static/src/js/utils.js"></script>
+
+                <script type="text/javascript" src="/mail/static/src/js/models/threads/abstract_thread.js"></script>
+                <script type="text/javascript" src="/mail/static/src/js/models/threads/mixins/thread_typing_mixin.js"></script>
+                <script type="text/javascript" src="/mail/static/src/js/models/messages/abstract_message.js"></script>
+                <script type="text/javascript" src="/mail/static/src/js/models/utils/timer.js"></script>
+                <script type="text/javascript" src="/mail/static/src/js/models/utils/timers.js"></script>
+                <script type="text/javascript" src="/mail/static/src/js/models/utils/cc_throttle_function.js"></script>
+
+                <script type="text/javascript" src="/bus/static/src/js/longpolling_bus.js"></script>
+                <script type="text/javascript" src="/bus/static/src/js/crosstab_bus.js"></script>
+                <script type="text/javascript" src="/bus/static/src/js/services/bus_service.js"></script>
+
+                <script type="text/javascript" src="/web/static/src/js/chrome/systray_menu.js"></script>
+
+                <script type="text/javascript" src="/ev_web_notification/static/src/js/systray/mail_notification_manager.js"></script>
+                <script type="text/javascript" src="/ev_web_notification/static/src/js/systray/systray_activity_menu.js"></script>
+                <script type="text/javascript" src="/ev_web_notification/static/src/js/portal_systray_activity_menu.js"></script>
+                <!--Stylesheets-->
+                <link rel="stylesheet" type="text/scss" href="/mail/static/src/scss/abstract_thread_window.scss"></link>
+                <link rel="stylesheet" type="text/scss" href="/mail/static/src/scss/thread.scss"></link>
+                <link rel="stylesheet" type="text/scss" href="/ev_web_notification/static/src/scss/systray.scss"/>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

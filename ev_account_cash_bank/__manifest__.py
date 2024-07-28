@@ -1,0 +1,26 @@
+# -*- coding: utf-8 -*-
+{
+    'name': "Cash Bank Payment",
+    'author': "ERPVIET",
+    'website': "https://www.erpviet.vn",
+    'category': 'account',
+    'version': '0.1',
+    'depends': ['base', 'account', 'account_accountant', 'ev_account_erpviet'],
+    'data': [
+        'data/ir_sequence_data.xml',
+        'views/account_payment.xml',
+        'views/account_payment_cash_in.xml',
+        'views/account_payment_cash_out.xml',
+        'views/account_payment_bank_in.xml',
+        'views/account_payment_bank_out.xml',
+        'views/res_company.xml',
+        'views/account_journal.xml',
+        'views/account_move_view.xml',
+        'data/account_general_funds.xml',
+        'report/report.xml',
+        'report/report_bank_in_out.xml',
+        'security/ir.model.access.csv',
+        'security/ir_rule.xml',
+        'views/account_menu.xml',
+    ],
+}

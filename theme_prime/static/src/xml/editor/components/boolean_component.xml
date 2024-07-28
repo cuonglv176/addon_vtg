@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<templates>
+    <t t-name="theme_prime.boolean_component">
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" t-att-id="widget.uid" t-att-checked="widget.value || None"/>
+            <label class="custom-control-label h6" style="font-size:0.875rem;font-weight: 400;" t-att-for="widget.uid"><t t-out="widget.title"/></label>
+        </div>
+    </t>
+</templates>

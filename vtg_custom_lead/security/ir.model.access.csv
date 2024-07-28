@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_crm_lead_booking,vtg_custom_lead.crm_lead_booking,model_crm_lead_booking,base.group_user,1,1,1,1
+access_crm_lead_booking_detail,vtg_custom_lead.crm_lead_booking_detail,model_crm_lead_booking_detail,base.group_user,1,1,1,1
+access_crm_lead_exist,vtg_custom_lead.crm_lead_exist,model_crm_lead_exist,base.group_user,1,1,1,1
+access_crm_lead_log_note,vtg_custom_lead.crm_lead_log_note,model_crm_lead_log_note,base.group_user,1,1,1,0

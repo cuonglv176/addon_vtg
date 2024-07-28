@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="object_cost_tree_view" model="ir.ui.view">
+            <field name="name">object_cost_tree_view</field>
+            <field name="model">object.cost</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="company_id"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="object_cost_form_view" model="ir.ui.view">
+            <field name="name">object_cost_form</field>
+            <field name="model">object.cost</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" required="1" force_save="1" string="Code"/>
+                            </group>
+                            <group>
+                                <field name="company_id" options="{'no_create': 1}"/>
+                            </group>
+                            <group>
+                                <field name="description"/>
+                            </group>
+                            <group>
+                                <field name="unfinished_expense_account_id" options="{'no_create': True}" required="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Details">
+                                <field name="product_ids">
+                                    <tree editable="bottom">
+                                        <field name="product_id" options="{'no_create': 1}"
+                                        required="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Cost Account">
+                                <field name="cost_account_ids">
+                                    <tree editable="bottom">
+                                        <field name="account_id" options="{'no_create': 1}"
+                                        domain="[('company_id', '=', parent.company_id)]" required="1"/>
+                                        <field name="cost_factor_id" options="{'no_create': 1}" required="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_object_cost_form" model="ir.actions.act_window">
+            <field name="name">Object Cost</field>
+            <field name="res_model">object.cost</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_object_cost" parent="account.account_management_menu"
+                  name="Object Cost"
+                  groups="account.group_account_user"
+                  action="action_object_cost_form" sequence="99"/>
+
+    </data>
+</odoo>

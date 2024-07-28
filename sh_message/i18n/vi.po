@@ -1,0 +1,67 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sh_message
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-27 12:08+0000\n"
+"PO-Revision-Date: 2022-08-27 12:08+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sh_message
+#: model:ir.model.fields,field_description:sh_message.field_sh_message_wizard__create_uid
+msgid "Created by"
+msgstr "Được tạo bởi"
+
+#. module: sh_message
+#: model:ir.model.fields,field_description:sh_message.field_sh_message_wizard__create_date
+msgid "Created on"
+msgstr "Được tạo ra"
+
+#. module: sh_message
+#: model:ir.model.fields,field_description:sh_message.field_sh_message_wizard__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: sh_message
+#: model:ir.model.fields,field_description:sh_message.field_sh_message_wizard__id
+msgid "ID"
+msgstr "TÔI"
+
+#. module: sh_message
+#: model:ir.model.fields,field_description:sh_message.field_sh_message_wizard____last_update
+msgid "Last Modified on"
+msgstr "Sửa đổi lần cuối"
+
+#. module: sh_message
+#: model:ir.model.fields,field_description:sh_message.field_sh_message_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: sh_message
+#: model:ir.model.fields,field_description:sh_message.field_sh_message_wizard__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: sh_message
+#: model:ir.model.fields,field_description:sh_message.field_sh_message_wizard__name
+#: model_terms:ir.ui.view,arch_db:sh_message.sh_message_wizard
+msgid "Message"
+msgstr "Thông điệp"
+
+#. module: sh_message
+#: model:ir.model,name:sh_message.model_sh_message_wizard
+msgid "Message wizard to display warnings, alert ,success messages"
+msgstr "Trình hướng dẫn thông báo để hiển thị cảnh báo, cảnh báo, tin nhắn thành công"
+
+#. module: sh_message
+#: model_terms:ir.ui.view,arch_db:sh_message.sh_message_wizard
+msgid "OK"
+msgstr "ĐƯỢC RỒI"
